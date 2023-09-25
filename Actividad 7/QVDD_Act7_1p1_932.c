@@ -8,6 +8,7 @@
 //PROTOTIPOS
 int msges (void);
 void menu (void);
+void CambiarAmayus(char *string);
 
 void convertirMayusc (char *string);
 void invertirPalabra (char *string);
@@ -67,7 +68,7 @@ void menu (void)
             printf("Ingresa una palabra: \n");
             fflush(stdin);
             gets(word);
-            convertirMayusc(word);
+            CambiarAmayus(word);
         }
         
         switch (op)
@@ -110,6 +111,25 @@ void menu (void)
         }  
     } while (op!=0);
     
+}
+
+
+
+//Convierte los caracteres a mayuscula pero no imprime
+void CambiarAmayus(char *string)
+{
+    int i;
+    for (i = 0; string[i] != '\0'; i++)
+    {
+        if (string[i] >='a')
+        {
+            if (string[i]<='z')
+            {
+                string[i]=string[i]-32;
+            }
+            
+        }
+    }
 }
 
 
@@ -274,7 +294,6 @@ void Salida9 (char *string)
             printf("%c",caracter);
         }
     }
-    
 }
 //*******************************************
 
