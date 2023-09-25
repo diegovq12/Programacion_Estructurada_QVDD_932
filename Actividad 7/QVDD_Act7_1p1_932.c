@@ -16,22 +16,24 @@ void Salida7 (char *string);
 void Salida8 (char *string);
 void Salida9 (char *string);
 void Salida10 (char *string);
-//*********
+//**********************************
 
 
-
+//Main principal
 int main()
 {
     menu();
 
     return 0;
 }
+//*************
 
-
+//Desarrollo de Funciones
+/******************************************************/
 int msges(void)
 {
     int op;
-    printf("\n M E N U\n");
+    printf("\n \tM E N U\n");
     printf("1- Despegar Normal\n");
     printf("2- Invertida\n");
     printf("3- Vertical\n");
@@ -49,7 +51,7 @@ int msges(void)
     
     return op;
 }
-
+/******************************************************/
 void menu (void)
 {
     int op;
@@ -62,6 +64,7 @@ void menu (void)
             printf("Ingresa una palabra: \n");
             fflush(stdin);
             gets(word);
+            convertirMayusc(word);
         }
         
         switch (op)
@@ -106,6 +109,9 @@ void menu (void)
     
 }
 
+
+// Imprime la cadena en mayúscula.
+// QVDD_Act7_parte1_01_932
 void convertirMayusc(char *string)
 {
     int i;
@@ -122,7 +128,9 @@ void convertirMayusc(char *string)
     }
     printf("\n%s\n",string);
 }
-
+//***************************************
+// Imprime la cadena en orden invertido
+// QVDD_Act7_parte1_02_932
 void invertirPalabra(char *string)
 {
     int size=0;
@@ -138,8 +146,12 @@ void invertirPalabra(char *string)
         string[i]=string[j];
         string[j]=aux;
     }
+    printf("\n%s\n",string);
 }
+//*****************************************
 
+// Imprime la cadena en Vertical.
+// QVDD_Act7_parte1_03_932
 void Salida3 (char *string)
 {
     for (int i = 0; string[i] != '\0' ; i++)
@@ -147,13 +159,20 @@ void Salida3 (char *string)
         printf(" %c \n",string[i]);
     }
 }
+//*********************************************
 
+// Imprime la cadena en Vertical e Invertida.
+// QVDD_Act7_parte1_04_932
 void Salida4 (char*string)
 {
     invertirPalabra(string);
     Salida3 (string);
 }
+//***************************
 
+// Imprime y va eliminando la cadena
+// de derecha a izquierda
+// QVDD_Act7_parte1_05_932
 void Salida5 (char *string)
 {
     int size=0;
@@ -171,13 +190,21 @@ void Salida5 (char *string)
         
     }
 }
+//******************************************
 
+// Invierte, imprime y va eliminando la cadena
+// de derecha a izquierda
+// QVDD_Act7_parte1_06_932
 void Salida6 (char *string)
 {
     invertirPalabra(string);
     Salida5(string);
 }
+//***************************
 
+// Imprime y va eliminando la cadena
+// de izquierda a derecha
+// QVDD_Act7_parte1_07_932
 void Salida7 (char *string)
 {
     int size=0;
@@ -197,7 +224,11 @@ void Salida7 (char *string)
         printf("%s\n",string);
     }
 }
+//***************************************
 
+// Invierte, imprime y va eliminando la cadena
+// de izquierda a derecha
+// QVDD_Act7_parte1_08_932
 void Salida8 (char *string)
 {
     int size=0;
@@ -226,7 +257,10 @@ void Salida8 (char *string)
         printf("%s\n",string);
     }
 }
+//******************************************
 
+// Imprime solamente las  Consonantes
+// QVDD_Act7_parte1_09_932
 void Salida9 (char *string)
 {
     for (int i = 0; i != '\n'; i++)
@@ -239,7 +273,10 @@ void Salida9 (char *string)
     }
     
 }
+//*******************************************
 
+// Imprime solamente las Vocales
+// QVDD_Act7_parte1_10_932
 void Salida10 (char *string)
 {
     for (int i = 0; i != '\n'; i++)
@@ -251,3 +288,4 @@ void Salida10 (char *string)
         }
     }
 }
+//*******************************************
