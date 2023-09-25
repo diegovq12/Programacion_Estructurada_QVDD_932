@@ -1,3 +1,7 @@
+// Quiros Vicencio Diego Demian Matricula:372688
+// 09/23/23 (creado) - 09/24/23 (modificado)
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
