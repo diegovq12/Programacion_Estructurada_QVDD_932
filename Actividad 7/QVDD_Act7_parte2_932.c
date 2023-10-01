@@ -193,6 +193,7 @@ void invertirPalabra(char *string)
         string[i]=string[j];
         string[j]=aux;
     }
+    printf("%s\n",string);
 }
 //******************************************
 
@@ -221,7 +222,7 @@ void cadenaSinEspacios(char *string)
 
 /* Imprime solamente caracteres alfabeticos
 y verifica que no tenga Espacios al principio o al final*/
-// QVDD_Act7_parte2_06_932
+// QVDD_Act7_parte2_07_932
 void cadenaAlfabetico (char *string)
 {
     int i, j;
