@@ -10,8 +10,8 @@ void llena_vectorManual (int vector1[10],int m,int ri,int rf);
 void llena_vectorRandom (int vector2[10],int m,int ri,int rf);
 void llena_vector3conV1yV2 (int vector3[20],int vector1[10],int vector2[10],int m);
 void imprimir_vectores (int vect[],int m);
-void llena_matriz4x4(void);
-void imprimir_matriz(void);
+void llena_matriz4x4(int matriz[4][4],int vector3[],int m,int n);
+void imprimir_matriz(int matriz[4][4],int m,int n);
 //*************
 
 int main()
@@ -43,9 +43,13 @@ void menu (void)
     int op;
     do
     {
+    
         int vector1[10],vector2[10],vector3[20];
-        op=msge();
+        int matriz[4][4];
         system("CLS");
+
+        op=msge();
+        
         switch (op)
         {
         case 1:
@@ -68,20 +72,22 @@ void menu (void)
             imprimir_vectores(vector3,20);
             break;
         case 5:
-            //llena_matriz4x4();
+            llena_matriz4x4(matriz,vector3,4,4);
             break;
         case 6:
-            //imprimir_matriz();
+            imprimir_matriz(matriz,4,4);
             break;
         default:
             break;
         }
+        system("PAUSE");
     } while (op!=0);   
 }
 
 void llena_vectorManual (int vector1[10],int m,int ri,int rf)
 {
     int num,aux;
+    printf("Los datos del Vector deben estar entre los valores %d y %d\n",ri,rf);
     for (int i = 0; i < m; i++)
     {
         aux=0;
@@ -89,10 +95,11 @@ void llena_vectorManual (int vector1[10],int m,int ri,int rf)
        if (num<ri || num>rf)
         {
             aux=1;
-            printf("Valor fuera de limite\n");
-            printf("El numero debe estar entre %d y %d\n",ri,rf);
+            
             do
             {
+                printf("Valor fuera de limite\n");
+                printf("El numero debe estar entre %d y %d\n",ri,rf);
                 scanf("%d",&num);
                 if (num>=ri && num<=rf)
                 {
@@ -113,7 +120,7 @@ void llena_vectorRandom (int vector2[10],int m,int ri,int rf)
     {  
         aux=0;
         num=(rand()%(ri-rf))+ri;
-        for (int j = 0; j<m; j++)
+        for (j = 0; j<m; j++)
         {
             if (num==vector2[j])
             {
@@ -130,6 +137,7 @@ void llena_vectorRandom (int vector2[10],int m,int ri,int rf)
             vector2[i]=num;
         }
     }
+    printf("\nEl Vector 2 ha sido llenado con valores del %d hasta %d\n",ri,rf);
 }
 
 void llena_vector3conV1yV2(int vector3[20],int vector1[10],int vector2[10],int m)
@@ -145,15 +153,42 @@ void llena_vector3conV1yV2(int vector3[20],int vector1[10],int vector2[10],int m
         vector3[i]=vector2[j];
         j++;
     }
-    
+    printf("\nEl Vector ha sido llenado con los datos del Vector 1 y Vector 2");
 }
-
 
 void imprimir_vectores(int vect[],int m)
 {
     for (int i = 0; i < m; i++)
     {
         printf("%d - [%d]\n",i,vect[i]);
-    }
-    
+    }   
+}
+
+void llena_matriz4x4(int matriz[4][4],int vector3[],int m,int n)
+{
+    int i,j;
+    int aux=0;
+    for (i = 0; i < m; i++)
+    {
+        for(j = 0; j<n ; j++)
+        {
+            matriz[i][j]=vector3[aux];
+            aux++;
+        }
+    }   
+    printf("Se ha llenado la matriz con los valores de los vectores anteriores\n");
+}
+
+void imprimir_matriz(int matriz[4][4],int m,int n)
+{
+    int i,j;
+
+    for (i = 0; i < m; i++)
+    {
+        for(j = 0; j<n ; j++)
+        {
+            printf("[%d]",matriz[i][j]);
+        }
+        printf("\n");
+    }   
 }
