@@ -84,6 +84,9 @@ void menu (void)
     } while (op!=0);   
 }
 
+
+//Funcion Que llena un vector manualmente dentro de cierto rango de numeros
+//QVDD_Act8_01_932.c
 void llena_vectorManual (int vector1[10],int m,int ri,int rf)
 {
     int num,aux;
@@ -112,6 +115,8 @@ void llena_vectorManual (int vector1[10],int m,int ri,int rf)
     }
 }
 
+//Funcion Que llena un vector aleatoriamente sin repetirse dentro de cierto rango de numeros
+//QVDD_Act8_02_932.c
 void llena_vectorRandom (int vector2[10],int m,int ri,int rf)
 {
     srand(time(NULL));
@@ -140,6 +145,8 @@ void llena_vectorRandom (int vector2[10],int m,int ri,int rf)
     printf("\nEl Vector 2 ha sido llenado con valores del %d hasta %d\n",ri,rf);
 }
 
+// FUNCION QUE LLENA VECTOR 3 CON DATOS DEL VECTOR1 Y VECTOR2.
+//QVDD_Act8_03_932.c
 void llena_vector3conV1yV2(int vector3[20],int vector1[10],int vector2[10],int m)
 {
     int i,j;
@@ -156,6 +163,8 @@ void llena_vector3conV1yV2(int vector3[20],int vector1[10],int vector2[10],int m
     printf("\nEl Vector ha sido llenado con los datos del Vector 1 y Vector 2");
 }
 
+// FUNCION QUE IMPRIME LOS DATOS DE LOS 3 VECTORES.
+//QVDD_Act8_04_932.c
 void imprimir_vectores(int vect[],int m)
 {
     for (int i = 0; i < m; i++)
@@ -164,6 +173,9 @@ void imprimir_vectores(int vect[],int m)
     }   
 }
 
+// FUNCION QUE LLENA UNA MATRIZ 4X4 CON LOS DATOS DE LOS
+//VECTORES 1 Y 2.
+//QVDD_Act8_05_932.c
 void llena_matriz4x4(int matriz[4][4],int vector3[],int m,int n)
 {
     int i,j;
@@ -179,6 +191,8 @@ void llena_matriz4x4(int matriz[4][4],int vector3[],int m,int n)
     printf("Se ha llenado la matriz con los valores de los vectores anteriores\n");
 }
 
+// FUNCION QUE IMPRIME UNA MATRIZ 4X4
+//QVDD_Act8_06_932.c
 void imprimir_matriz(int matriz[4][4],int m,int n)
 {
     int i,j;
