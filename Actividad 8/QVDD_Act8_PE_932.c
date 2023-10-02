@@ -1,3 +1,8 @@
+/*Quiros Vicencio Diego Demian
+09/26/23(creado) - 09/30/23(modificado)
+Actividad 8. Arreglos en C  
+*/ 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
