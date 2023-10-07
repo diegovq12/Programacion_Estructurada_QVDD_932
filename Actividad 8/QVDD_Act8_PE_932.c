@@ -11,21 +11,12 @@ Actividad 8. Arreglos en C
 int msge(void);
 void menu(void);
 
-<<<<<<< Updated upstream
 void llena_vectorManual (int vector1[10],int m,int ri,int rf);
 void llena_vectorRandom (int vector2[10],int m,int ri,int rf);
 void llena_vector3conV1yV2 (int vector3[20],int vector1[10],int vector2[10],int m);
 void imprimir_vectores (int vect[],int m);
 void llena_matriz4x4(int matriz[4][4],int vector3[],int m,int n);
 void imprimir_matriz(int matriz[4][4],int m,int n);
-=======
-int llena_vectorManual (int vector1[10],int m,int ri,int rf);
-int llena_vectorRandom (int vector2[10],int m,int ri,int rf);
-void llena_vector3conV1yV2 (void);
-void imprimir_vectores (int vect[],int m);
-void llena_matriz4x4(void);
-void imprimir_matriz(void);
->>>>>>> Stashed changes
 //*************
 
 int main()
@@ -61,13 +52,9 @@ void menu (void)
         int vector1[10],vector2[10],vector3[20];
         int matriz[4][4];
         system("CLS");
-<<<<<<< Updated upstream
 
         op=msge();
         
-=======
-        int vector1[10],vector2[10];
->>>>>>> Stashed changes
         switch (op)
         {
         case 1:
@@ -80,7 +67,6 @@ void menu (void)
             llena_vector3conV1yV2(vector3,vector1,vector2,20);
             break;
         case 4:
-<<<<<<< Updated upstream
             printf("Vector 1\n");
             imprimir_vectores(vector1,10);
             printf("\n");
@@ -89,9 +75,6 @@ void menu (void)
             printf("\n");
             printf("Vector 3\n");
             imprimir_vectores(vector3,20);
-=======
-            imprimir_vectores(vector1[10],10);
->>>>>>> Stashed changes
             break;
         case 5:
             llena_matriz4x4(matriz,vector3,4,4);
@@ -106,7 +89,6 @@ void menu (void)
     } while (op!=0);   
 }
 
-<<<<<<< Updated upstream
 
 //Funcion Que llena un vector manualmente dentro de cierto rango de numeros
 //QVDD_Act8_01_932.c
@@ -114,11 +96,6 @@ void llena_vectorManual (int vector1[10],int m,int ri,int rf)
 {
     int num,aux;
     printf("Los datos del Vector deben estar entre los valores %d y %d\n",ri,rf);
-=======
-int llena_vectorManual (int vector1[],int m,int ri,int rf)
-{
-    int num;
->>>>>>> Stashed changes
     for (int i = 0; i < m; i++)
     {
         aux=0;
@@ -143,18 +120,13 @@ int llena_vectorManual (int vector1[],int m,int ri,int rf)
     }
 }
 
-<<<<<<< Updated upstream
 //Funcion Que llena un vector aleatoriamente sin repetirse dentro de cierto rango de numeros
 //QVDD_Act8_02_932.c
 void llena_vectorRandom (int vector2[10],int m,int ri,int rf)
-=======
-int llena_vectorRandom (int vector2[],int m,int ri,int rf)
->>>>>>> Stashed changes
 {
     srand(time(NULL));
     int aux,num,i,j;
     for (i = 0; i < m; i++)
-<<<<<<< Updated upstream
     {  
         aux=0;
         num=(rand()%(ri-rf))+ri;
@@ -198,35 +170,10 @@ void llena_vector3conV1yV2(int vector3[20],int vector1[10],int vector2[10],int m
 
 // FUNCION QUE IMPRIME LOS DATOS DE LOS 3 VECTORES.
 //QVDD_Act8_04_932.c
-=======
-    {
-        aux=0;
-        num=(rand()%(ri-rf))+ri;
-        for (j = 0; i < m; j++)
-        {
-            if (num==vector2[j])
-            {
-                aux = 1;
-            }
-        }
-        if (aux==1)
-        {
-            i--;
-        }       
-        else
-        {
-            vector2[i]=num;
-        }
-    }
-    
-}
-
->>>>>>> Stashed changes
 void imprimir_vectores(int vect[],int m)
 {
     for (int i = 0; i < m; i++)
     {
-<<<<<<< Updated upstream
         printf("%d - [%d]\n",i,vect[i]);
     }   
 }
@@ -264,9 +211,3 @@ void imprimir_matriz(int matriz[4][4],int m,int n)
         printf("\n");
     }   
 }
-=======
-        printf("%d- [%d]\n",i,vect[i]);
-    }
-    
-}
->>>>>>> Stashed changes
