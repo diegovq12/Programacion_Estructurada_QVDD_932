@@ -1,18 +1,22 @@
+/*
+Quiros Vicencio Diego Demian
+10/08/23(creado)
+Actividad 9. FUNCIONES y METODOS DE ORDENACION Y BUSQUEDA.
+programa en C que utilice librerias propias para realizar
+distintas operaciones con matrices y vectores.
+*/ 
+
 //Librerias utilizadas
 #include <stdio.h>
 #include <stdlib.h>
 #include "ddqv.h"
 #include "ddqvval.h"
 #include "ddqvSort.h"
-
 //********************
 
 //Prototipos de Funciones
 int msge(void);
 void menu(void);
-
-
-
 //************************
 
 
