@@ -14,7 +14,8 @@ void menu(void);
 
 int main()
 {
-
+    menu();
+    
     return 0;
 }
 
@@ -73,4 +74,9 @@ void menu (void)
         }
         system("PAUSE");
     } while (op!=0);   
+}
+
+void llenarVector()
+{
+
 }
