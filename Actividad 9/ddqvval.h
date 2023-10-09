@@ -12,5 +12,10 @@ int validInt(int ri, int rf)
         fflush(stdin);
         gets(cadenaNum);
         num = atoi(cadenaNum);
+        if (num<ri || num>rf)
+        {
+            printf("Out of range\n");
+        }
     } while (num<ri || num>rf);
+    return num;
 }
