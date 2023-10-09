@@ -5,6 +5,7 @@
 //Funcion que llena un vector con valores aleatorios sin repetirse
 //recibe como valor el vector,tamaño y los valores para obtener el
 //rango de los valores
+//QQVDD_Act9_PE_932
 void fill_vectorRand (int *vector,int m,int ri,int rf)
 {
     srand(time(NULL));
@@ -36,6 +37,7 @@ void fill_vectorRand (int *vector,int m,int ri,int rf)
 //Funcion que llena una matriz 4x4 con valores aleatorios sin repetirse
 //recibe como valor la matriz,tamaño y los valores para obtener el
 //rango de los valores
+////QQVDD_Act9_PE_932
 void fill_MatrizRand (int mat[4][4],int m, int n ,int ri,int rf)
 {
     srand(time(NULL));
@@ -68,6 +70,7 @@ void fill_MatrizRand (int mat[4][4],int m, int n ,int ri,int rf)
 
 //Funcion que Imprime un vector 
 //recibe como valor el vector y tamaño
+////QQVDD_Act9_PE_932
 void printVector (int vect[], int m, char name[20])
 {
     int i;
@@ -80,6 +83,7 @@ void printVector (int vect[], int m, char name[20])
 
 //Funcion que Imprime una Matriz 
 //recibe como valor la matriz y tamaño
+////QQVDD_Act9_PE_932
 void printMatrix (int m, int n, int mat[m][n],char name[20])
 {
     int i,j;
@@ -100,6 +104,7 @@ void printMatrix (int m, int n, int mat[m][n],char name[20])
 //Funcion que busca un valor pedido por el usuario dentro
 //de un vector
 //solicita vector, tamaño y valor a buscar
+////QQVDD_Act9_PE_932
 void findVectorValue (int vector[], int m, int val)
 {
     int i;
