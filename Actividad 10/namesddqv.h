@@ -1,73 +1,65 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 /*
     Funcion que tiene una lista de nombres y te da uno aleatorio
     puede regresar 1 o 2 nombres, pueden ser masculino o femenino
     todo aleatorio
 */
-char genName ()
-{
-    srand(time(NULL));
-    char maleName[30][25] = {"Alejandro","Juan"
-    ,"Manuel","Jose","Luis","Carlos","Pedro",
-    "Antonio","Javier","Miguel","David","Francisco",
-    "Raúl","Daniel","Guillermo","Alberto","Mario","Eduardo"
-    ,"Ángel","Sergio","Oscar","Rubén","Fernando","Jorge","Diego"};
+void genName(char name[50]) {
 
-    char femName[30][25] = {"María","Ana"
-    ,"Laura","Isabel","Carmen","Rosa","Patricia",
-    "Sara","Elena","Andrea","Marta","Sofía",
-    "Beatriz","Natalia","Clara","Silvia","Lucía","Catalina"
-    ,"Diana","Lorena","Vanessa","Alicia","Carolina","Jorge"};
+    char maleName[25][25] = {
+        "Alejandro", "Juan", "Manuel", "Jose", "Luis", "Carlos", "Pedro",
+        "Antonio", "Javier", "Miguel", "David", "Francisco",
+        "Raul", "Daniel", "Guillermo", "Alberto", "Mario", "Eduardo",
+        "Angel", "Sergio", "Oscar", "Ruben", "Fernando", "Jorge", "Diego"
+    };
 
-    int OneOrTwo = rand()% 2 + 1;// 1 para un solo nombre 2 para dos
-    int ForM = rand()% 2 + 1; // 1 para Masc 2 para Fem
-    int namerand,namerand2;
-    if (OneOrTwo == 1)
-    {
-        if (ForM == 1)
-        {
-            namerand==rand()% 25 ;
-            return maleName[30][namerand];
+    char femName[25][25] = {
+        "Maria", "Ana", "Laura", "Isabel", "Carmen", "Rosa", "Patricia",
+        "Sara", "Elena", "Andrea", "Marta", "Sofia",
+        "Beatriz", "Natalia", "Clara", "Silvia", "Lucia", "Catalina",
+        "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"
+    };
+
+    int OneOrTwo = rand() % 2 + 1;  // 1 para un solo nombre, 2 para dos
+    int ForM = rand() % 2 + 1;     // 1 para masculino, 2 para femenino
+    int namerand, namerand2;
+
+    if (OneOrTwo == 1) {
+        if (ForM == 1) {
+            namerand = rand() % 25;
+            strcpy(name, maleName[namerand]);
+        } else if (ForM == 2) {
+            namerand = rand() % 25;
+            strcpy(name, femName[namerand]);
         }
-        else if (ForM == 2)
-        {
-            namerand==rand()% 25;
-            return femName[30][namerand];
-        }  
-    }
-    else if(OneOrTwo == 2)
-    {
-        if (ForM == 1)
-        {
-            namerand==rand()% 25;
-            namerand2==rand()% 25;
-            return maleName[30][namerand] + printf(" ") + maleName[30][namerand2];
+    } else if (OneOrTwo == 2) {
+        if (ForM == 1) {
+            namerand = rand() % 25;
+            namerand2 = rand() % 25;
+            sprintf(name, "%s %s", maleName[namerand], maleName[namerand2]);
+        } else if (ForM == 2) {
+            namerand = rand() % 25;
+            namerand2 = rand() % 25;
+            sprintf(name, "%s %s", femName[namerand], femName[namerand2]);
         }
-        else if (ForM == 2)
-        {
-            namerand==rand()% 25;
-            namerand2==rand()% 25;
-            return femName[30][namerand] + printf(" ") + femName[30][namerand2];
-        }  
     }
 }
 //*****************************************************************
 
 //Funcion que tiene una lista de apellidos y te da uno aleatorio
-char genLastName ()
+void genLastName (char lastname[30])
 {
-    srand(time(NULL));
-    char lastName[30][25] = {"Gonzalez","Rodriguez"
+    char LastName[30][25] = {"Gonzalez","Rodriguez"
     ,"Lopez","Perez","Martinez","Garcia","Sanchez",
     "Romero","Fernandez","Torres","Ruiz","Diaz",
     "Jimenez","Vargas","Castro","Morales","Rivera","Ortega"
     ,"Parra","Yepiz","Aguilar","Navarro","Ramirez","Vicencio","Llamas"};
 
-    int namerand = rand()% 25 ;;
+    int namerand = rand()% 25 ;
 
-    return lastName[30][namerand];
-
+    strcpy(lastname,LastName[namerand]);
 }

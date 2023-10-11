@@ -8,16 +8,22 @@ ESTRUCTURAS Y LIBRERIAS
 //Librerias utilizadas
 #include <stdio.h>
 #include <stdlib.h>
-#include "ddqv.h"
+#include <time.h>
+#include <string.h>
+#include "namesddqv.h"
 #include "ddqvval.h"
 #include "ddqvSort.h"
 //********************
 
 
+int main ()
+{
+    srand(time(NULL));
+    menu();
+    return 0;
+}
 
-
-
-//num=(rand()%(ri-rf))+ri;
+//num=min + rand() % (max - min + 1);
 
 
 
@@ -67,11 +73,7 @@ void menu (void)
 
             break;
         case 6:
-            do
-            {
-                
-            } while (op2!=2);
-            
+
             break;
         default:
             break;
