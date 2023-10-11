@@ -44,5 +44,4 @@ void printRegs(Talumn vect_alumn[])
         printf("Apellido Materno: %s\n",vect_alumn[i].apMat);
         printf("Nombre(s): %s\n",vect_alumn[i].nombre);
     }
-    
 }
