@@ -10,10 +10,10 @@ ESTRUCTURAS Y LIBRERIAS
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include "namesddqv.h"
 #include "ddqvval.h"
 #include "ddqvSort.h"
 #include "ddqvstructs10.h"
+#include "namesddqv.h"
 //********************
 
 void menu (void);
