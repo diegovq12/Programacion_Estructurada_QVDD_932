@@ -20,7 +20,7 @@ typedef struct _alumm
     osea con valores aleatorios utilizando una lista de
     nombres y apellidos
 */
-Talumn fillAtmreg(Talumn _alumm, Talumn vect_alum[])
+void fillAtmreg(Talumn vect_alum[])
 {
     for (int i = 0; i < 10 ; i++)
     {
@@ -32,6 +32,17 @@ Talumn fillAtmreg(Talumn _alumm, Talumn vect_alum[])
         vect_alum[i].edad= 17 +rand() % (40-17+1);
         vect_alum[i].sexo= rand() % 2 + 1;
     }
-    
 }
 
+void printRegs(Talumn vect_alumn[])
+{
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Status: %d\n",vect_alumn[i].status);
+        printf("Matricula: %d\n",vect_alumn[i].matricula );
+        printf("Apellido Paterno: %s\n",vect_alumn[i].apPat);
+        printf("Apellido Materno: %s\n",vect_alumn[i].apMat);
+        printf("Nombre(s): %s\n",vect_alumn[i].nombre);
+    }
+    
+}

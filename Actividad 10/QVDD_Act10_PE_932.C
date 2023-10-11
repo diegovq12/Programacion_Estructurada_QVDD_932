@@ -13,7 +13,11 @@ ESTRUCTURAS Y LIBRERIAS
 #include "namesddqv.h"
 #include "ddqvval.h"
 #include "ddqvSort.h"
+#include "ddqvstructs10.h"
 //********************
+
+void menu (void);
+int msge (void);
 
 
 int main ()
@@ -47,6 +51,7 @@ int msge (void)
 void menu (void)
 {
     int op;
+     Talumn _alumm[500];
 
     do
     {
@@ -58,7 +63,7 @@ void menu (void)
         switch (op)
         {
         case 1:
-            
+            fillAtmreg(_alumm);
             break;
         case 2:
            

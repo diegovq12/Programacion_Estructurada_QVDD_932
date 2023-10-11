@@ -8,8 +8,8 @@
     puede regresar 1 o 2 nombres, pueden ser masculino o femenino
     todo aleatorio
 */
-void genName(char name[50]) {
-
+void genName(char name[50]) 
+{
     char maleName[25][25] = {
         "Alejandro", "Juan", "Manuel", "Jose", "Luis", "Carlos", "Pedro",
         "Antonio", "Javier", "Miguel", "David", "Francisco",
@@ -53,7 +53,7 @@ void genName(char name[50]) {
 //Funcion que tiene una lista de apellidos y te da uno aleatorio
 void genLastName (char lastname[30])
 {
-    char LastName[30][25] = {"Gonzalez","Rodriguez"
+    char LastNamelist[30][25] = {"Gonzalez","Rodriguez"
     ,"Lopez","Perez","Martinez","Garcia","Sanchez",
     "Romero","Fernandez","Torres","Ruiz","Diaz",
     "Jimenez","Vargas","Castro","Morales","Rivera","Ortega"
@@ -61,5 +61,5 @@ void genLastName (char lastname[30])
 
     int namerand = rand()% 25 ;
 
-    strcpy(lastname,LastName[namerand]);
+    strcpy(lastname,LastNamelist[namerand]);
 }
