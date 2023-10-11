@@ -8,7 +8,7 @@
     puede regresar 1 o 2 nombres, pueden ser masculino o femenino
     todo aleatorio
 */
-void genName(char name[50]) 
+void genName (char name[50]) 
 {
     char maleName[25][25] = {
         "Alejandro", "Juan", "Manuel", "Jose", "Luis", "Carlos", "Pedro",
