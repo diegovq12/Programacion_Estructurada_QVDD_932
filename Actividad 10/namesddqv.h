@@ -63,3 +63,24 @@ void genLastName (char lastname[30])
 
     strcpy(lastname,LastNamelist[namerand]);
 }
+
+int sexDetect(char name[30],int sexo)
+{
+    char femName[25][25] = {
+        "Maria", "Ana", "Laura", "Isabel", "Carmen", "Rosa", "Patricia",
+        "Sara", "Elena", "Andrea", "Marta", "Sofia",
+        "Beatriz", "Natalia", "Clara", "Silvia", "Lucia", "Catalina",
+        "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"
+    };
+    
+    for (int i = 0; i < 25; i++)
+    {
+        if (name == femName[i])
+        {
+            sexo=2;
+            return sexo;
+        }  
+    }
+    sexo=1;
+    return sexo;
+}
