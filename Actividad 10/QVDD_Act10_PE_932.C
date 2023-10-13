@@ -62,7 +62,7 @@ int msge (void)
     printf("6.- IMPRIMIR\n");
     printf("0. Salir\n");
     printf("Ingresa funcion a utilizar:\n");
-    op=validInt(0,6,"","Rango Incorrecto");
+    op=validInt(0,6," ","Rango Incorrecto");
     
     return op;
 }
@@ -178,11 +178,6 @@ void fillRegManual(Talumn vect_alum[],int indexNumber)
 
     vect_alum[indexNumber].status=1;
     printf("Llenado Manual\n");
-    /*do{
-        id=300000 + rand() % (399999 - 300000 + 1);
-        i = searchId(vect_alum ,indexNumber,id);
-    }while(i != -1); 
-    */
    int i;
    do
    {   
