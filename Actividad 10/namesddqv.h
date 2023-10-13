@@ -47,6 +47,7 @@ void genName(char name[50])
             sprintf(name, "%s %s", femName[namerand], femName[namerand2]);
         }
     }
+    
 }
 //*****************************************************************
 
@@ -64,8 +65,9 @@ void genLastName (char lastname[30])
     strcpy(lastname,LastNamelist[namerand]);
 }
 
-int sexDetect(char name[30],int sexo)
+int sexDetect(char name[30])
 {
+    int sexo;
     char femName[25][25] = {
         "Maria", "Ana", "Laura", "Isabel", "Carmen", "Rosa", "Patricia",
         "Sara", "Elena", "Andrea", "Marta", "Sofia",
@@ -75,7 +77,7 @@ int sexDetect(char name[30],int sexo)
     
     for (int i = 0; i < 25; i++)
     {
-        if (name == femName[i])
+        if (strcmp(name , femName[i]) == 0) 
         {
             sexo=2;
             return sexo;
