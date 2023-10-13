@@ -9,9 +9,12 @@ int validInt(int ri, int rf)
 
     do
     {
-        fflush(stdin);
-        gets(cadenaNum);
-        num = atoi(cadenaNum);
+        do
+        {
+            fflush(stdin);
+            gets(cadenaNum);
+            num = atoi(cadenaNum);
+        }while(cadenaNum[0]==32 || cadenaNum[0]=='\0');    
         if (num<ri || num>rf)
         {
             printf("Out of range\n");

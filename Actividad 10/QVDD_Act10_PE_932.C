@@ -15,7 +15,7 @@ ESTRUCTURAS Y LIBRERIAS
 #include "ddqvSort.h" 
 #include "namesddqv.h"
 //********************
-#define REG_MAX 25
+#define REG_MAX 100
 typedef struct _alum
 {
     int status;
@@ -92,7 +92,7 @@ void menu (void)
             }   
             else
             {
-                printf("Llegaria al Maximo de Alumnos, Podria registrar manualmente a %d alumnos mas",REG_MAX-indexNumber);
+                printf("Llegaria al Maximo de Alumnos, Podria registrar manualmente a %d alumnos mas\n",REG_MAX-indexNumber);
             }
 
             break;
@@ -101,7 +101,19 @@ void menu (void)
            indexNumber++;
             break;
         case 3:
-           
+            printRegs(_alum,indexNumber);
+            printf("Ingresa matricula a dar de baja: ");
+            id=validInt(300000,399999);
+            num =  searchId(_alum,indexNumber,id);
+            if (num != -1)
+            {
+                _alum[num].status=0;
+                printf("Alumno dado de baja.\n");
+            }
+            else
+            {
+                printf("Esa matricula no esta registrada\n");
+            }
             break;
         case 4:
             printf("Ingresa matricula a buscar: ");
@@ -110,8 +122,6 @@ void menu (void)
             if (num != -1)
             {
                 printRegs(_alum,1);
-                //printf("Matricula         ApPat              ApMat             Nombre         Edad    Sexo\n");
-                //printf("%-6d          %-15s   %-15s  %-15s    %2d     %d\n", _alum[num].matricula, _alum[num].apPat,_alum[num].apMat,_alum[num].nombre,_alum[num].edad, _alum[num].sexo);
             }
             else
             {
@@ -141,9 +151,17 @@ void menu (void)
 */
 void fillAtmreg(Talumn vect_alum[],int indexNumber)
 {
+    int i,id;
     //generar matricula y status
     vect_alum[indexNumber].status=1;
-    vect_alum[indexNumber].matricula=300000 + rand() % (399999 - 300000 + 1);
+    
+    do{
+
+        id=300000 + rand() % (399999 - 300000 + 1);
+        searchId(vect_alum[indexNumber],indexNumber,id);
+        
+
+    {while();
     //Generar Nombre y apellidos
     genLastName(vect_alum[indexNumber].apPat);
     genLastName(vect_alum[indexNumber].apMat);
@@ -154,6 +172,7 @@ void fillAtmreg(Talumn vect_alum[],int indexNumber)
     indexNumber++;
 }
 
+//Funcion que permite al usuario ingresar los datos para llenar un registro 
 void fillRegManual(Talumn vect_alum[],int indexNumber)
 {
     char name[30];
@@ -181,6 +200,8 @@ void fillRegManual(Talumn vect_alum[],int indexNumber)
     indexNumber++;
 }
 
+/*Funcion que imprimira todos los registros existentes
+cuyo status sea igual a 1*/
 void printRegs(Talumn vect_alumn[],int index)
 {
     int i;
@@ -188,7 +209,7 @@ void printRegs(Talumn vect_alumn[],int index)
     char sexalumn[10];
     printf("Matricula         ApPat              ApMat           Nombre                 Edad      Sexo\n");
 
-    for (i = 0; i < index; i++)
+    for (i = 0; i < index ; i++)
     {   
         if (vect_alumn[i].sexo == 1)
         {
@@ -199,15 +220,10 @@ void printRegs(Talumn vect_alumn[],int index)
             strcpy(sexalumn,sexo[1]);
 
         }
-    
-        printf("%-6d          %-15s   %-15s  %-25s%2d        %-10s\n", vect_alumn[i].matricula, vect_alumn[i].apPat,vect_alumn[i].apMat,vect_alumn[i].nombre, vect_alumn[i].edad, sexalumn);
-        /*
-        printf("Status: %d\n",vect_alumn[i].status);
-        printf("Matricula: %d\n",vect_alumn[i].matricula );
-        printf("Apellido Paterno: %s\n",vect_alumn[i].apPat);
-        printf("Apellido Materno: %s\n",vect_alumn[i].apMat);
-        printf("Nombre(s): %s\n",vect_alumn[i].nombre);
-        */
+        if(vect_alumn[i].status == 1)
+        {
+            printf("%-6d          %-15s   %-15s  %-25s%2d        %-10s\n", vect_alumn[i].matricula, vect_alumn[i].apPat,vect_alumn[i].apMat,vect_alumn[i].nombre, vect_alumn[i].edad, sexalumn);
+        }
     }
 }
 
@@ -243,4 +259,3 @@ int searchId (Talumn vector[],int m, int val)
     }
     return -1;
 }
-
