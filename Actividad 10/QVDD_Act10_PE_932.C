@@ -22,7 +22,7 @@ typedef struct _alum
     int matricula;
     char apPat[30];
     char apMat[30];
-    char nombre[30];
+    char nombre[50];
     int edad;
     int sexo;
 }Talumn;
@@ -103,7 +103,7 @@ void menu (void)
         case 3:
             printRegs(_alum,indexNumber);
             printf("Ingresa matricula a dar de baja: ");
-            id=validInt(300000,399999);
+            id=validInt(300000,399999," ", "Matricula fuera de rango");
             num =  searchId(_alum,indexNumber,id);
             if (num != -1)
             {
@@ -117,7 +117,7 @@ void menu (void)
             break;
         case 4:
             printf("Ingresa matricula a buscar: ");
-            id=validInt(300000,399999,"","Numero invalido\n");
+            id=validInt(300000,399999," ","Numero invalido\n");
             num =  searchId(_alum,indexNumber,id);
             if (num != -1)
             {
@@ -156,12 +156,11 @@ void fillAtmreg(Talumn vect_alum[],int indexNumber)
     vect_alum[indexNumber].status=1;
     
     do{
-
         id=300000 + rand() % (399999 - 300000 + 1);
-        searchId(vect_alum[indexNumber],indexNumber,id);
-        
+        i = searchId(vect_alum ,indexNumber,id);
+    }while(i != -1);
 
-    {while();
+    vect_alum[indexNumber].matricula = id;
     //Generar Nombre y apellidos
     genLastName(vect_alum[indexNumber].apPat);
     genLastName(vect_alum[indexNumber].apMat);
@@ -179,8 +178,24 @@ void fillRegManual(Talumn vect_alum[],int indexNumber)
 
     vect_alum[indexNumber].status=1;
     printf("Llenado Manual\n");
-    printf("Ingresa Matricula: ");
-    vect_alum[indexNumber].matricula=validInt(300000,399999,"","Rango Incorrecto\n");
+    /*do{
+        id=300000 + rand() % (399999 - 300000 + 1);
+        i = searchId(vect_alum ,indexNumber,id);
+    }while(i != -1); 
+    */
+   int i;
+   do
+   {   
+        printf("Ingresa Matricula: ");
+
+        vect_alum[indexNumber].matricula=validInt(300000, 399999," ", "Matricula Fuera de Rango\n");
+       i = searchId(vect_alum,indexNumber,vect_alum[indexNumber].matricula);
+       if (i != -1)
+       {
+            printf("Matricula Ya Registrada\n");
+       }
+       
+   }while(i != -1);
     printf("Ingresa Apellido Paterno: ");
     fflush(stdin);
     gets(name);
@@ -194,9 +209,9 @@ void fillRegManual(Talumn vect_alum[],int indexNumber)
     gets(name);
     strcpy(vect_alum[indexNumber].nombre,name);
     printf("Ingresa Edad: ");
-    vect_alum[indexNumber].edad=validInt(17,99);
+    vect_alum[indexNumber].edad=validInt(17,99,"","Edad invalida\n");
     printf("Ingresa sexo 1] Hombre 2] Mujer: ");
-    vect_alum[indexNumber].sexo=validInt(1,2);
+    vect_alum[indexNumber].sexo=validInt(1,2," "," Opcion invalida");
     indexNumber++;
 }
 
