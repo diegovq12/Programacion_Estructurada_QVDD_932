@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int validInt(int ri, int rf)
+int validInt(int ri, int rf, char msgecheck[30], char msgeWrong[30])
 {
     int num;
     char cadenaNum[50];
@@ -14,8 +14,9 @@ int validInt(int ri, int rf)
         num = atoi(cadenaNum);
         if (num<ri || num>rf)
         {
-            printf("Out of range\n");
+            printf(" %s\n",msgeWrong);
         }
     } while (num<ri || num>rf);
+    printf("%s\n",msgecheck);
     return num;
 }
