@@ -62,7 +62,7 @@ int msge (void)
     printf("6.- IMPRIMIR\n");
     printf("0. Salir\n");
     printf("Ingresa funcion a utilizar:\n");
-    op=validInt(0,6);
+    op=validInt(0,6,"","Rango Incorrecto");
     
     return op;
 }
@@ -117,7 +117,7 @@ void menu (void)
             break;
         case 4:
             printf("Ingresa matricula a buscar: ");
-            id=validInt(300000,399999);
+            id=validInt(300000,399999,"","Numero invalido\n");
             num =  searchId(_alum,indexNumber,id);
             if (num != -1)
             {
@@ -180,7 +180,7 @@ void fillRegManual(Talumn vect_alum[],int indexNumber)
     vect_alum[indexNumber].status=1;
     printf("Llenado Manual\n");
     printf("Ingresa Matricula: ");
-    vect_alum[indexNumber].matricula=validInt(300000,399999);
+    vect_alum[indexNumber].matricula=validInt(300000,399999,"","Rango Incorrecto\n");
     printf("Ingresa Apellido Paterno: ");
     fflush(stdin);
     gets(name);
