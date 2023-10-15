@@ -174,7 +174,7 @@ void fillAtmreg(Talumn vect_alum[],int indexNumber)
 //Funcion que permite al usuario ingresar los datos para llenar un registro 
 void fillRegManual(Talumn vect_alum[],int indexNumber)
 {
-    char name[30];
+    char name[50];
 
     vect_alum[indexNumber].status=1;
     printf("Llenado Manual\n");
@@ -210,8 +210,10 @@ void fillRegManual(Talumn vect_alum[],int indexNumber)
     indexNumber++;
 }
 
-/*Funcion que imprimira todos los registros existentes
-cuyo status sea igual a 1*/
+/*
+Funcion que imprimira todos los registros existentes
+cuyo status sea igual a 1
+*/
 void printRegs(Talumn vect_alumn[],int index)
 {
     int i;
@@ -237,6 +239,10 @@ void printRegs(Talumn vect_alumn[],int index)
     }
 }
 
+/*
+Funcion que sirve para ordenar la lista desordenada
+mediante el metodo de la burbuja mejorada
+*/
 void sortIds (Talumn vector[],int m)
 {
     int i,j;
@@ -256,6 +262,10 @@ void sortIds (Talumn vector[],int m)
     }
 }
 
+/*
+Funcion que busca el indice de una matricula e
+imprime todos los datos de esta
+*/
 int searchId (Talumn vector[],int m, int val)
 {
     int i;

@@ -23,3 +23,9 @@ int validInt(int ri, int rf, char msgecheck[30], char msgeWrong[30])
     printf("%s\n",msgecheck);
     return num;
 }
+
+/*char validstring()
+{
+
+}
+*/

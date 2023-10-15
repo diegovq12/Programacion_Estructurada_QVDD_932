@@ -75,14 +75,16 @@ int sexDetect(char name[30])
         "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"
     };
     
+
     for (int i = 0; i < 25; i++)
     {
         if (strcmp(name , femName[i]) == 0) 
         {
-            sexo=2;
-            return sexo;
-        }  
+            //sexo=2;
+            return 2;   
+        }
+
     }
-    sexo=1;
-    return sexo;
+        //sexo=1;
+        return 1;
 }
