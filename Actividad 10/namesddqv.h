@@ -71,7 +71,6 @@ void genLastName (char lastname[30])
 */
 int sexDetect(char name[30])
 {
-    int sexo;
     char femName[25][25] = {
         "Maria", "Ana", "Laura", "Isabel", "Carmen", "Rosa", "Patricia",
         "Sara", "Elena", "Andrea", "Marta", "Sofia",
@@ -79,20 +78,20 @@ int sexDetect(char name[30])
         "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"
     };
     
-    char nametemp [30];
-    strcpy(nametemp,name);
+    char nametemp [30];//Se genera una cadena temporal 
+    strcpy(nametemp,name);//se copia el nombre a comparar en el temporal
 
+    //Se recorta la cadena hasta antes del primer espacio" ", en casod de que sean 
+    //dos nombres
     strtok(nametemp," ");  
 
     for (int i = 0; i < 25; i++)
     {
         if (strcmp(nametemp , femName[i]) == 0) 
         {
-            //sexo=2;
             return 2;   
         }
 
     }
-        //sexo=1;
-        return 1;
+    return 1;
 }

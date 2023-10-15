@@ -62,7 +62,7 @@ int msge (void)
     printf("6.- IMPRIMIR\n");
     printf("0. Salir\n");
     printf("Ingresa funcion a utilizar:\n");
-    op=validInt(0,6," ","Rango Incorrecto");
+    op=validInt(0,6, " ." , "Opcion Invalida");
     
     return op;
 }
@@ -134,6 +134,9 @@ void menu (void)
             break;
         case 6:
             printRegs(_alum,indexNumber);
+            break;
+        case 0:
+            printf("Fin del programa\n");
             break;
         default:
             break;
