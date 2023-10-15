@@ -58,13 +58,17 @@ void genLastName (char lastname[30])
     ,"Lopez","Perez","Martinez","Garcia","Sanchez",
     "Romero","Fernandez","Torres","Ruiz","Diaz",
     "Jimenez","Vargas","Castro","Morales","Rivera","Ortega"
-    ,"Parra","Yepiz","Aguilar","Navarro","Ramirez","Vicencio","Llamas"};
+    ,"Parra","Yepiz","Aguilar","Navarro","Ramirez","Vicencio","Llamas","Diarte"};
 
     int namerand = rand()% 25 ;
 
     strcpy(lastname,LastNamelist[namerand]);
 }
 
+/*
+    Funcion que detecta el sexo de el alumno mediante su nombre
+    retorna 2 si es mujer y 1 si es hombre
+*/
 int sexDetect(char name[30])
 {
     int sexo;
@@ -75,10 +79,16 @@ int sexDetect(char name[30])
         "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"
     };
     
+    char nametemp [30];
+    strcpy(nametemp,name);
+
+    strtok(nametemp," ");  
+
+    
 
     for (int i = 0; i < 25; i++)
     {
-        if (strcmp(name , femName[i]) == 0) 
+        if (strcmp(nametemp , femName[i]) == 0) 
         {
             //sexo=2;
             return 2;   

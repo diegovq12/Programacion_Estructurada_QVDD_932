@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "QVDD_Act10_PE_932.C": "cpp"
+        "QVDD_Act10_PE_932.C": "cpp",
+        "typeinfo": "cpp"
     }
 }
