@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int validInt(int ri, int rf, char msgecheck[30], char msgeWrong[30])
+int validInt(int ri, int rf, char *msgeWrong)
 {
     int num;
     char cadenaNum[50];
@@ -14,18 +14,84 @@ int validInt(int ri, int rf, char msgecheck[30], char msgeWrong[30])
             fflush(stdin);
             gets(cadenaNum);
             num = atoi(cadenaNum);
-        }while(cadenaNum[0]==32 || cadenaNum[0]=='\0');    
-        if (num<ri || num>rf)
+        } while (cadenaNum[0] == 32 || cadenaNum[0] == '\0');
+        if (num < ri || num > rf)
         {
-            printf(" %s\n",msgeWrong);
+            printf(" %s\n", msgeWrong);
         }
-    } while (num<ri || num>rf);
-    printf("%s\n",msgecheck);
+    } while (num < ri || num > rf);
     return num;
 }
 
-/*char validstring()
+int validSingleString(const char string[])
 {
+    if (string == NULL || string[0] == '\0')
+    {
+        return 0; // La cadena es nula o vacía
+    }
 
+    int hasSpace = 0;    // Variable para rastrear si hay un espacio
+    char prevChar = ' '; // Inicializamos prevChar con un espacio para evitar espacio al principio
+
+    for (int i = 0; string[i] != '\0'; i++)
+    {
+        unsigned char c = string[i];
+
+        // Verifica si el carácter es un espacio
+        if (c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f')
+        {
+            hasSpace = 1;
+
+            // Verifica si hay dobles espacios
+            if (prevChar == ' ')
+            {
+                return 0;
+            }
+        }
+        // Verifica si el carácter no es una letra o es un espacio
+        else if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (((unsigned char)c >= 128 && (unsigned char)c <= 165) || ((unsigned char)c >= 192 && c <= 255))) && (unsigned char)c != '\0')
+        {
+            return 0;
+        }
+        prevChar = c;
+    }
+
+    // Verifica si la cadena comienza o termina con un espacio
+    if (hasSpace || prevChar == ' ')
+    {
+        return 0;
+    }
+    return 1; // La cadena cumple con todas las condiciones
 }
-*/
+
+int validString(const char string[]) {
+    if (string == NULL || string[0] == '\0') {
+        return 0; // La cadena es nula o vacía
+    }
+
+    int hasSpace = 0;    // Variable para rastrear si hay un espacio
+    char prevChar = ' '; // Inicializamos prevChar con un espacio para evitar espacio al principio
+
+    for (int i = 0; string[i] != '\0'; i++) {
+        unsigned char c = string[i];
+
+        // Verifica si el carácter no es una letra o es un espacio
+        if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f') && c != '\0') {
+            return 0;
+        }
+
+        // Verifica si hay más de un espacio consecutivo
+        if (c == ' ' && prevChar == ' ') {
+            return 0;
+        }
+
+        prevChar = c;
+    }
+
+    // Verifica si la cadena comienza o termina con un espacio
+    if (hasSpace || prevChar == ' ') {
+        return 0;
+    }
+
+    return 1; // La cadena cumple con todas las condiciones
+}

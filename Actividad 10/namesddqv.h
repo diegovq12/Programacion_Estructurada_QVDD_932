@@ -8,61 +8,77 @@
     puede regresar 1 o 2 nombres, pueden ser masculino o femenino
     todo aleatorio
 */
-void genName(char name[50]) 
+void genName(char name[50])
 {
-    char maleName[25][25] = {
+    char maleName[25][35] = {
         "Alejandro", "Juan", "Manuel", "Jose", "Luis", "Carlos", "Pedro",
         "Antonio", "Javier", "Miguel", "David", "Francisco",
         "Raul", "Daniel", "Guillermo", "Alberto", "Mario", "Eduardo",
-        "Angel", "Sergio", "Oscar", "Ruben", "Fernando", "Jorge", "Diego"
-    };
+        "Angel", "Sergio", "Oscar", "Ruben", "Fernando", "Jorge", "Diego"};
 
-    char femName[25][25] = {
+    char femName[25][35] = {
         "Maria", "Ana", "Laura", "Isabel", "Carmen", "Rosa", "Patricia",
         "Sara", "Elena", "Andrea", "Marta", "Sofia",
         "Beatriz", "Natalia", "Clara", "Silvia", "Lucia", "Catalina",
-        "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"
-    };
+        "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"};
 
-    int OneOrTwo = rand() % 2 + 1;  // 1 para un solo nombre, 2 para dos
+    int OneOrTwo = rand() % 2 + 1; // 1 para un solo nombre, 2 para dos
     int ForM = rand() % 2 + 1;     // 1 para masculino, 2 para femenino
     int namerand, namerand2;
 
-    if (OneOrTwo == 1) {
-        if (ForM == 1) {
+    if (OneOrTwo == 1)
+    {
+        if (ForM == 1)
+        {
             namerand = rand() % 25;
             strcpy(name, maleName[namerand]);
-        } else if (ForM == 2) {
+        }
+        else if (ForM == 2)
+        {
             namerand = rand() % 25;
             strcpy(name, femName[namerand]);
         }
-    } else if (OneOrTwo == 2) {
-        if (ForM == 1) {
+    }
+    else if (OneOrTwo == 2)
+    {
+        if (ForM == 1)
+        {
+
             namerand = rand() % 25;
-            namerand2 = rand() % 25;
+            // Comprobar que el segundo nombre no sea igual al primero
+            do
+            {
+                namerand2 = rand() % 25;
+            } while (namerand2 == namerand);
+
             sprintf(name, "%s %s", maleName[namerand], maleName[namerand2]);
-        } else if (ForM == 2) {
+        }
+        else if (ForM == 2)
+        {
+
             namerand = rand() % 25;
-            namerand2 = rand() % 25;
+            // Comprobar que el segundo nombre no sea igual al primero
+            do
+            {
+                namerand2 = rand() % 25;
+            } while (namerand2 == namerand);
+
             sprintf(name, "%s %s", femName[namerand], femName[namerand2]);
         }
     }
-    
 }
 //*****************************************************************
 
-//Funcion que tiene una lista de apellidos y te da uno aleatorio
-void genLastName (char lastname[30])
+// Funcion que tiene una lista de apellidos y te da uno aleatorio
+void genLastName(char lastname[30])
 {
-    char LastNamelist[30][25] = {"Gonzalez","Rodriguez"
-    ,"Lopez","Perez","Martinez","Garcia","Sanchez",
-    "Romero","Fernandez","Torres","Ruiz","Diaz",
-    "Jimenez","Vargas","Castro","Morales","Rivera","Ortega"
-    ,"Parra","Yepiz","Aguilar","Navarro","Ramirez","Vicencio","Llamas","Diarte"};
+    char LastNamelist[30][25] = {"Gonzalez", "Rodriguez", "Lopez", "Perez", "Martinez", "Garcia", "Sanchez",
+                                 "Romero", "Fernandez", "Torres", "Ruiz", "Diaz",
+                                 "Jimenez", "Vargas", "Castro", "Morales", "Rivera", "Ortega", "Parra", "Yepiz", "Aguilar", "Navarro", "Ramirez", "Vicencio", "Llamas", "Diarte"};
 
-    int namerand = rand()% 25 ;
+    int namerand = rand() % 25;
 
-    strcpy(lastname,LastNamelist[namerand]);
+    strcpy(lastname, LastNamelist[namerand]);
 }
 
 /*
@@ -75,23 +91,50 @@ int sexDetect(char name[30])
         "Maria", "Ana", "Laura", "Isabel", "Carmen", "Rosa", "Patricia",
         "Sara", "Elena", "Andrea", "Marta", "Sofia",
         "Beatriz", "Natalia", "Clara", "Silvia", "Lucia", "Catalina",
-        "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"
-    };
-    
-    char nametemp [30];//Se genera una cadena temporal 
-    strcpy(nametemp,name);//se copia el nombre a comparar en el temporal
+        "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"};
 
-    //Se recorta la cadena hasta antes del primer espacio" ", en casod de que sean 
-    //dos nombres
-    strtok(nametemp," ");  
+    char nametemp[30];      // Se genera una cadena temporal
+    strcpy(nametemp, name); // se copia el nombre a comparar en el temporal
+
+    // Se recorta la cadena hasta antes del primer espacio" ", en casod de que sean
+    // dos nombres
+    strtok(nametemp, " ");
 
     for (int i = 0; i < 25; i++)
     {
-        if (strcmp(nametemp , femName[i]) == 0) 
+        if (strcmp(nametemp, femName[i]) == 0)
         {
-            return 2;   
+            return 2;
         }
-
     }
     return 1;
+}
+
+#include <stdio.h>
+
+void capitalizeWords(char *str)
+{
+    // Variable para rastrear si la próxima letra debe ser mayúscula
+    int capitalizeNext = 1;
+
+    while (*str)
+    {
+        // Verifica si el carácter es una letra minúscula
+        if ((*str >= 'a' && *str <= 'z') && capitalizeNext)
+        {
+            // Convierte la letra a mayúscula
+            *str = *str - 'a' + 'A';
+            capitalizeNext = 0; // Ya hemos capitalizado esta palabra
+        }
+        // Verifica si el carácter es un espacio en blanco
+        else if (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\r' || *str == '\v' || *str == '\f')
+        {
+            capitalizeNext = 1; // La próxima letra debe ser mayúscula
+        }
+        else
+        {
+            capitalizeNext = 0; // La próxima letra no debe ser mayúscula
+        }
+        str++; // Mueve el puntero al siguiente carácter
+    }
 }
