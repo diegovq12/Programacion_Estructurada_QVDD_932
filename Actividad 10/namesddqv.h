@@ -110,8 +110,6 @@ int sexDetect(char name[30])
     return 1;
 }
 
-#include <stdio.h>
-
 void capitalizeWords(char *str)
 {
     // Variable para rastrear si la próxima letra debe ser mayúscula

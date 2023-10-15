@@ -13,7 +13,7 @@ ESTRUCTURAS Y LIBRERIAS
 #include "ddqvval.h" //propia
 #include "namesddqv.h"//propia
 //********************
-#define REG_MAX 100
+#define REG_MAX 500
 typedef struct _alum
 {
     int status;
