@@ -84,8 +84,6 @@ int sexDetect(char name[30])
 
     strtok(nametemp," ");  
 
-    
-
     for (int i = 0; i < 25; i++)
     {
         if (strcmp(nametemp , femName[i]) == 0) 
