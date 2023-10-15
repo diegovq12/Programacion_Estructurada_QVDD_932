@@ -18,8 +18,8 @@ typedef struct _alum
 {
     int status;
     int matricula;
-    char apPat[30];
-    char apMat[30];
+    char apPat[35];
+    char apMat[35];
     char nombre[50];
     int edad;
     int sexo;
