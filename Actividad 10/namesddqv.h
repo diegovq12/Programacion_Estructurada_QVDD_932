@@ -21,7 +21,7 @@ void genName(char name[50])
         "Sara", "Elena", "Andrea", "Marta", "Sofia",
         "Beatriz", "Natalia", "Clara", "Silvia", "Lucia", "Catalina",
         "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"};
-
+        
     int OneOrTwo = rand() % 2 + 1; // 1 para un solo nombre, 2 para dos
     int ForM = rand() % 2 + 1;     // 1 para masculino, 2 para femenino
     int namerand, namerand2;
@@ -55,7 +55,6 @@ void genName(char name[50])
         }
         else if (ForM == 2)
         {
-
             namerand = rand() % 25;
             // Comprobar que el segundo nombre no sea igual al primero
             do
