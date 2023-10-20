@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "QVDD_Act10_PE_932.C": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "stdlib.h": "c",
+        "time.h": "c"
     }
 }
