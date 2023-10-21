@@ -154,11 +154,6 @@ int ValBisiesto(int year)
     return FALSE;
 }
 
-/*int getYear()
-{
-
-}*/
-
 int showMonth()
 {
     char month[30][12]={"Enero","Febrero","Marzo", "Abril"
@@ -179,11 +174,11 @@ void borndate (char bornDate[])
     char dayC[5],monthC[5], yearC[5];
     system("CLS");
     printf("Ingresa el Annio de nacimiento: ");
-    year = validInt(1950,2023, "Invalido");
+    year = validInt(1950,2023, "Invalido - Fuera de Rango");
     if (year == 2023)
     {
         printf("Ingresa el mes de nacimiento (1 - 12): ");
-        month = validInt(1,10, "Invalido");
+        month = validInt(1,10, "Invalido - Fuera de Rango");
     }
     else
     {
@@ -194,13 +189,13 @@ void borndate (char bornDate[])
     if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
     {
         printf("Ingresa el dia de nacimiento(1 - 31): ");
-        day = validInt(1,31, "Invalido");
+        day = validInt(1,31, "Invalido - Fuera de Rango");
     }
 
     if (month == 4 || month == 6 || month == 9 || month == 11)
     {
         printf("Ingresa el dia de nacimiento (1 - 30): ");
-        day = validInt(1,30, "Invalido");
+        day = validInt(1,30, "Invalido - Fuera de Rango");
     }
 
     if (month == 2)
