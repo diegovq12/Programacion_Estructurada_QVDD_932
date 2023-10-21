@@ -13,7 +13,7 @@ void getFullName(char name[], char lnPat[], char lnMat[]);
 void getState(char state[]);
 int showMonth(void);
 int ValBisiesto(int year);
-
+void borndate(char bornDate[]);
 
 int main()
 {
@@ -35,7 +35,7 @@ int msge(void)
 
 void menu(void)
 {
-    char name[50], lnPat[50], lnMat[50], state[5];
+    char name[50], lnPat[50], lnMat[50], state[5], bornDate[10];
     int op;
     do
     {
@@ -52,8 +52,8 @@ void menu(void)
             system("CLS");
             getState(state);
             system("CLS");
-
-            printf("%s %s %s %s", name, lnPat, lnMat, state);
+            borndate(bornDate);
+            printf("%s %s %s %s %s \n", name, lnPat, lnMat, state,bornDate);
 
             break;
         case 0:
@@ -173,3 +173,82 @@ int showMonth()
    return op;
 }
 
+void borndate (char bornDate[])
+{
+    int year, month, day, bisiesto=FALSE;
+    char dayC[5],monthC[5], yearC[5];
+    system("CLS");
+    printf("Ingresa el Annio de nacimiento: ");
+    year = validInt(1950,2023, "Invalido");
+    if (year == 2023)
+    {
+        printf("Ingresa el mes de nacimiento (1 - 12): ");
+        month = validInt(1,10, "Invalido");
+    }
+    else
+    {
+        printf("Ingresa el mes de nacimiento (1 - 12): ");
+        month = validInt(1, 12,"Invalido - Fuera de Rango");
+    }
+
+    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+    {
+        printf("Ingresa el dia de nacimiento(1 - 31): ");
+        day = validInt(1,31, "Invalido");
+    }
+
+    if (month == 4 || month == 6 || month == 9 || month == 11)
+    {
+        printf("Ingresa el dia de nacimiento (1 - 30): ");
+        day = validInt(1,30, "Invalido");
+    }
+
+    if (month == 2)
+    {
+        if ((year%4 == 0 && year % 100 != 0) || year == 2000 || year == 1000)
+        {
+            bisiesto=TRUE;
+        }
+        
+        if (bisiesto == TRUE)
+        {
+            printf("Ingresa el dia de nacimiento (1 - 29): ");
+            day = validInt(1, 29,"Invalido- Fuera de Rango");
+        }
+        else
+        {
+            printf("Ingresa el dia de nacimiento (1 - 28): ");
+            day = validInt(1, 28,"Invalido- Fuera de Rango");
+        }
+    }
+    
+    if (day<10)
+    {
+        sprintf(dayC,"0%d",day);
+    }
+    else
+    {
+        sprintf(dayC,"%d",day);
+    }
+    
+    if (month<10)
+    {
+        sprintf(monthC,"0%d",month);
+    }
+    else
+    {
+        sprintf(monthC,"%d",month);
+    }
+    
+    int lastTwoDigits = year % 100;
+    
+    if(lastTwoDigits<10)
+    {
+        sprintf(yearC,"0%d",lastTwoDigits);
+    }
+    else
+    {
+        sprintf(yearC,"%d",lastTwoDigits);
+    }
+    sprintf(bornDate,"%s%s%s",yearC,monthC,dayC);
+}
