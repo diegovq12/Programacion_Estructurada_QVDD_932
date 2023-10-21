@@ -64,24 +64,29 @@ int validSingleString(const char string[])
     return 1; // La cadena cumple con todas las condiciones
 }
 
-int validString(const char string[]) {
-    if (string == NULL || string[0] == '\0') {
+int validString(const char string[])
+{
+    if (string == NULL || string[0] == '\0')
+    {
         return 0; // La cadena es nula o vacía
     }
 
     int hasSpace = 0;    // Variable para rastrear si hay un espacio
     char prevChar = ' '; // Inicializamos prevChar con un espacio para evitar espacio al principio
 
-    for (int i = 0; string[i] != '\0'; i++) {
+    for (int i = 0; string[i] != '\0'; i++)
+    {
         unsigned char c = string[i];
 
         // Verifica si el carácter no es una letra o es un espacio
-        if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f') && c != '\0') {
+        if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f') && c != '\0')
+        {
             return 0;
         }
 
         // Verifica si hay más de un espacio consecutivo
-        if (c == ' ' && prevChar == ' ') {
+        if (c == ' ' && prevChar == ' ')
+        {
             return 0;
         }
 
@@ -89,7 +94,8 @@ int validString(const char string[]) {
     }
 
     // Verifica si la cadena comienza o termina con un espacio
-    if (hasSpace || prevChar == ' ') {
+    if (hasSpace || prevChar == ' ')
+    {
         return 0;
     }
 
@@ -120,5 +126,20 @@ void capitalizeWords(char *str)
             capitalizeNext = 0; // La próxima letra no debe ser mayúscula
         }
         str++; // Mueve el puntero al siguiente carácter
+    }
+}
+
+void convertMayus(char *string)
+{
+    int i;
+    for (i = 0; string[i] != '\0'; i++)
+    {
+        if (string[i] >= 'a')
+        {
+            if (string[i] <= 'z')
+            {
+                string[i] = string[i] - 32;
+            }
+        }
     }
 }
