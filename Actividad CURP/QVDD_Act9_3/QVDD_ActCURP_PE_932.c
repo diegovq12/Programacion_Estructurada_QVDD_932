@@ -9,14 +9,18 @@
 
 int main(void);
 void menu(void);
-void getFullName(char name[], char lnPat[], char lnMat[]);
+void getFullName(char name[], char lnPat[], char lnMat[], char initials[]);
 void getState(char state[]);
 int showMonth(void);
-int ValBisiesto(int year);
-void borndate(char bornDate[]);
+int borndate(char bornDate[]);
+char firstVowel (char firstLn[]);
+void getSex (char sex[]);
+void detectConsonant (char name[],char ln[],char ln2[],char consonante[]);
+void getHomonimia (int year,char homonimia[]);
 
 int main()
 {
+    srand(time(NULL));
     menu();
     return 0;
 }
@@ -24,7 +28,7 @@ int main()
 int msge(void)
 {
     int op;
-    printf("\n GENERADOR DE CURP\n");
+    printf("GENERADOR DE CURP\n");
     printf("1.- GENERAR CURP\n");
     printf("0. Salir\n");
     printf("Ingresa Opcion\n");
@@ -35,8 +39,10 @@ int msge(void)
 
 void menu(void)
 {
-    char name[50], lnPat[50], lnMat[50], state[5], bornDate[10];
-    int op;
+    char name[50], lnPat[50], lnMat[50], state[5], bornDate[10],initials1[10],consonants[10];
+    char sex[2],homonimia[5];
+    char curp[40];
+    int op;int year;
     do
     {
 
@@ -48,13 +54,25 @@ void menu(void)
         {
         case 1:
             system("CLS");
-            getFullName(name, lnPat, lnMat);
-            system("CLS");
-            getState(state);
-            system("CLS");
-            borndate(bornDate);
-            printf("%s %s %s %s %s \n", name, lnPat, lnMat, state,bornDate);
+            getFullName(name, lnPat, lnMat,initials1);
 
+
+            system("CLS");
+            system("CLS");
+            year = borndate(bornDate);
+            getState(state);
+            getSex(sex);
+            detectConsonant(name,lnPat,lnMat,consonants);
+            getHomonimia(year,homonimia);
+
+            printf("%s %s %s %s %s %s %s %s %s\n", name, lnPat, lnMat,initials1,bornDate,state,sex,consonants,homonimia);
+
+            //printf("%s %s %s %s %s %s\n", initials1, bornDate,sex,state,consonants,homonimia);
+            
+            // printf("%s%s%s%s%s\n", initials1, bornDate,sex,state,consonants);
+
+            sprintf(curp, "%s%s%s%s%s%s", initials1, bornDate,sex,state,consonants,homonimia);
+            printf("\n%s\n",curp);
             break;
         case 0:
             printf("Fin del programa\n");
@@ -66,7 +84,7 @@ void menu(void)
     } while (op != 0);
 }
 
-void getFullName(char name[], char lnPat[], char lnMat[])
+void getFullName(char name[], char lnPat[], char lnMat[], char initials[])
 {
     int correct;
     printf("Ingresa Nombre(s): ");
@@ -116,6 +134,13 @@ void getFullName(char name[], char lnPat[], char lnMat[])
         }
     } while (correct == FALSE);
     convertMayus(lnMat);
+
+    initials[0] = lnPat[0];
+    initials[1] = firstVowel(lnPat);
+    initials[2] = lnMat[0];
+    initials[3] = name[0];
+    initials[4] = '\0';
+
 }
 
 void getState(char state[])
@@ -144,16 +169,6 @@ void getState(char state[])
     }
 }
 
-
-int ValBisiesto(int year)
-{
-    if (year %4 == 0 && year%100 != 0)
-    {
-        return TRUE;
-    }
-    return FALSE;
-}
-
 int showMonth()
 {
     char month[30][12]={"Enero","Febrero","Marzo", "Abril"
@@ -168,7 +183,7 @@ int showMonth()
    return op;
 }
 
-void borndate (char bornDate[])
+int borndate (char bornDate[])
 {
     int year, month, day, bisiesto=FALSE;
     char dayC[5],monthC[5], yearC[5];
@@ -246,4 +261,108 @@ void borndate (char bornDate[])
         sprintf(yearC,"%d",lastTwoDigits);
     }
     sprintf(bornDate,"%s%s%s",yearC,monthC,dayC);
+
+    return year;
+}
+
+void getSex (char sex[])
+{
+    int sexo;
+    printf("Ingresa tu sexo: ");
+    printf("1) Hombre 2) Mujer\n");
+    sexo = validInt(1,2,"Valor Invalido, Reingresar");
+    if (sexo == 1)
+    {
+        strcpy(sex,"H");
+
+    }
+    else
+    {
+        strcpy(sex,"M");
+    }
+}
+
+char firstVowel (char firstLn[])
+{
+    char c='X';
+    int flag=FALSE;
+    for (int i = 0; firstLn[i] != '\0' && flag==FALSE; i++)
+    {
+        c=firstLn[i];
+        if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' )
+        {
+            flag=TRUE;
+        }
+    }
+    return c;
+}
+
+void detectConsonant(char name[], char ln[], char ln2[], char consonante[]) {
+    char c = 'X';
+    int flag = FALSE;
+
+    for (int i = 1; ln[i] != '\0' && flag == FALSE; i++) {
+        c = ln[i];
+        if (c >= 'A' && c <= 'Z' && c != 'A' && c != 'E' && c != 'I' && c != 'O' && c != 'U') {
+            flag = TRUE;
+        }
+    }
+    consonante[0] = c;
+
+    flag = FALSE;
+
+    for (int i = 1; ln2[i] != '\0' && flag == FALSE; i++) {
+        c = ln2[i];
+        if (c >= 'A' && c <= 'Z' && c != 'A' && c != 'E' && c != 'I' && c != 'O' && c != 'U') {
+            flag = TRUE;
+        }
+    }
+    consonante[1] = c;
+
+    flag = FALSE;
+
+    for (int i = 1; name[i] != '\0' && flag == FALSE; i++) {
+        c = name[i];
+        if (c >= 'A' && c <= 'Z' && c != 'A' && c != 'E' && c != 'I' && c != 'O' && c != 'U') {
+            flag = TRUE;
+        }
+    }
+    consonante[2] = c;
+
+    consonante[3]= '\0';
+}
+
+void getHomonimia (int year,char homonimia[])
+{
+    char identifier[2],number[2];
+    identifier[0]='X';
+    int num;
+
+    if(year<2000)
+    {
+        identifier[0]='0';
+    }
+    else
+    {
+        if (year>= 2000 && year <= 2009)
+        {
+            identifier[0]='A';
+        }
+        else
+        {
+            if (year>= 2010 && year <= 2019)
+            {
+                identifier[0]='B';
+            }
+            else
+            {
+                identifier[0]='C';
+            }
+        }
+    }
+    num = rand() % 9 + 1;
+    sprintf(number,"%d",num);
+
+    sprintf(homonimia,"%s%s",identifier,number);
+
 }
