@@ -49,7 +49,7 @@ int validSingleString(const char string[])
             }
         }
         // Verifica si el carácter no es una letra o es un espacio
-        else if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (((unsigned char)c >= 128 && (unsigned char)c <= 165) || ((unsigned char)c >= 192 && c <= 255))) && (unsigned char)c != '\0')
+        else if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (((unsigned char)c >= 128 && (unsigned char)c <= 165) || ((unsigned char)c >= 192 && (unsigned char) c <= 255))) && (unsigned char)c != '\0')
         {
             return 0;
         }
@@ -64,43 +64,48 @@ int validSingleString(const char string[])
     return 1; // La cadena cumple con todas las condiciones
 }
 
-int validString(const char string[])
-{
-    if (string == NULL || string[0] == '\0')
-    {
+int validString(const char string[]) {
+    if (string == NULL || string[0] == '\0') {
         return 0; // La cadena es nula o vacía
     }
 
     int hasSpace = 0;    // Variable para rastrear si hay un espacio
-    char prevChar = ' '; // Inicializamos prevChar con un espacio para evitar espacio al principio
+    int prevCharWasSpace = 1; // Inicializamos prevCharWasSpace en 1 para evitar espacio al principio
 
-    for (int i = 0; string[i] != '\0'; i++)
-    {
+    for (int i = 0; string[i] != '\0'; i++) {
         unsigned char c = string[i];
 
-        // Verifica si el carácter no es una letra o es un espacio
-        if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f') && c != '\0')
-        {
-            return 0;
+        // Verifica si el carácter es una letra, un espacio o se encuentra en el rango del código ASCII [128, 165]
+        if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f' || (c >= 128 && c <= 165)) {
+            // El carácter es válido
+        } else {
+            return 0; // El carácter no es válido
         }
 
         // Verifica si hay más de un espacio consecutivo
-        if (c == ' ' && prevChar == ' ')
-        {
+        if (c == ' ' && prevCharWasSpace) {
             return 0;
         }
 
-        prevChar = c;
+        // Actualiza hasSpace si se encuentra un espacio
+        if (c == ' ') {
+            hasSpace = 1;
+        } else {
+            hasSpace = 0;
+        }
+
+        prevCharWasSpace = (c == ' ');
     }
 
     // Verifica si la cadena comienza o termina con un espacio
-    if (hasSpace || prevChar == ' ')
-    {
+    if (hasSpace || prevCharWasSpace) {
         return 0;
     }
 
     return 1; // La cadena cumple con todas las condiciones
 }
+
+
 
 void capitalizeWords(char *str)
 {
@@ -142,4 +147,41 @@ void convertMayus(char *string)
             }
         }
     }
+}
+
+const char* validStringNull(const char string[]) {
+    if (string == NULL || string[0] == '\0') {
+        return NULL; // La cadena es nula o vacía, devuelve NULL
+    }
+
+    int hasSpace = 0;
+    int prevCharWasSpace = 1;
+
+    for (int i = 0; string[i] != '\0'; i++) {
+        unsigned char c = string[i];
+
+        if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f' || (c >= 128 && c <= 165)) {
+            // El carácter es válido
+        } else {
+            return NULL; // El carácter no es válido, devuelve NULL
+        }
+
+        if (c == ' ' && prevCharWasSpace) {
+            return NULL;
+        }
+
+        if (c == ' ') {
+            hasSpace = 1;
+        } else {
+            hasSpace = 0;
+        }
+
+        prevCharWasSpace = (c == ' ');
+    }
+
+    if (hasSpace || prevCharWasSpace) {
+        return NULL;
+    }
+
+    return string; // La cadena cumple con todas las condiciones, devuelve la cadena original
 }
