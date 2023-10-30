@@ -33,7 +33,7 @@ typedef struct _estudiante
     int edad;
     int sexo;
     int estado;
-    char curp[9];
+    char curp[19];
 } Testudiante;
 
 // prototipos
@@ -43,7 +43,7 @@ int msges(void);
 
 int main()
 {
-
+    menu();
     return 0;
 }
 
@@ -87,7 +87,7 @@ void menu(void)
                 switch (op)
                 {
                 case 1:
-                    // llenarRegistroManual(alumno, indice);
+                    llenarRegistroManual(alumno, indice);
                     indice++;
                     ordenado = 0;
                     break;
@@ -216,7 +216,13 @@ void llenarRegistroManual(Testudiante vectorAlumno[], int indice)
         vectorAlumno[indice].nacimiento.mes = validInt(1, 12, "ANIO DE NACIMIENTO: ", "INVALIDO - REINGRESAR");
     } while (correcto == 0);
 
-    vectorAlumno[indice].edad = validInt(17, 99, "EDAD: ", "EDAD INVALIDA\n");
+    validarDia(vectorAlumno[indice].nacimiento.anio, vectorAlumno[indice].nacimiento.mes);
+
+    vectorAlumno[indice].edad = 2023 - vectorAlumno[indice].nacimiento.anio;
+
+    vectorAlumno[indice].sexo = validInt(1, 2, "SEXO 1) HOMBRE/ 2) MUJER: ", "INVALIDO - FUERA DE RANGO");
+    vectorAlumno[indice].estado=genEdo();
+    //GENERAR CURP
 }
 
 int searchLinearId(Testudiante vector[], int m, int val)
@@ -265,7 +271,7 @@ int validarDia(int anio, int mes)
 
     if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
     {
-        dia = validInt(1, 31,"DIA DE NACIMIENTO (1 - 31): ", "INVALIDO - FUERA DE RANGO");
+        dia = validInt(1, 31, "DIA DE NACIMIENTO (1 - 31): ", "INVALIDO - FUERA DE RANGO");
     }
 
     if (mes == 2)
@@ -274,21 +280,68 @@ int validarDia(int anio, int mes)
         {
             bisiesto = TRUE;
         }
-        if(bisiesto == TRUE)
+        if (bisiesto == TRUE)
         {
-            printf("DIA DE NACIMIENTO (1 - 29): ");   
-            dia = validInt(1, 29,"DIA DE NACIMIENTO (1 - 31): ", "INVALIDO - FUERA DE RANGO");        
+            printf("DIA DE NACIMIENTO (1 - 29): ");
+            dia = validInt(1, 29, "DIA DE NACIMIENTO (1 - 31): ", "INVALIDO - FUERA DE RANGO");
         }
         else
         {
             printf("DIA DE NACIMIENTO (1 - 28): ");
-            dia = validInt(1, 28,"DIA DE NACIMIENTO (1 - 31): ", "INVALIDO - FUERA DE RANGO");
+            dia = validInt(1, 28, "DIA DE NACIMIENTO (1 - 31): ", "INVALIDO - FUERA DE RANGO");
         }
     }
 
     if (mes == 4 || mes == 6 || mes == 9 || mes == 11)
     {
         printf("DIA DE NACIMIENTO (1 - 30): ");
-        dia = validInt(1, 30,"DIA DE NACIMIENTO (1 - 31): ", "INVALIDO - FUERA DE RANGO");
+        dia = validInt(1, 30, "DIA DE NACIMIENTO (1 - 31): ", "INVALIDO - FUERA DE RANGO");
     }
+
+    return dia;
+}
+
+int genEdo(void)
+{
+    printf("ESTADOS: \n");
+    printf("1.  Aguascalientes\n");
+    printf("2.  BAJA CALIFORNIA\n");
+    printf("3.  BAJA CALIFORNIA SUR\n");
+    printf("4.  CAMPECHE \n");
+    printf("5.  CHIAPAS\n");
+    printf("6.  CHIHUAHUA\n");
+    printf("7.  COAHUILA\n");
+    printf("8.  COLIMA\n");
+    printf("9.  CDMX\n");
+    printf("10. DURANGO\n");
+    printf("11. DF\n");
+    printf("12. GUANAJUATO\n");
+    printf("13. GUERRERO\n");
+    printf("14  HIDALGO\n");
+    printf("15. JALISCO\n");
+    printf("16. MICHOACAN\n");
+    printf("17. MORELOS\n");
+    printf("18. NAYARIT\n");
+    printf("19. NUEVO LEON\n");
+    printf("20. OAXACA\n");
+    printf("21. PUEBLA\n");
+    printf("22. QUERETARO\n");
+    printf("23. QUINTANA ROO\n");
+    printf("24. SAN LUIS POTOSI\n");
+    printf("25. SINALOA\n");
+    printf("26. SONORA\n");
+    printf("27. TABASCO\n");
+    printf("28. TAMAULIPAS\n");
+    printf("29. TLAXCALA\n");
+    printf("30. VERACRUZ\n");
+    printf("31. YUCATAN\n");
+    printf("32. ZACATECAS\n");
+    printf("33. EXTRANJERO\n");
+    char codigoEstado[35][5] = {"AS", "BC", "BS", "CC", "CS", "CH", "CL", "CM", "MC",
+                                "DG", "DF", "GT", "GR", "HG", "JC", "MN", "MS", "NT", "NL",
+                                "OC", "PL", "QT", "QR", "SP", "SL", "SR", "TC", "TS", "TL",
+                                "VZ", "YN", "ZS", "NE"};
+
+    int estado = validInt(1, 33, "INGRESA ESTADO DE NACIMIENTO: ", "OPCION FUERA DE RANGO");
+    return estado;
 }
