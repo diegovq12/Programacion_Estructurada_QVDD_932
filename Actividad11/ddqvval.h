@@ -115,25 +115,23 @@ void capitalizeWords(char *str)
 
     while (*str)
     {
-        // Verifica si el carácter es una letra minúscula
-        if ((*str >= 'a' && *str <= 'z') && capitalizeNext)
+        if (capitalizeNext && (*str >= 'a' && *str <= 'z'))
         {
-            // Convierte la letra a mayúscula
             *str = *str - 'a' + 'A';
-            capitalizeNext = 0; // Ya hemos capitalizado esta palabra
+            capitalizeNext = 0;
         }
-        // Verifica si el carácter es un espacio en blanco
         else if (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\r' || *str == '\v' || *str == '\f')
         {
-            capitalizeNext = 1; // La próxima letra debe ser mayúscula
+            capitalizeNext = 1;
         }
         else
         {
-            capitalizeNext = 0; // La próxima letra no debe ser mayúscula
+            capitalizeNext = 0;
         }
-        str++; // Mueve el puntero al siguiente carácter
+        str++;
     }
 }
+
 
 void convertMayus(char *string)
 {
@@ -185,4 +183,14 @@ const char* validStringNull(const char string[]) {
     }
 
     return string; // La cadena cumple con todas las condiciones, devuelve la cadena original
+}
+
+int largoCadena (char cadena[])
+{
+    int largo=0;
+    while (cadena[largo]!= '\0')
+    {
+        largo++;
+    }
+    return largo;
 }

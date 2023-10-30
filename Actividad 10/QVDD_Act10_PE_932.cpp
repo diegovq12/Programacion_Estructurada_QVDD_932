@@ -268,7 +268,6 @@ void fillRegManual(Talumn vect_alum[], int indexNumber)
     vect_alum[indexNumber].edad = validInt(17, 99, "Edad invalida\n");
     printf("Ingresa sexo 1] Hombre 2] Mujer: ");
     vect_alum[indexNumber].sexo = validInt(1, 2, "Opcion invalida");
-    indexNumber++;
 }
 
 /*
