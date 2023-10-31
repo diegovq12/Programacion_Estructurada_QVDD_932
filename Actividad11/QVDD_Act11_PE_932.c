@@ -55,7 +55,17 @@ void ordenarMatriculas(Testudiante vector[], int m);
 void escrbirArchivo(Testudiante vector[], int indice);
 
 // FUNCIONES PARA CURP
-
+void curp(Testudiante vector[], char curp[], int indice);
+char letraNombre(char nombre[]);
+int validarNombres(char nombre[]);
+void separarNombres(char nombre[], char primerNombre[], char otrosNombres[]);
+int validarPreposiciones(char nombre[]);
+char consonanteApellido(char apellido[]);
+char primeraVocal(char nombre[]);
+void obtenerCodigoEdo(char codigo[], int estado);
+char buscarSegundaConsonante(char cad[]);
+char consonanteNombres(char nombre[]);
+void obtenerHomonimia (int anio, char homonimia[]);
 //*************
 
 int main()
@@ -288,7 +298,9 @@ void llenarRegistroManual(Testudiante vectorAlumno[], int indice)
 
     vectorAlumno[indice].sexo = validInt(1, 2, "SEXO 1) HOMBRE/ 2) MUJER: ", "INVALIDO - FUERA DE RANGO");
     vectorAlumno[indice].estado = genEdo();
-    // GENERAR CURP
+    char curpalumno[19];
+    curp(vectorAlumno, curpalumno, indice);
+    strcpy(vectorAlumno[indice].curp,curpalumno);
 }
 
 int searchLinearId(Testudiante vector[], int m, int val)
@@ -436,7 +448,7 @@ void imprimirRegistros(Testudiante vector[], int indice)
 
             strcpy(estado, estados[vector[i].estado - 1]);
 
-            printf("%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   \n", vector[i].matricula, vector[i].nombreCompleto.nombre, vector[i].nombreCompleto.apellidoPat, vector[i].nombreCompleto.apellidoMat, vector[i].nacimiento.dia, vector[i].nacimiento.mes, vector[i].nacimiento.anio, vector[i].edad, sexalumn, estado);
+            printf("%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   %-18s\n", vector[i].matricula, vector[i].nombreCompleto.nombre, vector[i].nombreCompleto.apellidoPat, vector[i].nombreCompleto.apellidoMat, vector[i].nacimiento.dia, vector[i].nacimiento.mes, vector[i].nacimiento.anio, vector[i].edad, sexalumn, estado,vector[i].curp);
         }
     }
 }
@@ -467,7 +479,7 @@ void imprimirRegistroIndividual(Testudiante vector[], int num)
 
         strcpy(estado, estados[vector[num].estado - 1]);
 
-        printf("%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   \n", vector[num].matricula, vector[num].nombreCompleto.nombre, vector[num].nombreCompleto.apellidoPat, vector[num].nombreCompleto.apellidoMat, vector[num].nacimiento.dia, vector[num].nacimiento.mes, vector[num].nacimiento.anio, vector[num].edad, sexalumn, estado);
+        printf("%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   %-18s\n", vector[num].matricula, vector[num].nombreCompleto.nombre, vector[num].nombreCompleto.apellidoPat, vector[num].nombreCompleto.apellidoMat, vector[num].nacimiento.dia, vector[num].nacimiento.mes, vector[num].nacimiento.anio, vector[num].edad, sexalumn, estado,vector[num].curp);
     }
 }
 
@@ -500,7 +512,9 @@ void llenarRegistroATM(Testudiante vector[], int indice)
 
     vector[indice].estado = 1 + rand() % (33 - 1 + 1);
 
-    // curp
+    char curpalumno[19];
+    curp(vector, curpalumno, indice);
+    strcpy(vector[indice].curp,curpalumno);
 }
 
 int generarDiaAleatorio(int anio, int mes)
@@ -596,15 +610,48 @@ void escrbirArchivo(Testudiante vector[], int indice)
 }
 
 // FUNCIONES PARA CURP
-void curp(Testudiante vector, char curp[])
+void curp(Testudiante vector[], char curp[], int indice)
 {
     char dia[3], mes[3], anio[3];
-    sprintf(dia, "%02d", vector.nacimiento.dia);
-    sprintf(mes, "%02d", vector.nacimiento.mes);
-    sprintf(anio, "%02d", vector.nacimiento.anio % 100);
+    sprintf(dia, "%02d", vector[indice].nacimiento.dia);
+    sprintf(mes, "%02d", vector[indice].nacimiento.mes);
+    sprintf(anio, "%02d", vector[indice].nacimiento.anio % 100);
 
-    curp[0] = letraNombre(vector.nombreCompleto.apellidoPat) ? letraNombre(vector.nombreCompleto.apellidoPat) : 'X';
-    curp[1] = primeraVocal(vector.nombreCompleto.apellidoPat);
+    int sexo;
+    sexo = sexDetect(vector[indice].nombreCompleto.nombre);
+    char curp0Resultado = letraNombre(vector[indice].nombreCompleto.apellidoPat);
+    char curp1Resultado = buscarSegundaConsonante(vector[indice].nombreCompleto.apellidoPat);
+    char curp2Resultado = letraNombre(vector[indice].nombreCompleto.apellidoMat);
+    char curp3Resultado = letraNombre(vector[indice].nombreCompleto.nombre);
+
+    char codigoEdo[2];
+    obtenerCodigoEdo(codigoEdo,vector[indice].estado);
+
+    char homonimia[2];
+    obtenerHomonimia(vector[indice].nacimiento.anio ,homonimia);
+
+    curp[0] = curp0Resultado ? curp0Resultado : 'X';
+    curp[1] = curp1Resultado ? curp1Resultado : 'X';
+    curp[2] = curp2Resultado ? curp2Resultado : 'X';
+    curp[3] = curp3Resultado ? curp3Resultado : 'X';
+    curp[4] = anio[0];
+    curp[5] = anio[1];
+    curp[6] = mes[0];
+    curp[7] = mes[1];
+    curp[8] = dia[0];
+    curp[9] = dia[1];
+    curp[10] = (sexo == 1) ? 'H' : (sexo == 2) ? 'M'
+                                               : 'H';
+    curp[11] = codigoEdo[0];
+    curp[12] = codigoEdo[1];
+    curp[13] = consonanteApellido(vector[indice].nombreCompleto.apellidoPat);
+    curp[14] = consonanteApellido(vector[indice].nombreCompleto.apellidoMat);
+    curp[15] = consonanteNombres(vector[indice].nombreCompleto.nombre);
+    curp[16] = homonimia[0];
+    curp[17] = homonimia[1];
+    curp[18] ='\0';
+
+    convertMayus(curp);
 }
 
 char letraNombre(char nombre[])
@@ -617,7 +664,7 @@ char letraNombre(char nombre[])
     {
         separarNombres(segundoNombre, primerNombre, segundoNombre);
 
-        while (valiPrepos(primerNombre) && segundoNombre[0] != '\0')
+        while (validarPreposiciones(primerNombre) && segundoNombre[0] != '\0')
         {
             separarNombres(segundoNombre, primerNombre, segundoNombre);
         }
@@ -659,7 +706,7 @@ void separarNombres(char nombre[], char primerNombre[], char otrosNombres[])
 
     if (nombre[i] != '\0')
     {
-        i++; // Saltar el espacio en blanco
+        i++; 
         int j = 0;
         while (nombre[i] != '\0')
         {
@@ -691,17 +738,17 @@ int validarPreposiciones(char nombre[])
     return FALSE;
 }
 
-char vocalApellido(char apellido[])
+char consonanteApellido(char apellido[])
 {
     int largo = largoCadena(apellido);
-    char primerApellido[largo],segundoApellido[largo];
+    char primerApellido[largo], segundoApellido[largo];
 
     if (validarPreposiciones(primerApellido))
     {
-        separarNombres(segundoApellido,primerApellido,segundoApellido);
+        separarNombres(segundoApellido, primerApellido, segundoApellido);
         while (validarPreposiciones(primerApellido) && segundoApellido[0] != '\0')
         {
-            separarNombres(segundoApellido,primerApellido,segundoApellido);
+            separarNombres(segundoApellido, primerApellido, segundoApellido);
         }
     }
     if (primerApellido[1] == ',')
@@ -710,25 +757,125 @@ char vocalApellido(char apellido[])
     }
 
     return primeraVocal(primerApellido);
-    
 }
 
 char primeraVocal(char nombre[])
 {
     char c;
-    int flag = FALSE;
-    for (int i = 0; nombre[i] != '\0' && flag == FALSE; i++)
+    for (int i = 1; nombre[i] != '\0'; i++)
     {
         c = nombre[i];
         if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
         {
-            flag = TRUE;
+            return c;
         }
     }
 
-    if (flag == FALSE)
+    return 'X';
+
+}
+
+void obtenerCodigoEdo(char codigo[], int estado)
+{
+    char codigoEstados[35][5] = {"AS", "BC", "BS", "CC", "CS", "CH", "CL", "CM", "MC", "DG",
+                                 "DF", "GT", "GR", "HG", "JC", "MN", "MS", "NT", "NL", "OC",
+                                 "PL", "QT", "QR", "SP", "SL", "SR", "TC", "TS", "TL", "VZ",
+                                 "YN", "ZS", "NE"};
+
+    for (int i = 0; i < 33; i++)
     {
-        c = 'X';
+        if (estado == i + 1)
+        {
+            strcpy(codigo, codigoEstados[i]);
+        }
     }
-    return c;
+}
+
+char buscarSegundaConsonante(char cad[])
+{
+    int i = 1;
+    int largo = largoCadena(cad) + 1;
+
+    while (i < largo)
+    {
+        if (cad[i] != 'A' && cad[i] != 'E' && cad[i] != 'I' && cad[i] != 'O' && cad[i] != 'U' && cad[i] != ' ')
+        {
+            if (cad[i] == ',')
+            {
+                return 'X';
+            }
+
+            return cad[i];
+        }
+        i++;
+    }
+
+    return 'X';
+}
+
+char consonanteNombres(char nombre[])
+{
+    int largo = largoCadena(nombre);
+    char primerNombre[largo], segundoNombre[largo];
+
+    separarNombres(segundoNombre, primerNombre, segundoNombre);
+
+    if ((validarNombres(primerNombre) == TRUE) || ((validarPreposiciones(primerNombre) == TRUE) && segundoNombre[0] != '\0'))
+    {
+        separarNombres(segundoNombre, primerNombre, segundoNombre);
+
+        if ((validarPreposiciones(primerNombre) == TRUE))
+        {
+            separarNombres(segundoNombre, primerNombre, segundoNombre);
+
+            while (validarPreposiciones(primerNombre) && segundoNombre[0] != '\0')
+            {
+                separarNombres(segundoNombre, primerNombre, segundoNombre);
+            }
+        }
+        return buscarSegundaConsonante(primerNombre);
+    }
+
+    if ((validarPreposiciones(primerNombre) == TRUE))
+    {
+        separarNombres(segundoNombre, primerNombre, segundoNombre);
+
+        while (validarPreposiciones(primerNombre) == TRUE && segundoNombre[0] != '\0')
+        {
+            separarNombres(segundoNombre, primerNombre, segundoNombre);
+        }
+    }
+    return buscarSegundaConsonante(primerNombre);
+}
+
+void obtenerHomonimia (int anio, char homonimia[])
+{
+    char identificador[2], numero[2];
+    int num;
+    if (anio < 2000)
+    {
+        identificador[0] = '0';
+    }
+    else
+    {
+        if (anio >= 2000 && anio <= 2009)
+        {
+            identificador[0] = 'A';
+        }
+        else
+        {
+            if (anio >= 2010 && anio <= 2019)
+            {
+                identificador[0] = 'B';
+            }
+            else
+            {
+                identificador[0] = 'C';
+            }
+        }
+    }
+    num = rand() % 9 + 1;
+    sprintf(numero, "%d", num);
+
+    sprintf(homonimia, "%s%s", identificador, numero);
 }
