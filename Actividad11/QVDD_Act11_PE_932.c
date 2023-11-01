@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include "ddqvval.h"
 #include "namesddqv.h"
+#include "ddqvval.h"
 
 #define FALSE 0
 #define TRUE 1
 
-#define MAX_REG 200
-#define AGG_REG 50
+#define MAX_REG 2000
+#define AGG_REG 100
 
 typedef struct _nombreCompleto
 {
@@ -52,9 +52,10 @@ void imprimirRegistros(Testudiante vector[], int indice);
 void imprimirRegistroIndividual(Testudiante vector[], int indice);
 void llenarRegistroATM(Testudiante vector[], int indice);
 void ordenarMatriculas(Testudiante vector[], int m);
-void escrbirArchivo(Testudiante vector[], int indice);
-void quikSort(Testudiante lista[],int indice);
+void escrbirArchivo(char *nombreArchivo, Testudiante vector[], int indice);
+void quikSort(Testudiante lista[], int indice);
 void qs(Testudiante lista[], int limiteIzquierdo, int limiteDerecho);
+
 // FUNCIONES PARA CURP
 void curp(Testudiante vector[], char curp[], int indice);
 char letraNombre(char nombre[]);
@@ -67,6 +68,11 @@ void obtenerCodigoEdo(char codigo[], int estado);
 char buscarSegundaConsonante(char cad[]);
 char consonanteNombres(char nombre[]);
 void obtenerHomonimia(int anio, char homonimia[]);
+char buscarPrimeraConsonante(char cadena[]);
+char vocalApellido(char apellido[]);
+void validarPalabrasAltisonantes(char curp[]);
+void validarCaracteresEspeciales(char cadena[]);
+
 //*************
 
 int main()
@@ -97,8 +103,10 @@ void menu(void)
     int num, matricula;
     int ordenado = 0;
     int indice = 0;
-    Testudiante alumno[2000];
-    int op;
+    Testudiante alumno[2005];
+    int correcto;
+    char nombreArchivo[30];
+    int op, op2, maximo;
 
     do
     {
@@ -134,8 +142,28 @@ void menu(void)
                             indice++;
                         }
                         ordenado = 0;
+                        printf("SE HAN LLENADO %d REGISTROS SATISFACTORIAMENTE\n", AGG_REG);
                     }
-                    printf("SE HAN LLENADO %d REGISTROS SATISFACTORIAMENTE\n", AGG_REG);
+                    else
+                    {
+                        maximo = MAX_REG - indice;
+                        printf("LLEGARIA AL MAXIMO DE ALUMNOS, PODRIA REGISTRAR A %d ALUMNOS MAS\n", MAX_REG - indice);
+                        op2 = validInt(0, 1, "LLENAR REGISTROS AUTOMATICAMENTE (1\\SI 0\\REGRESAR): ", "VALOR INVALIDO - FUERA DE RANGO");
+                        if (op2 == 1)
+                        {
+                            for (int i = 0; i <= MAX_REG - indice; i++)
+                            {
+                                llenarRegistroATM(alumno, indice);
+                                indice++;
+                            }
+                            ordenado = 0;
+                            printf("SE HAN LLENADO %d REGISTROS SATISFACTORIAMENTE\n", maximo);
+                        }
+                        else
+                        {
+                            // regresar
+                        }
+                    }
                     system("PAUSE");
                     break;
 
@@ -145,20 +173,24 @@ void menu(void)
             } while (op != 3);
             break;
         case 2:
+
             matricula = validInt(300000, 399999, "INGRESAR MATRICULA A DAR DE BAJA: ", "MATRICULA FUERA DE RANGO\n");
             num = searchLinearId(alumno, indice, matricula);
-            do
+
+            if (num != -1)
             {
-                if (num != -1)
+                imprimirRegistroIndividual(alumno, num);
+                op2 = validInt(1, 2, "DAR DE BAJA (1\\SI 2\\NO): ", "OPCION INVALIDA - FUERA DE RANGO");
+                if (op2 == 1)
                 {
                     alumno[num].status = 0;
                     printf("ALUMNO DADO DE BAJA.\n");
                 }
-                else
-                {
-                    printf("MATRICULA NO REGISTRADA\n");
-                }
-            } while (matricula != 0);
+            }
+            else
+            {
+                printf("MATRICULA NO REGISTRADA\n");
+            }
             system("PAUSE");
             break;
         case 3:
@@ -190,20 +222,20 @@ void menu(void)
             system("PAUSE");
             break;
         case 4:
-            if (indice>100)
+            if (indice > 100)
             {
-                if (ordenado==0)
+                if (ordenado == 0)
                 {
-                    quikSort(alumno,indice);
+                    quikSort(alumno, indice);
                     ordenado = 1;
                 }
                 else
                 {
-                    printf("REGISTROS ACTUALMENTE ORDENADOS\n");  
-                }  
+                    printf("REGISTROS ACTUALMENTE ORDENADOS\n");
+                }
             }
-            else    
-            {  
+            else
+            {
                 if (ordenado == 0)
                 {
                     ordenarMatriculas(alumno, indice);
@@ -218,10 +250,25 @@ void menu(void)
             break;
         case 5:
             imprimirRegistros(alumno, indice);
-            system("PAUSE");
             break;
         case 6:
-            escrbirArchivo(alumno, indice);
+
+            printf("INGRESA NOMBRE DEL ARCHIVO: ");
+            fflush(stdin);
+            gets(nombreArchivo);
+            do
+            {
+                correcto = validSingleString(nombreArchivo);
+                if (correcto == 0)
+                {
+                    printf("ERROR - REINGRESA CORRECTAMENTE LOS DATOS.\n");
+                    printf("INGRESA NOMBRE DEL ARCHIVO: ");
+                    fflush(stdin);
+                    gets(nombreArchivo);
+                }
+            } while (correcto == 0);
+
+            escrbirArchivo(nombreArchivo, alumno, indice);
             printf("\n");
             system("PAUSE");
             break;
@@ -235,8 +282,8 @@ int msgesAgregar(void)
 {
     int op;
     printf("\nM E N U A G R E G A R\n");
-    printf("1.- AGREGAR MANUAL\n");
-    printf("2.- AGREGAR AUTOMATICO\n");
+    printf("1.- AGREGAR MANUAL (1)\n");
+    printf("2.- AGREGAR AUTOMATICO (%d)\n",AGG_REG);
     printf("3.- Regresar\n");
     op = validInt(1, 3, "Ingresa funcion a utilizar: ", "Opcion Invalida");
     return op;
@@ -284,7 +331,7 @@ void llenarRegistroManual(Testudiante vectorAlumno[], int indice)
         if (correcto == 0)
         {
             printf("ERROR - REINGRESA CORRECTAMENTE LOS DATOS.\n");
-            printf("APELLIDO PATERNO: ");
+            printf("APELLIDO MATERNO: ");
             fflush(stdin);
             gets(vectorAlumno[indice].nombreCompleto.apellidoMat);
         }
@@ -441,7 +488,6 @@ int genEdo(void)
 
 void imprimirRegistros(Testudiante vector[], int indice)
 {
-    int i;
     char sexo[2][10] = {"Hombre", "Mujer"};
     char sexalumn[10];
     char estado[30];
@@ -450,25 +496,33 @@ void imprimirRegistros(Testudiante vector[], int indice)
                             "Estado de Mexico", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacan", "Morelos", "Nayarit",
                             "Nuevo Leon", "Oaxaca", "Puebla", "Queretaro", "Quintana Roo", "San Luis Potosi", "Sinaloa",
                             "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas", "Extranjero"};
-    printf("MATRICULA   APPAT                           APMAT                            NOMBRE                            FECHA NAC    EDAD   SEXO      LUGAR NAC              CURP\n\n");
-    for (i = 0; i < indice; i++)
+   
+    int i = 0;
+    while (i < indice)
     {
-        if (vector[i].status == 1)
+        system("CLS");
+        printf("MATRICULA   APPAT                           APMAT                            NOMBRE                            FECHA NAC    EDAD   SEXO      LUGAR NAC              CURP\n\n");
+        for (int j = i; j < i + 40 && j < indice; j++)
         {
-
-            if (vector[i].sexo == 1)
+            if (vector[j].status == 1)
             {
-                strcpy(sexalumn, sexo[0]);
-            }
-            else
-            {
-                strcpy(sexalumn, sexo[1]);
-            }
+                if (vector[j].sexo == 1)
+                {
+                    strcpy(sexalumn, sexo[0]);
+                }
+                else
+                {
+                    strcpy(sexalumn, sexo[1]);
+                }
 
-            strcpy(estado, estados[vector[i].estado - 1]);
+                strcpy(estado, estados[vector[j].estado - 1]);
 
-            printf("%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   %-18s\n", vector[i].matricula, vector[i].nombreCompleto.apellidoPat, vector[i].nombreCompleto.apellidoMat, vector[i].nombreCompleto.nombre, vector[i].nacimiento.dia, vector[i].nacimiento.mes, vector[i].nacimiento.anio, vector[i].edad, sexalumn, estado, vector[i].curp);
+                printf("%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   %-18s\n", vector[j].matricula, vector[j].nombreCompleto.apellidoPat, vector[j].nombreCompleto.apellidoMat, vector[j].nombreCompleto.nombre, vector[j].nacimiento.dia, vector[j].nacimiento.mes, vector[j].nacimiento.anio, vector[j].edad, sexalumn, estado, vector[j].curp);
+            }
         }
+
+        i += 40;
+        system("PAUSE");
     }
 }
 
@@ -516,7 +570,16 @@ void imprimirRegistroIndividual(Testudiante vector[], int num)
 
         printf("MATRICULA: %d\n", vector[num].matricula);
         printf("NOMBRE: %s\n", nombre1);
-        printf("NOMBRE 2: %s\n", nombre3);
+
+        if (nombre3 != NULL)
+        {
+            printf("NOMBRE 2: %s\n", nombre3);
+        }
+        else
+        {
+            printf("NOMBRE 2:\n");
+        }
+
         printf("AP PATERNO: %s\n", vector[num].nombreCompleto.apellidoPat);
         printf("AP MATERNO: %s\n", vector[num].nombreCompleto.apellidoMat);
         printf("FECHA NAC: %02d-%02d-%4d\n", vector[num].nacimiento.dia, vector[num].nacimiento.mes, vector[num].nacimiento.anio);
@@ -616,7 +679,7 @@ void ordenarMatriculas(Testudiante vector[], int m)
     }
 }
 
-void escrbirArchivo(Testudiante vector[], int indice)
+void escrbirArchivo(char *nombreArchivo, Testudiante vector[], int indice)
 {
     int i;
     char sexo[2][10] = {"Hombre", "Mujer"};
@@ -628,7 +691,7 @@ void escrbirArchivo(Testudiante vector[], int indice)
                             "Nuevo Leon", "Oaxaca", "Puebla", "Queretaro", "Quintana Roo", "San Luis Potosi", "Sinaloa",
                             "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas", "Extranjero"};
     FILE *fa;
-    fa = fopen("registroAlumnos.txt", "w");
+    fa = fopen(nombreArchivo, "w");
     fprintf(fa, "MATRICULA   NOMBRE                           APPAT                            APMAT                            FECHA NAC    EDAD   SEXO      LUGAR NAC              CURP\n");
     for (i = 0; i < indice; i++)
     {
@@ -645,7 +708,7 @@ void escrbirArchivo(Testudiante vector[], int indice)
 
             strcpy(estado, estados[vector[i].estado - 1]);
 
-            fprintf(fa, "%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   %-18s\n", vector[i].matricula, vector[i].nombreCompleto.nombre, vector[i].nombreCompleto.apellidoPat, vector[i].nombreCompleto.apellidoMat, vector[i].nacimiento.dia, vector[i].nacimiento.mes, vector[i].nacimiento.anio, vector[i].edad, sexalumn, estado,vector[i].curp);
+            fprintf(fa, "%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   %-18s\n", vector[i].matricula, vector[i].nombreCompleto.nombre, vector[i].nombreCompleto.apellidoPat, vector[i].nombreCompleto.apellidoMat, vector[i].nacimiento.dia, vector[i].nacimiento.mes, vector[i].nacimiento.anio, vector[i].edad, sexalumn, estado, vector[i].curp);
         }
     }
 
@@ -655,7 +718,7 @@ void escrbirArchivo(Testudiante vector[], int indice)
 
 void qs(Testudiante lista[], int limiteIzquierdo, int limiteDerecho)
 {
-    int izquierda, derecha,  aux;
+    int izquierda, derecha, aux;
     Testudiante temp;
     izquierda = limiteIzquierdo;
     derecha = limiteDerecho;
@@ -691,14 +754,21 @@ void qs(Testudiante lista[], int limiteIzquierdo, int limiteDerecho)
     }
 }
 
-void quikSort(Testudiante lista[],int indice)
+void quikSort(Testudiante lista[], int indice)
 {
-    qs(lista,0,indice-1);
+    qs(lista, 0, indice - 1);
 }
 
 // FUNCIONES PARA CURP
 void curp(Testudiante vector[], char curp[], int indice)
 {
+    convertMayus(vector[indice].nombreCompleto.apellidoPat);
+    convertMayus(vector[indice].nombreCompleto.apellidoMat);
+    convertMayus(vector[indice].nombreCompleto.nombre);
+    validarCaracteresEspeciales(vector[indice].nombreCompleto.apellidoPat);
+    validarCaracteresEspeciales(vector[indice].nombreCompleto.apellidoMat);
+    validarCaracteresEspeciales(vector[indice].nombreCompleto.nombre);
+
     char dia[3], mes[3], anio[3];
     sprintf(dia, "%02d", vector[indice].nacimiento.dia);
     sprintf(mes, "%02d", vector[indice].nacimiento.mes);
@@ -716,15 +786,24 @@ void curp(Testudiante vector[], char curp[], int indice)
         c = 'H';
     }
     char curp0Resultado = letraNombre(vector[indice].nombreCompleto.apellidoPat);
-    char curp1Resultado = buscarSegundaConsonante(vector[indice].nombreCompleto.apellidoPat);
+    char curp1Resultado = vocalApellido(vector[indice].nombreCompleto.apellidoPat);
     char curp2Resultado = letraNombre(vector[indice].nombreCompleto.apellidoMat);
     char curp3Resultado = letraNombre(vector[indice].nombreCompleto.nombre);
 
     char codigoEdo[3];
     obtenerCodigoEdo(codigoEdo, vector[indice].estado);
 
+    char auxCedo1 = codigoEdo[0];
+    char auxCedo2 = codigoEdo[1];
+
     char homonimia[3];
     obtenerHomonimia(vector[indice].nacimiento.anio, homonimia);
+
+    char aux13 = consonanteApellido(vector[indice].nombreCompleto.apellidoPat);
+    char aux14 = consonanteApellido(vector[indice].nombreCompleto.apellidoMat);
+    char aux15 = consonanteNombres(vector[indice].nombreCompleto.nombre);
+
+    char aux16 = homonimia[0];
 
     curp[0] = curp0Resultado ? curp0Resultado : 'X';
     curp[1] = curp1Resultado ? curp1Resultado : 'X';
@@ -737,16 +816,17 @@ void curp(Testudiante vector[], char curp[], int indice)
     curp[8] = dia[0];
     curp[9] = dia[1];
     curp[10] = c;
-    curp[11] = codigoEdo[0];
-    curp[12] = codigoEdo[1];
-    curp[13] = consonanteApellido(vector[indice].nombreCompleto.apellidoPat);
-    curp[14] = consonanteApellido(vector[indice].nombreCompleto.apellidoMat);
-    curp[15] = consonanteNombres(vector[indice].nombreCompleto.nombre);
-    curp[16] = homonimia[0];
-    curp[17] = homonimia[1];
+    curp[11] = auxCedo1;
+    curp[12] = auxCedo2;
+    curp[13] = aux13;
+    curp[14] = aux14;
+    curp[15] = aux15;
+    curp[16] = aux16;
+    curp[17] = (rand() % 10) + '0';
     curp[18] = '\0';
 
     convertMayus(curp);
+    validarPalabrasAltisonantes(curp);
 }
 
 char letraNombre(char nombre[])
@@ -836,16 +916,47 @@ int validarPreposiciones(char nombre[])
 char consonanteApellido(char apellido[])
 {
     int largo = largoCadena(apellido);
-    char primerApellido[largo], segundoApellido[largo];
+    char primerApellido[largo];
+    char segundoApellido[largo];
+
+    separarNombres(apellido, primerApellido, segundoApellido);
 
     if (validarPreposiciones(primerApellido))
     {
         separarNombres(segundoApellido, primerApellido, segundoApellido);
+
         while (validarPreposiciones(primerApellido) && segundoApellido[0] != '\0')
         {
             separarNombres(segundoApellido, primerApellido, segundoApellido);
         }
     }
+
+    if (primerApellido[1] == ',')
+    {
+        return 'X';
+    }
+
+    return buscarSegundaConsonante(primerApellido);
+}
+
+char vocalApellido(char apellido[])
+{
+    int largo = largoCadena(apellido);
+    char primerApellido[largo];
+    char segundoApellido[largo];
+
+    separarNombres(apellido, primerApellido, segundoApellido);
+
+    if (validarPreposiciones(primerApellido))
+    {
+        separarNombres(segundoApellido, primerApellido, segundoApellido);
+
+        while (validarPreposiciones(primerApellido) && segundoApellido[0] != '\0')
+        {
+            separarNombres(segundoApellido, primerApellido, segundoApellido);
+        }
+    }
+
     if (primerApellido[1] == ',')
     {
         return 'X';
@@ -856,14 +967,17 @@ char consonanteApellido(char apellido[])
 
 char primeraVocal(char nombre[])
 {
-    char c;
-    for (int i = 1; nombre[i] != '\0'; i++)
+    int i;
+    int largo = largoCadena(nombre);
+    i = 1;
+
+    while (i < largo)
     {
-        c = nombre[i];
-        if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
+        if (nombre[i] == 'A' || nombre[i] == 'E' || nombre[i] == 'I' || nombre[i] == 'O' || nombre[i] == 'U')
         {
-            return c;
+            return nombre[i];
         }
+        i++;
     }
 
     return 'X';
@@ -885,21 +999,43 @@ void obtenerCodigoEdo(char codigo[], int estado)
     }
 }
 
-char buscarSegundaConsonante(char cad[])
+char buscarPrimeraConsonante(char cadena[])
 {
-    int i = 1;
-    int largo = largoCadena(cad) + 1;
+    int i = 0;
+    int largo = largoCadena(cadena) + 1;
 
     while (i < largo)
     {
-        if (cad[i] != 'A' && cad[i] != 'E' && cad[i] != 'I' && cad[i] != 'O' && cad[i] != 'U' && cad[i] != ' ')
+        if (cadena[i] != 'A' && cadena[i] != 'E' && cadena[i] != 'I' && cadena[i] != 'O' && cadena[i] != 'U' && cadena[i] != ' ')
         {
-            if (cad[i] == ',')
+            if (cadena[i] == ',')
             {
                 return 'X';
             }
 
-            return cad[i];
+            return cadena[i];
+        }
+        i++;
+    }
+
+    return 'X';
+}
+
+char buscarSegundaConsonante(char cadena[])
+{
+    int i = 1;
+    int largo = largoCadena(cadena) + 1;
+
+    while (i < largo)
+    {
+        if (cadena[i] != 'A' && cadena[i] != 'E' && cadena[i] != 'I' && cadena[i] != 'O' && cadena[i] != 'U' && cadena[i] != ' ')
+        {
+            if (cadena[i] == ',')
+            {
+                return 'X';
+            }
+
+            return cadena[i];
         }
         i++;
     }
@@ -912,7 +1048,7 @@ char consonanteNombres(char nombre[])
     int largo = largoCadena(nombre);
     char primerNombre[largo], segundoNombre[largo];
 
-    separarNombres(segundoNombre, primerNombre, segundoNombre);
+    separarNombres(nombre, primerNombre, segundoNombre);
 
     if ((validarNombres(primerNombre) == TRUE) || ((validarPreposiciones(primerNombre) == TRUE) && segundoNombre[0] != '\0'))
     {
@@ -930,7 +1066,7 @@ char consonanteNombres(char nombre[])
         return buscarSegundaConsonante(primerNombre);
     }
 
-    if ((validarPreposiciones(primerNombre) == TRUE))
+    if (validarPreposiciones(primerNombre))
     {
         separarNombres(segundoNombre, primerNombre, segundoNombre);
 
@@ -972,4 +1108,115 @@ void obtenerHomonimia(int anio, char homonimia[])
     sprintf(numero, "%d", num);
 
     sprintf(homonimia, "%s%s", identificador, numero);
+}
+
+void validarCaracteresEspeciales(char cadena[])
+{
+    int i = 0;
+    unsigned char caracter;
+
+    while (cadena[i] != '\0')
+    {
+        caracter = (unsigned char)cadena[i];
+        if (caracter >= 'a' && caracter <= 'z')
+        {
+            cadena[i] -= 32;
+        }
+        else
+        {
+            switch (caracter)
+            {
+            case 160: // á
+            case 181: // Á
+            case 132: // ä
+            case 142: // Ä
+                cadena[i] = 'A';
+                break;
+
+            case 130: // é
+            case 144: // É
+            case 137: // ë
+            case 211: // Ë
+                cadena[i] = 'E';
+                break;
+
+            case 161: // í
+            case 214: // Í
+            case 139: // ï
+            case 216: // Ï
+                cadena[i] = 'I';
+                break;
+
+            case 162: // ó
+            case 224: // Ó
+            case 148: // ö
+            case 153: // Ö
+                cadena[i] = 'O';
+                break;
+
+            case 163: // ú
+            case 233: // Ú
+            case 129: // ü
+            case 154: // Ü
+                cadena[i] = 'U';
+                break;
+
+            case 164: // ñ
+            case 165: // Ñ
+                cadena[i] = 'X';
+                break;
+
+            case 39:  // '
+            case 44:  // ,
+            case 45:  // -
+            case 46:  // .
+            case 47:  // /
+            case 96:  // `
+            case 239: // ´
+            case 249: // ¨
+                cadena[i] = ',';
+                break;
+            }
+        }
+        i++;
+    }
+}
+
+void validarPalabrasAltisonantes(char curp[])
+{
+    char antisonantes[][5] = {"BACA", "BAKA", "BUEI", "BUEY", "CACA", "CACO", "CAGA", "CAGO", "CAKA", "CAKO", "COGE", "COGI", "COJA", "COJE",
+                              "COJI", "COJO", "COLA", "CULO", "FALO", "FETO", "GETA", "GUEI", "GUEY", "JETA", "JOTO", "KACA", "KACO", "KAGA",
+                              "KAGO", "KAKA", "KAKO", "KOGE", "KOGI", "KOJA", "KOJE", "KOJI", "KOJO", "KOLA", "KULO", "LILO", "LOCA", "LOCO",
+                              "LOKA", "LOKO", "MAME", "MAMO", "MEAR", "MEAS", "MEON", "MIAR", "MION", "MOCO", "MOKO", "MULA", "MULO", "NACA",
+                              "NACO", "PEDA", "PEDO", "PENE", "PIPI", "PITO", "POPO", "PUTA", "PUTO", "QULO", "RATA", "ROBA", "ROBE", "ROBO",
+                              "RUIN", "SENO", "TETA", "VACA", "VAGA", "VAGO", "VAKA", "VUEI", "VUEY", "WUEI", "WUEY"};
+
+    char cadenatemp[5];
+    strncpy(cadenatemp, curp, 4);
+    cadenatemp[4] = '\0';
+
+    int i;
+    int found = 0;
+    for (i = 0; (unsigned int)i < (unsigned int)sizeof(antisonantes) / sizeof(antisonantes[0]) && found == 0; i++)
+    {
+        if (strcmp(cadenatemp, antisonantes[i]) == 0)
+        {
+            found = 1;
+        }
+    }
+
+    if (found == 1)
+    {
+        curp[1] = 'X';
+    }
+
+    if (curp[14] == ' ' || curp[14] == '\0')
+    {
+        curp[14] = 'X';
+    }
+
+    if (curp[15] == ' ' || curp[15] == '\0')
+    {
+        curp[15] = 'X';
+    }
 }

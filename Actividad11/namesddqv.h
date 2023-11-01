@@ -108,30 +108,3 @@ int sexDetect(char name[30])
     }
     return 1;
 }
-
-// void capitalizeWords(char *str)
-// {
-//     // Variable para rastrear si la próxima letra debe ser mayúscula
-//     int capitalizeNext = 1;
-
-//     while (*str)
-//     {
-//         // Verifica si el carácter es una letra minúscula
-//         if ((*str >= 'a' && *str <= 'z') && capitalizeNext)
-//         {
-//             // Convierte la letra a mayúscula
-//             *str = *str - 'a' + 'A';
-//             capitalizeNext = 0; // Ya hemos capitalizado esta palabra
-//         }
-//         // Verifica si el carácter es un espacio en blanco
-//         else if (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\r' || *str == '\v' || *str == '\f')
-//         {
-//             capitalizeNext = 1; // La próxima letra debe ser mayúscula
-//         }
-//         else
-//         {
-//             capitalizeNext = 0; // La próxima letra no debe ser mayúscula
-//         }
-//         str++; // Mueve el puntero al siguiente carácter
-//     }
-// }

@@ -28,28 +28,25 @@ int validSingleString(const char string[])
 {
     if (string == NULL || string[0] == '\0')
     {
-        return 0; // La cadena es nula o vacía
+        return 1; 
     }
 
-    int hasSpace = 0;    // Variable para rastrear si hay un espacio
-    char prevChar = ' '; // Inicializamos prevChar con un espacio para evitar espacio al principio
+    int hasSpace = 0;    
+    char prevChar = ' '; 
 
     for (int i = 0; string[i] != '\0'; i++)
     {
         unsigned char c = string[i];
 
-        // Verifica si el carácter es un espacio
         if (c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f')
         {
             hasSpace = 1;
 
-            // Verifica si hay dobles espacios
             if (prevChar == ' ')
             {
                 return 0;
             }
         }
-        // Verifica si el carácter no es una letra o es un espacio
         else if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (((unsigned char)c >= 128 && (unsigned char)c <= 165) || ((unsigned char)c >= 192 && (unsigned char) c <= 255))) && (unsigned char)c != '\0')
         {
             return 0;
@@ -57,38 +54,37 @@ int validSingleString(const char string[])
         prevChar = c;
     }
 
-    // Verifica si la cadena comienza o termina con un espacio
     if (hasSpace || prevChar == ' ')
     {
         return 0;
     }
-    return 1; // La cadena cumple con todas las condiciones
+    return 1; 
 }
 
 int validString(const char string[]) {
     if (string == NULL || string[0] == '\0') {
-        return 0; // La cadena es nula o vacía
+        return 1; 
     }
 
-    int hasSpace = 0;    // Variable para rastrear si hay un espacio
-    int prevCharWasSpace = 1; // Inicializamos prevCharWasSpace en 1 para evitar espacio al principio
+    int hasSpace = 0;    
+    int prevCharWasSpace = 1; 
 
     for (int i = 0; string[i] != '\0'; i++) {
         unsigned char c = string[i];
 
-        // Verifica si el carácter es una letra, un espacio o se encuentra en el rango del código ASCII [128, 165]
+
         if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f' || (c >= 128 && c <= 165)) {
-            // El carácter es válido
+           
         } else {
-            return 0; // El carácter no es válido
+            return 0; 
         }
 
-        // Verifica si hay más de un espacio consecutivo
+     
         if (c == ' ' && prevCharWasSpace) {
             return 0;
         }
 
-        // Actualiza hasSpace si se encuentra un espacio
+    
         if (c == ' ') {
             hasSpace = 1;
         } else {
@@ -98,19 +94,18 @@ int validString(const char string[]) {
         prevCharWasSpace = (c == ' ');
     }
 
-    // Verifica si la cadena comienza o termina con un espacio
     if (hasSpace || prevCharWasSpace) {
         return 0;
     }
 
-    return 1; // La cadena cumple con todas las condiciones
+    return 1; 
 }
+
 
 
 
 void capitalizeWords(char *str)
 {
-    // Variable para rastrear si la próxima letra debe ser mayúscula
     int capitalizeNext = 1;
 
     while (*str)
@@ -162,7 +157,7 @@ const char* validStringNull(const char string[]) {
         if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f' || (c >= 128 && c <= 165)) {
             // El carácter es válido
         } else {
-            return NULL; // El carácter no es válido, devuelve NULL
+            return NULL; 
         }
 
         if (c == ' ' && prevCharWasSpace) {
@@ -182,7 +177,7 @@ const char* validStringNull(const char string[]) {
         return NULL;
     }
 
-    return string; // La cadena cumple con todas las condiciones, devuelve la cadena original
+    return string;
 }
 
 int largoCadena (char cadena[])

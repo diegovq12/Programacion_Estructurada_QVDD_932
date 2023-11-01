@@ -465,36 +465,6 @@ void fixCurp(char curp[])
                               "NACO", "PEDA", "PEDO", "PENE", "PIPI", "PITO", "POPO", "PUTA", "PUTO", "QULO", "RATA", "ROBA", "ROBE", "ROBO",
                               "RUIN", "SENO", "TETA", "VACA", "VAGA", "VAGO", "VAKA", "VUEI", "VUEY", "WUEI", "WUEY"};
 
-    char partes[][6] = {"DAS ", "DEL ", "DE ", "DER ", "DIE ", "LOS ", "LAS ", "LES ", "MAC ", "VAN ", "VON ",
-                        "DA ", "DI ", "DD ", "EL ", "LA ", "LE ", "MC ", "Y "};
-
-    // for (int i = 0; curp[i] != '\0'; i++)
-    // {
-    //     if (curp[i] == '-' || curp[i] == '/' || curp[i] == '.')
-    //     {
-    //         curp[i] = 'X';
-    //     }
-    // }
-
-    // for (int i = 0; curp[i] != '\0'; i++)
-    // {
-    //     {
-    //         curp[i] = 'X';
-    //     }
-    // }
-
-    // for (int i = 0; i < sizeof(partes) / sizeof(partes[0]); i++)
-    // {
-    //     char *parte = partes[i];
-    //     if (strncmp(curp, parte, strlen(parte)) == 0)
-    //     {
-    //         if (curp[strlen(parte)] != 'X')
-    //         {
-    //             curp[strlen(parte)] = 'X';
-    //         }
-    //     }
-    // }
-
     char cadenatemp[5];
     strncpy(cadenatemp, curp, 4);
     cadenatemp[4]='\0';
@@ -515,13 +485,14 @@ void fixCurp(char curp[])
     }
     
 
-//     if (curp[14] == ' ' || curp[14] == '\0')
-//     {
-//         curp[14] = 'X';
-//     }
+    if (curp[14] == ' ' || curp[14] == '\0')
+    {
+        curp[14] = 'X';
+    }
 
-//     if (curp[15] == ' ' || curp[15] == '\0')
-//     {
-//         curp[15] = 'X';
-//     }
+    if (curp[15] == ' ' || curp[15] == '\0')
+    {
+        curp[15] = 'X';
+    }
+    
 }
