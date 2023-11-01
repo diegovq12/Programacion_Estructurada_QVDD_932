@@ -65,7 +65,7 @@ char primeraVocal(char nombre[]);
 void obtenerCodigoEdo(char codigo[], int estado);
 char buscarSegundaConsonante(char cad[]);
 char consonanteNombres(char nombre[]);
-void obtenerHomonimia (int anio, char homonimia[]);
+void obtenerHomonimia(int anio, char homonimia[]);
 //*************
 
 int main()
@@ -146,15 +146,18 @@ void menu(void)
         case 2:
             matricula = validInt(300000, 399999, "INGRESAR MATRICULA A DAR DE BAJA: ", "MATRICULA FUERA DE RANGO\n");
             num = searchLinearId(alumno, indice, matricula);
-            if (num != -1)
+            do
             {
-                alumno[num].status = 0;
-                printf("ALUMNO DADO DE BAJA.\n");
-            }
-            else
-            {
-                printf("MATRICULA NO REGISTRADA\n");
-            }
+                if (num != -1)
+                {
+                    alumno[num].status = 0;
+                    printf("ALUMNO DADO DE BAJA.\n");
+                }
+                else
+                {
+                    printf("MATRICULA NO REGISTRADA\n");
+                }
+            } while (matricula != 0);
             system("PAUSE");
             break;
         case 3:
@@ -300,7 +303,7 @@ void llenarRegistroManual(Testudiante vectorAlumno[], int indice)
     vectorAlumno[indice].estado = genEdo();
     char curpalumno[19];
     curp(vectorAlumno, curpalumno, indice);
-    strcpy(vectorAlumno[indice].curp,curpalumno);
+    strcpy(vectorAlumno[indice].curp, curpalumno);
 }
 
 int searchLinearId(Testudiante vector[], int m, int val)
@@ -431,7 +434,7 @@ void imprimirRegistros(Testudiante vector[], int indice)
                             "Estado de Mexico", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacan", "Morelos", "Nayarit",
                             "Nuevo Leon", "Oaxaca", "Puebla", "Queretaro", "Quintana Roo", "San Luis Potosi", "Sinaloa",
                             "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas", "Extranjero"};
-    printf("MATRICULA   NOMBRE                           APPAT                            APMAT                            FECHA NAC    EDAD   SEXO      LUGAR NAC              CURP\n\n");
+    printf("MATRICULA   APPAT                           APMAT                            NOMBRE                            FECHA NAC    EDAD   SEXO      LUGAR NAC              CURP\n\n");
     for (i = 0; i < indice; i++)
     {
         if (vector[i].status == 1)
@@ -448,7 +451,7 @@ void imprimirRegistros(Testudiante vector[], int indice)
 
             strcpy(estado, estados[vector[i].estado - 1]);
 
-            printf("%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   %-18s\n", vector[i].matricula, vector[i].nombreCompleto.nombre, vector[i].nombreCompleto.apellidoPat, vector[i].nombreCompleto.apellidoMat, vector[i].nacimiento.dia, vector[i].nacimiento.mes, vector[i].nacimiento.anio, vector[i].edad, sexalumn, estado,vector[i].curp);
+            printf("%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   %-18s\n", vector[i].matricula, vector[i].nombreCompleto.apellidoPat, vector[i].nombreCompleto.apellidoMat, vector[i].nombreCompleto.nombre, vector[i].nacimiento.dia, vector[i].nacimiento.mes, vector[i].nacimiento.anio, vector[i].edad, sexalumn, estado, vector[i].curp);
         }
     }
 }
@@ -456,7 +459,7 @@ void imprimirRegistros(Testudiante vector[], int indice)
 void imprimirRegistroIndividual(Testudiante vector[], int num)
 {
     int i;
-    char sexo[2][10] = {"Hombre", "Mujer"};
+    char sexo[2][10] = {"HOMBRE", "MUJER"};
     char sexalumn[10];
     char estado[30];
     char estados[35][35] = {"Aguascalientes", "Baja California", "Baja California Sur", "Campeche",
@@ -464,7 +467,26 @@ void imprimirRegistroIndividual(Testudiante vector[], int num)
                             "Estado de Mexico", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacan", "Morelos", "Nayarit",
                             "Nuevo Leon", "Oaxaca", "Puebla", "Queretaro", "Quintana Roo", "San Luis Potosi", "Sinaloa",
                             "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas", "Extranjero"};
-    printf("MATRICULA   NOMBRE                           APPAT                            APMAT                            FECHA NAC    EDAD   SEXO      LUGAR NAC              CURP\n\n");
+    char nombre1[30];
+    char nombre2[30];
+    char nombre3[30];
+
+    strcpy(nombre1, vector[num].nombreCompleto.nombre);
+
+    char *temp = strtok(nombre1, " ");
+
+    if (temp != NULL)
+    {
+        strcpy(nombre2, temp);
+        printf("nombre2: %s\n", nombre2);
+
+        temp = strtok(NULL, "");
+        if (temp != NULL)
+        {
+            strcpy(nombre3, temp);
+            printf("nombre3: %s\n", nombre3);
+        }
+    }
     for (i = 0; i < 1; i++)
     {
 
@@ -479,7 +501,16 @@ void imprimirRegistroIndividual(Testudiante vector[], int num)
 
         strcpy(estado, estados[vector[num].estado - 1]);
 
-        printf("%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   %-18s\n", vector[num].matricula, vector[num].nombreCompleto.nombre, vector[num].nombreCompleto.apellidoPat, vector[num].nombreCompleto.apellidoMat, vector[num].nacimiento.dia, vector[num].nacimiento.mes, vector[num].nacimiento.anio, vector[num].edad, sexalumn, estado,vector[num].curp);
+        printf("MATRICULA: %d\n", vector[num].matricula);
+        printf("NOMBRE: %s\n", nombre1);
+        printf("NOMBRE 2: %s\n", nombre3);
+        printf("AP PATERNO: %s\n", vector[num].nombreCompleto.apellidoPat);
+        printf("AP MATERNO: %s\n", vector[num].nombreCompleto.apellidoMat);
+        printf("FECHA NAC: %02d-%02d-%4d\n", vector[num].nacimiento.dia, vector[num].nacimiento.mes, vector[num].nacimiento.anio);
+        printf("EDAD: %d\n", vector[num].edad);
+        printf("SEXO: %s\n", sexalumn);
+        printf("LUGAR NACIMIENTO: %s\n", estado);
+        printf("CURP: %s\n", vector[num].curp);
     }
 }
 
@@ -514,7 +545,7 @@ void llenarRegistroATM(Testudiante vector[], int indice)
 
     char curpalumno[19];
     curp(vector, curpalumno, indice);
-    strcpy(vector[indice].curp,curpalumno);
+    strcpy(vector[indice].curp, curpalumno);
 }
 
 int generarDiaAleatorio(int anio, int mes)
@@ -619,16 +650,25 @@ void curp(Testudiante vector[], char curp[], int indice)
 
     int sexo;
     sexo = sexDetect(vector[indice].nombreCompleto.nombre);
+    char c;
+    if (sexo!=1)
+    {
+        c = 'M';
+    }
+    else
+    {
+        c = 'H';
+    }
     char curp0Resultado = letraNombre(vector[indice].nombreCompleto.apellidoPat);
     char curp1Resultado = buscarSegundaConsonante(vector[indice].nombreCompleto.apellidoPat);
     char curp2Resultado = letraNombre(vector[indice].nombreCompleto.apellidoMat);
     char curp3Resultado = letraNombre(vector[indice].nombreCompleto.nombre);
 
-    char codigoEdo[2];
-    obtenerCodigoEdo(codigoEdo,vector[indice].estado);
+    char codigoEdo[3];
+    obtenerCodigoEdo(codigoEdo, vector[indice].estado);
 
-    char homonimia[2];
-    obtenerHomonimia(vector[indice].nacimiento.anio ,homonimia);
+    char homonimia[3];
+    obtenerHomonimia(vector[indice].nacimiento.anio, homonimia);
 
     curp[0] = curp0Resultado ? curp0Resultado : 'X';
     curp[1] = curp1Resultado ? curp1Resultado : 'X';
@@ -640,8 +680,7 @@ void curp(Testudiante vector[], char curp[], int indice)
     curp[7] = mes[1];
     curp[8] = dia[0];
     curp[9] = dia[1];
-    curp[10] = (sexo == 1) ? 'H' : (sexo == 2) ? 'M'
-                                               : 'H';
+    curp[10] = c;
     curp[11] = codigoEdo[0];
     curp[12] = codigoEdo[1];
     curp[13] = consonanteApellido(vector[indice].nombreCompleto.apellidoPat);
@@ -649,7 +688,7 @@ void curp(Testudiante vector[], char curp[], int indice)
     curp[15] = consonanteNombres(vector[indice].nombreCompleto.nombre);
     curp[16] = homonimia[0];
     curp[17] = homonimia[1];
-    curp[18] ='\0';
+    curp[18] = '\0';
 
     convertMayus(curp);
 }
@@ -706,7 +745,7 @@ void separarNombres(char nombre[], char primerNombre[], char otrosNombres[])
 
     if (nombre[i] != '\0')
     {
-        i++; 
+        i++;
         int j = 0;
         while (nombre[i] != '\0')
         {
@@ -772,7 +811,6 @@ char primeraVocal(char nombre[])
     }
 
     return 'X';
-
 }
 
 void obtenerCodigoEdo(char codigo[], int estado)
@@ -848,7 +886,7 @@ char consonanteNombres(char nombre[])
     return buscarSegundaConsonante(primerNombre);
 }
 
-void obtenerHomonimia (int anio, char homonimia[])
+void obtenerHomonimia(int anio, char homonimia[])
 {
     char identificador[2], numero[2];
     int num;
