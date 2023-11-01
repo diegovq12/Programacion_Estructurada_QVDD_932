@@ -8,8 +8,8 @@
 #define FALSE 0
 #define TRUE 1
 
-#define MAX_REG 50
-#define AGG_REG 10
+#define MAX_REG 200
+#define AGG_REG 50
 
 typedef struct _nombreCompleto
 {
@@ -53,7 +53,8 @@ void imprimirRegistroIndividual(Testudiante vector[], int indice);
 void llenarRegistroATM(Testudiante vector[], int indice);
 void ordenarMatriculas(Testudiante vector[], int m);
 void escrbirArchivo(Testudiante vector[], int indice);
-
+void quikSort(Testudiante lista[],int indice);
+void qs(Testudiante lista[], int limiteIzquierdo, int limiteDerecho);
 // FUNCIONES PARA CURP
 void curp(Testudiante vector[], char curp[], int indice);
 char letraNombre(char nombre[]);
@@ -189,14 +190,29 @@ void menu(void)
             system("PAUSE");
             break;
         case 4:
-            if (ordenado == 0)
+            if (indice>100)
             {
-                ordenarMatriculas(alumno, indice);
-                ordenado = 1; // Bandera que indica si los registros estan ordenados o no
+                if (ordenado==0)
+                {
+                    quikSort(alumno,indice);
+                    ordenado = 1;
+                }
+                else
+                {
+                    printf("REGISTROS ACTUALMENTE ORDENADOS\n");  
+                }  
             }
-            else
-            {
-                printf("REGISTROS ACTUALMENTE ORDENADOS\n");
+            else    
+            {  
+                if (ordenado == 0)
+                {
+                    ordenarMatriculas(alumno, indice);
+                    ordenado = 1; // Bandera que indica si los registros estan ordenados o no
+                }
+                else
+                {
+                    printf("REGISTROS ACTUALMENTE ORDENADOS\n");
+                }
             }
             system("PAUSE");
             break;
@@ -478,13 +494,10 @@ void imprimirRegistroIndividual(Testudiante vector[], int num)
     if (temp != NULL)
     {
         strcpy(nombre2, temp);
-        printf("nombre2: %s\n", nombre2);
-
         temp = strtok(NULL, "");
         if (temp != NULL)
         {
             strcpy(nombre3, temp);
-            printf("nombre3: %s\n", nombre3);
         }
     }
     for (i = 0; i < 1; i++)
@@ -632,12 +645,55 @@ void escrbirArchivo(Testudiante vector[], int indice)
 
             strcpy(estado, estados[vector[i].estado - 1]);
 
-            fprintf(fa, "%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   \n", vector[i].matricula, vector[i].nombreCompleto.nombre, vector[i].nombreCompleto.apellidoPat, vector[i].nombreCompleto.apellidoMat, vector[i].nacimiento.dia, vector[i].nacimiento.mes, vector[i].nacimiento.anio, vector[i].edad, sexalumn, estado);
+            fprintf(fa, "%-9d   %-30s   %-30s   %-30s   %02d-%02d-%4d   %-4d   %-7s   %-20s   %-18s\n", vector[i].matricula, vector[i].nombreCompleto.nombre, vector[i].nombreCompleto.apellidoPat, vector[i].nombreCompleto.apellidoMat, vector[i].nacimiento.dia, vector[i].nacimiento.mes, vector[i].nacimiento.anio, vector[i].edad, sexalumn, estado,vector[i].curp);
         }
     }
 
     printf("ARCHIVO ESCRITO CON EXITO.");
     fclose(fa);
+}
+
+void qs(Testudiante lista[], int limiteIzquierdo, int limiteDerecho)
+{
+    int izquierda, derecha,  aux;
+    Testudiante temp;
+    izquierda = limiteIzquierdo;
+    derecha = limiteDerecho;
+    aux = lista[(izquierda + derecha) / 2].matricula;
+
+    do
+    {
+        while (lista[izquierda].matricula < aux && izquierda < limiteDerecho)
+        {
+            izquierda++;
+        }
+        while (aux < lista[derecha].matricula && derecha > limiteIzquierdo)
+        {
+            derecha--;
+        }
+        if (izquierda <= derecha)
+        {
+            temp = lista[izquierda];
+            lista[izquierda] = lista[derecha];
+            lista[derecha] = temp;
+            izquierda++;
+            derecha--;
+        }
+
+    } while (izquierda <= derecha);
+    if (limiteIzquierdo < derecha)
+    {
+        qs(lista, limiteIzquierdo, derecha);
+    }
+    if (limiteDerecho > izquierda)
+    {
+        qs(lista, izquierda, limiteDerecho);
+    }
+}
+
+void quikSort(Testudiante lista[],int indice)
+{
+    qs(lista,0,indice-1);
 }
 
 // FUNCIONES PARA CURP
@@ -651,7 +707,7 @@ void curp(Testudiante vector[], char curp[], int indice)
     int sexo;
     sexo = sexDetect(vector[indice].nombreCompleto.nombre);
     char c;
-    if (sexo!=1)
+    if (sexo != 1)
     {
         c = 'M';
     }
