@@ -54,11 +54,18 @@ void getState(char code[], int stateCode);
 int generarDiaAleatorio(int anio, int mes);
 void fillAtmReg(Tstudent vect[], int index);
 void print1Register(Tstudent vector[], int num);
+int binarySearchId(Tstudent vect[], int val, int start, int end);
+void add1RegTxt(Tstudent vect, int index, FILE *fa);
+void makeFile(Tstudent vect[], int index, char fileName[], int status);
+void genTxt(Tstudent vect[], int index, char fileName[]);
+int regsCount(char fileName[]);
 //***************************
 
 int main()
 {
     srand(time(NULL));
+    system("mingw32-gcc-6.3.0.exe RegisterCounter.c -o RegisterCounter");
+
     menu();
     return 0;
 }
@@ -77,7 +84,7 @@ int msges(void)
     printf("8.- AMMOUNT OF REGISTERS IN FILE\n");
     printf("9.- SHOW DELETED\n");
     printf("0. CLOSE\n");
-    op = validInt(0, 6, "SELECT AN OPTION: ", "INVALID OPTION");
+    op = validInt(0, 9, "SELECT AN OPTION: ", "INVALID OPTION");
     return op;
 }
 
@@ -111,9 +118,10 @@ void menu(void)
                     index = loadFile(student, index, fileName);
                     loaded = TRUE;
                     sorted = FALSE;
+                    makeFile(student, index, "activos.txt", 1);
                 }
             }
-            printf("\n%d\n", index);
+            // printf("\n%d\n", index);
             system("PAUSE");
             break;
         case 2:
@@ -124,6 +132,7 @@ void menu(void)
                     fillAtmReg(student, index);
                     index++;
                 }
+                makeFile(student, index, "activos.txt", 1);
                 sorted = FALSE;
                 printf("FILLED %d REGISTERS\n", AGG_REG);
             }
@@ -143,6 +152,8 @@ void menu(void)
                     student[num].status = 0;
                     printf("STUDENT ID CANCELED.\n");
                 }
+                makeFile(student, index, "activos.txt", 1);
+                makeFile(student, index, "eliminados.txt", 0);
             }
             else
             {
@@ -150,9 +161,8 @@ void menu(void)
             }
             system("PAUSE");
             break;
-
         case 4:
-            id = validInt(300000, 399999, "INGRESAR MATRICULA A BUSCAR: ", "MATRICULA FUERA DE RANGO\n");
+            id = validInt(300000, 399999, "ENTER ID: ", "ID OUT OF RANGE\n");
             if (sorted == FALSE)
             {
                 num = searchLinearId(student, index, id);
@@ -162,7 +172,7 @@ void menu(void)
                 }
                 else
                 {
-                    printf("MATRICULA NO REGISTRADA\n");
+                    printf("ID UNREGISTERED\n");
                 }
             }
             else
@@ -180,13 +190,54 @@ void menu(void)
             system("PAUSE");
             break;
         case 5:
-
+            if (index > 500)
+            {
+                if (sorted == FALSE)
+                {
+                    quikSort(student, index);
+                    printf("REGISTERS SORTED\n");
+                    sorted = TRUE;
+                    makeFile(student, index, "activos.txt", 1);
+                    makeFile(student, index, "eliminados.txt", 0);
+                }
+                else
+                {
+                    printf("REGISTERS CURRENTLY SORTED\n");
+                }
+            }
+            else
+            {
+                if (sorted == FALSE)
+                {
+                    bubbleSortIds(student, index);
+                    sorted = TRUE; // Bandera que indica si los registros estan ordenados o no
+                    printf("REGISTERS SORTED\n");
+                }
+                else
+                {
+                    printf("REGISTERS CURRENTLY SORTED\n");
+                }
+            }
+            system("PAUSE");
             break;
 
         case 6:
             printRegs(student, index);
             system("PAUSE");
             break;
+        case 7:
+            getString(fileName, "ENTER FILE NAME: ");
+            genTxt(student, index, fileName);
+            system("PAUSE");
+
+            break;
+        case 8:
+            getString(fileName, "ENTER FILE TO COUNT REGISTERS: ");
+            regsCount(fileName);
+            system("PAUSE");
+
+            break;
+
         default:
             break;
         }
@@ -198,8 +249,7 @@ int loadFile(Tstudent vect[], int index, char name[])
     FILE *fa;
     Tstudent reg;
     int tempN = 0;
-
-    char dir[] = "C:\\\\Users\\\\diego\\\\Documents\\\\diegouni\\\\Programacion_Estructurada_QVDD_932\\\\Actividad12\\\\";
+    char dir[] = "C:\\\\Users\\\\ADMIN\\\\Documents\\\\UABC 2022-2\\\\Software\\\\Programacion_Estructurada_QVDD_932\\\\Actividad12\\\\";
     strcat(dir, name);
     strcat(dir, ".txt");
     fa = fopen(dir, "r");
@@ -224,7 +274,7 @@ int loadFile(Tstudent vect[], int index, char name[])
     {
         printf("\nFILE UNAVAILABLE\n");
     }
-    return index - 1;
+    return index;
 }
 
 void fillAtmReg(Tstudent vect[], int index)
@@ -440,20 +490,102 @@ int searchLinearId(Tstudent vector[], int m, int val)
 
 void print1Register(Tstudent vector[], int num)
 {
-    // char sexo[2][10] = {"HOMBRE", "MUJER"};
-    // char sexalumn[10];
-    // char estado[30];
-    /*char estados[35][35] = {"Aguascalientes", "Baja California", "Baja California Sur", "Campeche",
-                            "Chiapas", "Chihuahua", "Coahuila", "Colima", "Ciudad de Mexico/CDMX", "Durango",
-                            "Estado de Mexico", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacan", "Morelos", "Nayarit",
-                            "Nuevo Leon", "Oaxaca", "Puebla", "Queretaro", "Quintana Roo", "San Luis Potosi", "Sinaloa",
-                            "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas", "Extranjero"};
-    */
+
     printf("ID: %d\n", vector[num].id);
     printf("NAME: %s\n", vector[num].fullName.name);
     printf("F. LAST NAME: %s\n", vector[num].fullName.fLastName);
     printf("M LAST NAME: %s\n", vector[num].fullName.mLastName);
     printf("AGE: %d\n", vector[num].age);
     printf("SEX: %s\n", vector[num].sex);
-    printf("STATE: %s\n", vector[num].state.state);
+}
+
+int binarySearchId(Tstudent vect[], int val, int start, int end)
+{
+    int mid;
+
+    while (start <= end)
+    {
+        mid = (start + end) / 2;
+        if (vect[mid].id == val)
+        {
+            return mid;
+        }
+        else if (val < vect[mid].id)
+        {
+            end = mid - 1;
+        }
+        else
+        {
+            start = mid + 1;
+        }
+    }
+
+    return -1;
+}
+
+void makeFile(Tstudent vect[], int index, char fileName[], int status)
+{
+    int i;
+    FILE *fa;
+    fa = fopen(fileName, "w");
+
+    if ((strcmp(fileName, "activos.txt") != 0) && (strcmp(fileName, "eliminados.txt") != 0))
+    {
+        fprintf(fa, "%-6s %-10s %-10s %-15s %-15s %-5s %s\n", "No.", "Matricula", "Nombre", "Ape Paterno", "Ape Materno", "Edad", "Sexo");
+    }
+    int j = 0;
+    for (i = 0; i < index; i++)
+    {
+        if (vect[i].status == status)
+        {
+            add1RegTxt(vect[i], j, fa);
+            j++;
+        }
+    }
+
+    fclose(fa);
+}
+
+void add1RegTxt(Tstudent vect, int index, FILE *fa)
+{
+    fprintf(fa, "%2d%-5s%-10d %-10s %-15s %-15s %-5d %s\n",
+            index,
+            ".-",
+            vect.id,
+            vect.fullName.name,
+            vect.fullName.fLastName,
+            vect.fullName.mLastName,
+            vect.age,
+            vect.sex);
+}
+
+void genTxt(Tstudent vect[], int index, char fileName[])
+{
+    char temp[30];
+    strcpy(temp, fileName);
+    strcat(fileName, "Active.txt");
+    makeFile(vect, index, fileName, 1);
+    strcat(temp, "Deleted.txt");
+    makeFile(vect, index, temp, 0);
+    printf("FILES CREATED SUCCESSFULLY\n");
+}
+
+int regsCount(char fileName[])
+{
+    int counter;
+    char cmd[50];
+    strcat(fileName, ".txt");
+
+    sprintf(cmd, "RegisterCounter.exe %s", fileName);
+    counter = system(cmd);
+
+    if (counter != -1)
+    {
+        printf("FILE %s CONTAINS %d REGISTERS\n", fileName, counter);
+    }
+    else
+    {
+        printf("FILE UNAVAILABLE\n");
+    }
+    return counter;
 }
