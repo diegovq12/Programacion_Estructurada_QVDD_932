@@ -21,7 +21,7 @@ void genName(char name[50])
         "Sara", "Elena", "Andrea", "Marta", "Sofia",
         "Beatriz", "Natalia", "Clara", "Silvia", "Lucia", "Catalina",
         "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"};
-        
+
     int OneOrTwo = rand() % 2 + 1; // 1 para un solo nombre, 2 para dos
     int ForM = rand() % 2 + 1;     // 1 para masculino, 2 para femenino
     int namerand, namerand2;
@@ -68,6 +68,35 @@ void genName(char name[50])
 }
 //*****************************************************************
 
+void genNameV2(char name[50])
+{
+    char maleName[25][50] = {
+        "ALEJANDRO", "JUAN", "MANUEL", "JOSE", "LUIS", "CARLOS", "PEDRO",
+        "ANTONIO", "JAVIER", "MIGUEL", "DAVID", "FRANCISCO",
+        "RAUL", "DANIEL", "GUILLERMO", "ALBERTO", "MARIO", "EDUARDO",
+        "ANGEL", "SERGIO", "OSCAR", "RUBEN", "FERNANDO", "JORGE", "DIEGO"};
+
+    char femName[25][50] = {
+        "MARIA", "ANA", "LAURA", "ISABEL", "CARMEN", "ROSA", "PATRICIA",
+        "SARA", "ELENA", "ANDREA", "MARTA", "SOFIA",
+        "BEATRIZ", "NATALIA", "CLARA", "SILVIA", "LUCIA", "CATALINA",
+        "DIANA", "LORENA", "VANESSA", "ALICIA", "CAROLINA", "JULIETA"};
+
+    int ForM = rand() % 2 + 1; // 1 para masculino, 2 para femenino
+    int namerand;
+
+    if (ForM == 1)
+    {
+        namerand = rand() % 25;
+        strcpy(name, maleName[namerand]);
+    }
+    else if (ForM == 2)
+    {
+        namerand = rand() % 25;
+        strcpy(name, femName[namerand]);
+    }
+}
+
 // Funcion que tiene una lista de apellidos y te da uno aleatorio
 void genLastName(char lastname[30])
 {
@@ -91,6 +120,31 @@ int sexDetect(char name[30])
         "Sara", "Elena", "Andrea", "Marta", "Sofia",
         "Beatriz", "Natalia", "Clara", "Silvia", "Lucia", "Catalina",
         "Diana", "Lorena", "Vanessa", "Alicia", "Carolina", "Julieta"};
+
+    char nametemp[30];      // Se genera una cadena temporal
+    strcpy(nametemp, name); // se copia el nombre a comparar en el temporal
+
+    // Se recorta la cadena hasta antes del primer espacio" ", en casod de que sean
+    // dos nombres
+    strtok(nametemp, " ");
+
+    for (int i = 0; i < 25; i++)
+    {
+        if (strcmp(nametemp, femName[i]) == 0)
+        {
+            return 2;
+        }
+    }
+    return 1;
+}
+
+int sexDetectV2(char name[30])
+{
+    char femName[25][50] = {
+        "MARIA", "ANA", "LAURA", "ISABEL", "CARMEN", "ROSA", "PATRICIA",
+        "SARA", "ELENA", "ANDREA", "MARTA", "SOFIA",
+        "BEATRIZ", "NATALIA", "CLARA", "SILVIA", "LUCIA", "CATALINA",
+        "DIANA", "LORENA", "VANESSA", "ALICIA", "CAROLINA", "JULIETA"};
 
     char nametemp[30];      // Se genera una cadena temporal
     strcpy(nametemp, name); // se copia el nombre a comparar en el temporal

@@ -35,7 +35,7 @@ void getString(char string[], char msge[]) {
         }
 
     } while (key != 13);
-    string[i] = '\0';
+    //string[i] = '\0';
 }
 
 
