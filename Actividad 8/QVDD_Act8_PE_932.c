@@ -206,7 +206,7 @@ void imprimir_matriz(int matriz[4][4],int m,int n)
     {
         for(j = 0; j<n ; j++)
         {
-            printf("[%d]",matriz[i][j]);
+            printf("[%2d]",matriz[i][j]);
         }
         printf("\n");
     }   
