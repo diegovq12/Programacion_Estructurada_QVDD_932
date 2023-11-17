@@ -39,10 +39,6 @@ void getString(char string[], char msge[]) {
     //string[i] = '\0';
 }
 
-
-#include <stdio.h>
-#include <stdlib.h>
-
 int validInt(int ri, int rf, char* msge, char* msgeWrong) {
     int num;
     char input[50];
@@ -62,23 +58,28 @@ int validInt(int ri, int rf, char* msge, char* msgeWrong) {
                 if (key == 8 && i > 0) {
                     printf("\b \b");
                     i--;
-                } else {
+                } else if (key != 13) {
                     isValid = 0;
                 }
             }
-        } while (key != 13 || !isValid);
+        } while (key != 13 && isValid);
 
         input[i] = '\0';
-        num = atoi(input);
+        if (i > 0) {
+            num = atoi(input);
 
-        if (num < ri || num > rf) {
-            printf(" %s\n", msgeWrong);
+            if (num < ri || num > rf) {
+                printf(" %s\n", msgeWrong);
+            }
+        } else {
+            // Si no se ingresó ningún número, asigna un valor fuera del rango
+            num = rf + 1;
         }
+
     } while (num < ri || num > rf);
 
     return num;
 }
-
 
 void convertMayus(char *string)
 {
