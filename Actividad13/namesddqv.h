@@ -100,9 +100,10 @@ void genNameV2(char name[50])
 // Funcion que tiene una lista de apellidos y te da uno aleatorio
 void genLastName(char lastname[30])
 {
-    char LastNamelist[30][25] = {"Gonzalez", "Rodriguez", "Lopez", "Perez", "Martinez", "Garcia", "Sanchez",
-                                 "Romero", "Fernandez", "Torres", "Ruiz", "Diaz",
-                                 "Jimenez", "Vargas", "Castro", "Morales", "Rivera", "Ortega", "Parra", "Yepiz", "Aguilar", "Navarro", "Ramirez", "Vicencio", "Llamas", "Diarte"};
+    char LastNamelist[30][25] = {"GONZALEZ", "RODRIGUEZ", "LOPEZ", "PEREZ", "MARTINEZ", "GARCIA", "SANCHEZ",
+                                 "ROMERO", "FERNANDEZ", "TORRES", "RUIZ", "DIAZ", "JIMENEZ", "VARGAS", "CASTRO",
+                                 "MORALES", "RIVERA", "ORTEGA", "PARRA", "YEPIZ", "AGUILAR", "NAVARRO", "RAMIREZ",
+                                 "VICENCIO", "LLAMAS", "DIARTE"};
 
     int namerand = rand() % 25;
 

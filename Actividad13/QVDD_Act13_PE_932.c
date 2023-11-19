@@ -1,8 +1,26 @@
+
+/*
+Quiros Vicencio Diego Demian
+11/08/23(creado) - 11/18/23 (modificado)
+Actividad 13. Registros de empleados y archivos binarios
+1.- Agregar : El programa deberá ser capaz de agregar 100 registros al vector de registros (Generar automáticamente los datos).
+2.- Editar Registro : El programa deberá buscar una matrícula en el vector por medio del método de búsqueda más óptimo. Mostrar los datos en forma de registro Preguntar que campo quire Editar, actualiar los datos en el vector (solo a registros activos)
+3.- Eliminar Registro : El programa deberá buscar una matrícula en el vector por medio del método de búsqueda más óptimo. Utilizar banderas para escoger el método más adecuado., imprimir el registro y preguntar si se quiere eliminar el registro.
+4.- Buscar : El programa deberá buscar una matrícula en el vector por medio del método de búsqueda más óptimo. Utilizar banderas para escoger el método más adecuado. Mostrar los datos en forma de registro
+5.- Ordenar : El programa deberá ordenar el vector por medio del método de ordenación más óptimo. Utilizar banderas para escoger el método más adecuado se ordenará por el campo llave (matrícula)
+6.- Imprimir: El programa deberá mostrar todos los registros del vector y como están en ese momento ordenado o desordenado. (mostrar en forma de tabla )
+7.- Generar Archivo Texto : El programa deberá preguntar al usuario el nombre del archivo,  solo nombre sin extensión, el programa generará un archivo con el nombre proporcionado por el usuario con extensión .txt los datos que pondrá en el archivo de texto serán idénticos a los contenidos en el Vector de registros. (ordenado o desordenado). El programa podrá generar múltiples archivos para comprobar las salidas.
+8.- Mostrar Archivo Texto: El programa deberá preguntar al usuario el nombre del archivo,  solo nombre sin extensión, el programa generará un archivo con el nombre proporcionado por el usuario con extensión .txt mostrar el archivo de texto tal y como se encuantra.
+9.- Crear archivo binario : El programa deberá crear un archivo binario con los datos del vector actualizados, sustituir el archivo base, realizar respaldo del archivo anterior y guardarlo con el mismo nombre pero extencion .tmp (validar msges si el archivo no se puede crear por falta de registros en el vector)
+10 .- Cargar Archivo Binario : El programa deberá cargar al vector los registros del archivo binario (solo podrá cargarse una sola vez el archivo, el archivo binario se debara llamar datos.dll y si no existe debera indicar )
+11.- Mostrar Borrados: El programa deberá mostrar del archivo binario solo los registros que se eliminaron (marcados con status 0) y que fueron marcados en su momento como registros eliminados.
+*/
+
 #include "ddqvalhd.h"
 #include "namesddqv.h"
 
-#define MAX_REG 100
-#define ADD_REG 10
+#define MAX_REG 5000
+#define ADD_REG 100
 #define TRUE 1
 #define FALSE 0
 typedef int Tkey;
@@ -44,8 +62,12 @@ int concatenarEnteros(int num1, int num2);
 int genEdo(void);
 void getState(char code[], int stateCode);
 void eliminarRegistro(Templeado empleado[], int indice, int ordenado);
-
-//************
+int genArch(Templeado vect[], int indice, char nombre[]);
+int leerArchivo(char nombre[]);
+int crearArchivoBinario(Templeado vect[], int indice, char nombre[]);
+int leerArchivoBinario(Templeado vect[], int *indice, char nombre[]);
+void mostrarEliminadosBin(Templeado vect[], int indice);
+//***********************************************************************
 
 int main()
 {
@@ -71,16 +93,18 @@ int msges(void)
     printf("10 .- CARGAR ARCHIVO BINARIO\n");
     printf("11 .- MOSTRAR BORRADOS\n");
     printf("0. SALIR\n");
+    printf("========================================\n");
     op = validInt(0, 11, "INGRESA FUNCION A UTILIZAR: ", "OPCION INVALIDA");
-    printf("========================================");
+    // printf("========================================");
     return op;
 }
 
 void menu()
 {
-    int op;
+    int op, fa;
     int indice = 0, ordenado = 0;
-
+    char nombreArchivo[20];
+    int cargado = FALSE;
     Templeado empleados[MAX_REG];
 
     do
@@ -113,18 +137,20 @@ void menu()
             break;
         case 3:
             // ELIMINAR REGISTRO
-            eliminarRegistro(empleados,indice,ordenado);
+            eliminarRegistro(empleados, indice, ordenado);
             break;
         case 4:
             buscarId(empleados, indice, ordenado);
+            system("PAUSE");
             break;
-        case 5: 
+        case 5:
             if (indice > 250)
             {
                 if (ordenado == 0)
                 {
                     quikSort(empleados, indice);
                     ordenado = TRUE;
+                    printf("SE HAN ORDENADO LOS REGISTROS");
                 }
                 else
                 {
@@ -136,7 +162,8 @@ void menu()
                 if (ordenado == 0)
                 {
                     bubbleSortIds(empleados, indice);
-                    ordenado = TRUE; 
+                    ordenado = TRUE;
+                    printf("SE HAN ORDENADO LOS REGISTROS");
                 }
                 else
                 {
@@ -149,8 +176,98 @@ void menu()
             imprimirRegistros(empleados, indice);
             system("PAUSE");
             break;
+        case 7:
+            getString(nombreArchivo, "INGRESA EL NOMBRE DEL ARCHIVO: ");
+            strcat(nombreArchivo, ".txt");
+            fa = genArch(empleados, indice, nombreArchivo);
+
+            if (fa == 1)
+            {
+                printf("\nEL ARCHIVO SE HA ESCRITO CON EXITO\n");
+            }
+            else
+            {
+                printf("\nERROR AL ESCRIBIR EL ARCHIVO\n");
+            }
+            printf("\n");
+            system("PAUSE");
+            break;
+        case 8:
+            fflush(stdin);
+            getString(nombreArchivo, "INGRESA EL NOMBRE DEL ARCHIVO: ");
+            strcat(nombreArchivo, ".txt");
+            printf("\n");
+            fflush(stdin);
+
+            fa = leerArchivo(nombreArchivo);
+
+            if (fa == 1)
+            {
+                printf("\nEL ARCHIVO SE HA MOSTRADO CON EXITO\n");
+            }
+            else
+            {
+                printf("\nERROR AL MOSTRAR EL ARCHIVO\n");
+            }
+            printf("\n");
+            system("PAUSE");
+            break;
+        case 9:
+            fflush(stdin);
+            getString(nombreArchivo, "INGRESA EL NOMBRE DEL ARCHIVO BINARIO: ");
+            strcat(nombreArchivo, ".dll");
+
+            fflush(stdin);
+
+            fa = crearArchivoBinario(empleados, indice, nombreArchivo);
+
+            if (fa == 1)
+            {
+                printf("\nEL ARCHIVO BINARIO SE HA CREADO CON EXITO\n");
+            }
+            else
+            {
+                printf("\nERROR AL CREAR EL ARCHIVO\n");
+            }
+            printf("\n");
+            system("PAUSE");
+            break;
+
+        case 10:
+
+            if (cargado == FALSE)
+            {
+                fflush(stdin);
+                getString(nombreArchivo, "INGRESA EL NOMBRE DEL ARCHIVO BINARIO: ");
+                strcat(nombreArchivo, ".dll");
+                printf("\n");
+                fflush(stdin);
+                fa = leerArchivoBinario(empleados, &indice, nombreArchivo);
+
+                if (fa == 1)
+                {
+                    printf("\nEL ARCHIVO SE HA CARGADO CON EXITO\n");
+                    cargado = TRUE;
+                }
+                else
+                {
+                    printf("\nERROR AL CARGAR EL ARCHIVO\n");
+                }
+            }
+            else
+            {
+                printf("YA HA SIDO CARGADO UN ARCHIVO");
+            }
+            printf("\n");
+            system("PAUSE");
+            break;
+
+        case 11:
+            mostrarEliminadosBin(empleados, indice);
+            break;
 
         default:
+            printf("\nFINALIZANDO PROGRAMA...");
             break;
         }
     } while (op != 0);
@@ -174,7 +291,7 @@ void imprimirRegistros(Templeado vect[], int index)
         {
             system("PAUSE");
             system("CLS");
-            printf("%-6s %-15s %-15s %-15s %-15s %-5s %-6s %-10s %-9s %s\n",
+            printf("%-6s %-15s %-15s %-15s %-15s %-5s %-6s %-10s      %-9s   %s\n",
                    "No.", "ID", "NOMBRE", "APELLIDO PAT", "APELLIDO MAT", "EDAD", "SEXO", "PUESTO", "CELULAR", "ESTADO");
         }
     }
@@ -198,7 +315,7 @@ void individualList(Templeado vect)
 void mostrar1Registro(Templeado vector[], int num)
 {
 
-    printf("ID: %d\n", vector[num].id);
+    printf("\nID: %d\n", vector[num].id);
     printf("NOMBRE: %s\n", vector[num].nombre);
     printf("APELLIDO PAT: %s\n", vector[num].apellidoP);
     printf("APELLIDO MAT: %s\n", vector[num].apellidoM);
@@ -553,7 +670,7 @@ void getState(char code[], int stateCode)
 void eliminarRegistro(Templeado empleado[], int indice, int ordenado)
 {
 
-    int num = buscarId(empleado,indice,ordenado);
+    int num = buscarId(empleado, indice, ordenado);
     if (num != -1)
     {
         int op = validInt(1, 2, "DAR DE BAJA (1\\SI 2\\NO): ", "OPCION INVALIDA - FUERA DE RANGO");
@@ -566,6 +683,138 @@ void eliminarRegistro(Templeado empleado[], int indice, int ordenado)
     else
     {
         printf("MATRICULA NO REGISTRADA\n");
+    }
+    system("PAUSE");
+}
+
+int genArch(Templeado vect[], int indice, char nombre[])
+{
+    FILE *fa;
+
+    fa = fopen(nombre, "w");
+
+    if (fa == NULL)
+    {
+        return -1;
+    }
+
+    if (fa)
+    {
+        fprintf(fa, "%-6s %-15s %-15s %-15s %-15s %-5s %-6s %-10s      %-9s   %s\n",
+                "No.", "ID", "NOMBRE", "APELLIDO PAT", "APELLIDO MAT", "EDAD", "SEXO", "PUESTO", "CELULAR", "ESTADO");
+
+        for (int i = 0; i < indice; i++)
+        {
+            if (vect[i].status == 1)
+            {
+                fprintf(fa, "%-4d  %-5d        %-15s    %-15s %-15s %-4d %-6s %-10s      %-9d    %-19s\n",
+                        i + 1,
+                        vect[i].id,
+                        vect[i].nombre,
+                        vect[i].apellidoP,
+                        vect[i].apellidoM,
+                        vect[i].edad,
+                        vect[i].sexo,
+                        vect[i].puesto,
+                        vect[i].celular,
+                        vect[i].estado);
+            }
+        }
+        fclose(fa);
+    }
+    return 1;
+}
+
+int leerArchivo(char nombre[])
+{
+    FILE *fa;
+    char caracter;
+
+    fa = fopen(nombre, "r");
+
+    if (fa == NULL)
+    {
+        return -1;
+    }
+
+    if (fa)
+    {
+        while ((caracter = fgetc(fa)) != EOF)
+        {
+            putchar(caracter);
+        }
+
+        fclose(fa);
+    }
+
+    return 1;
+}
+
+int crearArchivoBinario(Templeado vect[], int indice, char nombre[])
+{
+    FILE *fa;
+
+    fa = fopen(nombre, "wb");
+
+    if (fa == NULL)
+    {
+        printf("Error al abrir el archivo para escritura binaria.\n");
+        return -1;
+    }
+
+    fprintf(fa, "%-6s %-15s %-15s %-15s %-15s %-5s %-6s %-10s      %-9s   %s\n",
+            "No.", "ID", "NOMBRE", "APELLIDO PAT", "APELLIDO MAT", "EDAD", "SEXO", "PUESTO", "CELULAR", "ESTADO");
+
+    fwrite(vect, sizeof(Templeado), indice, fa);
+
+    fflush(fa);
+    fclose(fa);
+
+    return 1;
+}
+
+int leerArchivoBinario(Templeado vect[], int *indice, char nombre[])
+{
+    FILE *fa;
+
+    fa = fopen(nombre, "rb");
+
+    if (fa == NULL)
+    {
+        return -1;
+    }
+
+    char encabezado[256];
+    fgets(encabezado, sizeof(encabezado), fa);
+
+    *indice = fread(vect, sizeof(Templeado), MAX_REG, fa);
+
+    fclose(fa);
+    return 1;
+}
+
+void mostrarEliminadosBin(Templeado vect[], int indice)
+{
+    printf("\n\tREGISTROS ELIMINADOS:\n");
+    printf("%-6s %-15s %-15s %-15s %-15s %-5s %-6s %-10s      %-9s   %s\n",
+           "No.", "ID", "NOMBRE", "APELLIDO PAT", "APELLIDO MAT", "EDAD", "SEXO", "PUESTO", "CELULAR", "ESTADO");
+
+    for (int i = 0; i < indice; i++)
+    {
+        if (vect[i].status == 0)
+        {
+            printf("%-4d  %-5d        %-15s    %-15s %-15s %-4d %-6s %-10s      %-9d    %-19s\n",
+                   i + 1,
+                   vect[i].id,
+                   vect[i].nombre,
+                   vect[i].apellidoP,
+                   vect[i].apellidoM,
+                   vect[i].edad,
+                   vect[i].sexo,
+                   vect[i].puesto,
+                   vect[i].celular,
+                   vect[i].estado);
+        }
     }
     system("PAUSE");
 }

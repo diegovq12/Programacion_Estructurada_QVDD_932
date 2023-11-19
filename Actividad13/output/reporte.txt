@@ -1,0 +1,100 @@
+No.    ID              NOMBRE          APELLIDO PAT    APELLIDO MAT    EDAD  SEXO   PUESTO          CELULAR     ESTADO
+1     300031        ISABEL             MORALES         DIAZ            49   MUJER  PSICOLOGO       646122474    HIDALGO            
+2     300199        NATALIA            RUIZ            VICENCIO        20   MUJER  PSICOLOGO       646103447    NAYARIT            
+3     300416        ANDREA             MORALES         VICENCIO        42   MUJER  MAESTRO         646124473    ZACATECAS          
+4     301700        JULIETA            PEREZ           SANCHEZ         40   MUJER  SECRETARIO      646120175    CDMX               
+5     301863        LAURA              LLAMAS          MORALES         25   MUJER  SUBDIRECTOR      646113277    DURANGO            
+6     301935        ELENA              MORALES         RAMIREZ         52   MUJER  ASISTENTE       646128531    MICHOACAN          
+7     302282        PEDRO              GARCIA          RODRIGUEZ       43   HOMBRE DIRECTOR        646116959    HIDALGO            
+8     302289        ALEJANDRO          VICENCIO        SANCHEZ         43   HOMBRE BECARIO         646129749    SAN LUIS POTOSI    
+9     302525        JULIETA            CASTRO          RIVERA          58   MUJER  SUBDIRECTOR      646126469    QUERETARO          
+10    302758        DAVID              DIAZ            MORALES         19   HOMBRE ASISTENTE       646114026    AGUASCALIENTES     
+11    302806        CLARA              FERNANDEZ       AGUILAR         52   MUJER  INTENDENTE      646124943    CHIHUAHUA          
+12    303794        LUCIA              YEPIZ           DIAZ            35   MUJER  SECRETARIO      646111289    AGUASCALIENTES     
+13    304343        LAURA              ROMERO          JIMENEZ         46   MUJER  ESPECIALISTA      646111263    QUERETARO          
+14    304971        BEATRIZ            LLAMAS          CASTRO          31   MUJER  ASISTENTE       646114684    EXTRANJERO         
+15    305291        DIEGO              AGUILAR         YEPIZ           49   HOMBRE COORDINADOR      646123138    TABASCO            
+16    305444        ANA                RODRIGUEZ       LLAMAS          25   MUJER  DIRECTOR        646123717    QUERETARO          
+17    305467        ANGEL              NAVARRO         ROMERO          59   HOMBRE INTENDENTE      646132033    CHIAPAS            
+18    305540        SERGIO             ROMERO          RIVERA          44   HOMBRE BIBLIOTECARIO      646102708    CHIAPAS            
+19    305720        CARLOS             VARGAS          AGUILAR         53   HOMBRE SUBDIRECTOR      646104664    TAMAULIPAS         
+20    305900        ANA                PARRA           VICENCIO        33   MUJER  ASISTENTE       646122500    TLAXCALA           
+21    306679        LUIS               MARTINEZ        LLAMAS          51   HOMBRE BECARIO         646126933    GUANAJUATO         
+22    306991        ANGEL              TORRES          NAVARRO         58   HOMBRE ESPECIALISTA      646131947    SAN LUIS POTOSI    
+23    308499        ALEJANDRO          YEPIZ           VICENCIO        37   HOMBRE SECRETARIO      646115675    GUANAJUATO         
+24    308780        SARA               RUIZ            VARGAS          59   MUJER  DIRECTOR        646106946    GUANAJUATO         
+25    309620        DIANA              PEREZ           TORRES          21   MUJER  DIRECTOR        646129371    CAMPECHE           
+26    310382        RUBEN              ORTEGA          ORTEGA          23   HOMBRE INTENDENTE      646113463    DISTRITO FEDERAL   
+27    310591        VANESSA            TORRES          RAMIREZ         54   MUJER  BIBLIOTECARIO      646125002    QUINTANA ROO       
+28    311019        PATRICIA           VICENCIO        ORTEGA          34   MUJER  ESPECIALISTA      646109981    QUINTANA ROO       
+29    311358        CAROLINA           PEREZ           RAMIREZ         56   MUJER  INTENDENTE      646111120    PUEBLA             
+30    311393        MANUEL             TORRES          MARTINEZ        55   HOMBRE MAESTRO         646112274    BAJA CALIFORNIA    
+31    311653        CAROLINA           VICENCIO        FERNANDEZ       26   MUJER  DIRECTOR        646115245    YUCATAN            
+32    311770        JAVIER             TORRES          VARGAS          29   HOMBRE ASISTENTE       646124300    GUANAJUATO         
+33    311878        JORGE              PARRA           PEREZ           60   HOMBRE BIBLIOTECARIO      646106891    ZACATECAS          
+34    311968        EDUARDO            RAMIREZ         RAMIREZ         46   HOMBRE PSICOLOGO       646101395    DURANGO            
+35    312095        JULIETA            CASTRO          CASTRO          54   MUJER  SECRETARIO      646101959    TLAXCALA           
+37    312336        CATALINA           JIMENEZ         VICENCIO        36   MUJER  COORDINADOR      646110182    DISTRITO FEDERAL   
+38    312979        DIEGO              RIVERA          GONZALEZ        36   HOMBRE SECRETARIO      646108458    JALISCO            
+39    313064        FERNANDO           SANCHEZ         RODRIGUEZ       46   HOMBRE SUBDIRECTOR      646120911    TAMAULIPAS         
+40    313766        MARIO              ORTEGA          AGUILAR         28   HOMBRE BIBLIOTECARIO      646112037    ZACATECAS          
+41    313880        VANESSA            SANCHEZ         GARCIA          20   MUJER  DIRECTOR        646123965    OAXACA             
+42    314294        ANGEL              NAVARRO         GARCIA          34   HOMBRE BECARIO         646113704    PUEBLA             
+43    314456        LUIS               SANCHEZ         NAVARRO         31   HOMBRE BECARIO         646117443    ZACATECAS          
+44    314471                           MARTINEZ        DIAZ            26   MUJER  BECARIO         646123336    TAMAULIPAS         
+45    314899        JULIETA            ROMERO          SANCHEZ         52   MUJER  SECRETARIO      646131230    AGUASCALIENTES     
+46    315287        RAUL               LOPEZ           MORALES         46   HOMBRE SUBDIRECTOR      646103074    GUERRERO           
+47    315590        ALEJANDRO          NAVARRO         YEPIZ           46   HOMBRE DIRECTOR        646127756    SAN LUIS POTOSI    
+48    315649        MIGUEL             VICENCIO        RAMIREZ         28   HOMBRE ESPECIALISTA      646108511    EXTRANJERO         
+49    315650        CATALINA           PARRA           SANCHEZ         35   MUJER  COORDINADOR      646120068    CAMPECHE           
+50    315880        JAVIER             GARCIA          JIMENEZ         43   HOMBRE INTENDENTE      646106173    CHIHUAHUA          
+51    316020        DAVID              FERNANDEZ       VARGAS          52   HOMBRE INTENDENTE      646119099    YUCATAN            
+52    316288        CATALINA           JIMENEZ         RIVERA          35   MUJER  ESPECIALISTA      646116667    BAJA CALIFORNIA    
+53    316302        JORGE              RIVERA          RUIZ            49   HOMBRE INTENDENTE      646131102    NUEVO LEON         
+54    316445        DOROTEO            MORALES         PARRA           57   HOMBRE ESPECIALISTA      646103829    BAJA CALIFORNIA    
+55    316629        CLARA              MARTINEZ        DIAZ            51   MUJER  SECRETARIO      646107638    BAJA CALIFORNIA SUR
+56    316851        DIEGO              LOPEZ           LOPEZ           44   HOMBRE SUBDIRECTOR      646132172    EXTRANJERO         
+57    316962        LORENA             SANCHEZ         DIAZ            60   MUJER  SUBDIRECTOR      646113358    SINALOA            
+58    317142        SERGIO             PARRA           VICENCIO        44   HOMBRE MAESTRO         646109925    COAHUILA           
+59    317232        ANTONIO            JIMENEZ         ORTEGA          45   HOMBRE ASISTENTE       646104737    ZACATECAS          
+60    317406        JULIETA            ORTEGA          MORALES         43   MUJER  SECRETARIO      646127866    QUERETARO          
+61    318435        ANTONIO            RAMIREZ         VICENCIO        28   HOMBRE MAESTRO         646105532    CAMPECHE           
+62    318773        ROSA               MORALES         ORTEGA          29   MUJER  SUBDIRECTOR      646118173    YUCATAN            
+63    318936        ANGEL              SANCHEZ         VICENCIO        29   HOMBRE BECARIO         646107872    SAN LUIS POTOSI    
+64    319067        MIGUEL             LOPEZ           SANCHEZ         40   HOMBRE COORDINADOR      646121394    SINALOA            
+65    319344        JAVIER             SANCHEZ         VARGAS          26   HOMBRE PSICOLOGO       646113551    YUCATAN            
+66    319537        RUBEN              MORALES         DIAZ            44   HOMBRE MAESTRO         646106705    MORELOS            
+67    319751        LORENA             TORRES          RUIZ            53   MUJER  SUBDIRECTOR      646128736    MORELOS            
+68    319765        ELENA              NAVARRO         VARGAS          38   MUJER  BIBLIOTECARIO      646122412    SINALOA            
+69    319999        LUCIA              ORTEGA          PARRA           25   MUJER  DIRECTOR        646109985    MORELOS            
+70    320485        PATRICIA           NAVARRO         MORALES         58   MUJER  PSICOLOGO       646118521    COLIMA             
+71    320618        CLARA              ORTEGA          SANCHEZ         50   MUJER  BECARIO         646114321    NAYARIT            
+72    321539        MARIO              SANCHEZ         ROMERO          42   HOMBRE SECRETARIO      646106742    TLAXCALA           
+73    322105                           RAMIREZ         RIVERA          20   MUJER  BECARIO         646101586    MICHOACAN          
+74    322128        MARIO              MARTINEZ        PARRA           50   HOMBRE PSICOLOGO       646110822    AGUASCALIENTES     
+75    322372        LAURA              RIVERA          VARGAS          30   MUJER  ASISTENTE       646112447    BAJA CALIFORNIA SUR
+76    323373        GUILLERMO          PARRA           YEPIZ           57   HOMBRE SECRETARIO      646114413    DURANGO            
+77    323640        SARA               ORTEGA          MARTINEZ        60   MUJER  ASISTENTE       646101871    AGUASCALIENTES     
+78    324559        DAVID              VICENCIO        RAMIREZ         38   HOMBRE ESPECIALISTA      646127214    EXTRANJERO         
+79    324699        SOFIA              VARGAS          GONZALEZ        58   MUJER  PSICOLOGO       646125632    CAMPECHE           
+80    324875        CARMEN             NAVARRO         PEREZ           22   MUJER  BECARIO         646123615    CAMPECHE           
+81    324944        ROSA               FERNANDEZ       JIMENEZ         24   MUJER  PSICOLOGO       646120119    BAJA CALIFORNIA    
+82    325396        ALEJANDRO          JIMENEZ         PARRA           55   HOMBRE ASISTENTE       646114117    BAJA CALIFORNIA    
+83    325742        CARMEN             LOPEZ           MARTINEZ        43   MUJER  COORDINADOR      646118601    SAN LUIS POTOSI    
+84    326890        GUILLERMO          RIVERA          MORALES         20   HOMBRE ESPECIALISTA      646124739    ZACATECAS          
+85    327124        JAVIER             LOPEZ           YEPIZ           19   HOMBRE COORDINADOR      646128257    QUERETARO          
+86    328577        SILVIA             JIMENEZ         TORRES          24   MUJER  BIBLIOTECARIO      646114792    COLIMA             
+87    328709        LORENA             RAMIREZ         YEPIZ           24   MUJER  ASISTENTE       646125337    CAMPECHE           
+88    329171        SILVIA             FERNANDEZ       NAVARRO         54   MUJER  ESPECIALISTA      646122593    VERACRUZ           
+89    329510        RUBEN              RUIZ            JIMENEZ         53   HOMBRE ESPECIALISTA      646129276    QUINTANA ROO       
+90    329829        DIANA              GARCIA          AGUILAR         22   MUJER  SECRETARIO      646114921    TLAXCALA           
+91    329848        CATALINA           VARGAS          LLAMAS          44   MUJER  INTENDENTE      646127628    SINALOA            
+92    330097        ANGEL              VARGAS          MORALES         26   HOMBRE SUBDIRECTOR      646127121    MICHOACAN          
+93    330361        CATALINA           NAVARRO         ROMERO          27   MUJER  BIBLIOTECARIO      646105395    BAJA CALIFORNIA    
+94    330589        DANIEL             TORRES          RUIZ            18   HOMBRE COORDINADOR      646127191    SINALOA            
+95    330663        SERGIO             GONZALEZ        DIAZ            36   HOMBRE COORDINADOR      646120868    HIDALGO            
+96    332031        ANDREA             RAMIREZ         RIVERA          21   MUJER  INTENDENTE      646132433    SONORA             
+97    332137        FERNANDO           RODRIGUEZ       GONZALEZ        58   HOMBRE BECARIO         646129681    CHIHUAHUA          
+98    332424        PEDRO              GARCIA          CASTRO          29   HOMBRE ESPECIALISTA      646109420    AGUASCALIENTES     
+99    332664        SILVIA             LOPEZ           VARGAS          25   MUJER  INTENDENTE      646122077    MICHOACAN          
+100   332717        JUAN               VICENCIO        GONZALEZ        56   HOMBRE DIRECTOR        646116723    NAYARIT            
