@@ -1,103 +1,401 @@
 MATRICULA   NOMBRE                           APPAT                            APMAT                            FECHA NAC    EDAD   SEXO      LUGAR NAC              CURP
-301447      JULIETA CATALINA                 GARCIA                           VICENCIO                         31-01-1991   32     Mujer     Zacatecas              GAVJ910131HZSRCL06
-301823      ANTONIO                          GONZALEZ                         MARTINEZ                         26-08-1944   79     Hombre    Sinaloa                GOMA440826HSLNRN01
-302219      ANGEL OSCAR                      PEREZ                            FERNANDEZ                        23-12-1933   90     Hombre    Quintana Roo           PEFA331223HQRRRN02
-302716      ANTONIO                          GARCIA                           DIAZ                             13-04-1928   95     Hombre    Colima                 GADA280413HCMRZN03
-302794      DANIEL                           GONZALEZ                         NAVARRO                          15-01-1982   41     Hombre    Colima                 GOND820115HCMNVN04
-302954      ANA                              DIAZ                             LLAMAS                           07-08-2002   21     Mujer     Morelos                DILA020807HMSZLNA6
-303201      NATALIA                          LOPEZ                            GONZALEZ                         18-05-1918   105    Mujer     Colima                 LOGN180518HCMPNT08
-303212      FRANCISCO MARIO                  AGUILAR                          VARGAS                           31-10-1927   96     Hombre    Extranjero             AUVF271031HNEGRR05
-303499      LUCIA                            RAMIREZ                          VICENCIO                         05-01-2003   20     Mujer     Sinaloa                RAVL030105HSLMCCA4
-304396      JULIETA SOFIA                    RUIZ                             PEREZ                            01-09-1954   69     Mujer     Colima                 RUPJ540901HCMZRL00
-304528      MARIO CARLOS                     YEPIZ                            RUIZ                             16-04-1987   36     Hombre    Extranjero             YERM870416HNEPZR00
-304667      FERNANDO                         PEREZ                            JIMENEZ                          24-06-1926   97     Hombre    Tamaulipas             PEJF260624HTSRMR09
-304700      JOSE MIGUEL                      AGUILAR                          CASTRO                           08-09-1900   123    Hombre    Queretaro              AUCM000908HQTGSG08
-304987      PATRICIA                         JIMENEZ                          RIVERA                           19-04-1917   106    Mujer     Quintana Roo           JIRP170419HQRMVT00
-305069      ISABEL                           SANCHEZ                          GONZALEZ                         06-08-1957   66     Mujer     Sinaloa                SAGI570806HSLNNS00
-305190      CARLOS ALBERTO                   AGUILAR                          LLAMAS                           24-08-2004   19     Hombre    Queretaro              AULC040824HQTGLRA7
-305309      DIEGO DAVID                      VICENCIO                         ROMERO                           24-09-1923   100    Hombre    Quintana Roo           VIRD230924HQRCMG05
-305441      ALBERTO                          CASTRO                           VARGAS                           04-10-1905   118    Hombre    Tabasco                CAVA051004HTCSRL08
-305750      DIEGO                            PEREZ                            GONZALEZ                         11-09-1938   85     Hombre    Puebla                 PEGD380911HPLRNG07
-305851      ALEJANDRO JUAN                   RODRIGUEZ                        JIMENEZ                          07-11-1964   59     Hombre    Tlaxcala               ROJA641107HTLDML09
-306037      LAURA CAROLINA                   AGUILAR                          ORTEGA                           01-09-1923   100    Mujer     Guanajuato             AUOL230901HGTGRR07
-306052      OSCAR                            DIAZ                             LLAMAS                           02-06-1923   100    Hombre    Tlaxcala               DILO230602HTLZLS07
-306066      JAVIER                           ORTEGA                           FERNANDEZ                        08-07-1976   47     Hombre    Extranjero             OEFJ760708HNERRV04
-306602      JULIETA                          AGUILAR                          PARRA                            15-06-1999   24     Mujer     Baja California        AUPJ990615HBCGRL06
-306988      SERGIO                           MORALES                          ORTEGA                           23-01-1992   31     Hombre    Oaxaca                 MOOS920123HOCRRR05
-307559      ALEJANDRO                        PEREZ                            TORRES                           13-01-1980   43     Hombre    Puebla                 PETA800113HPLRRL02
-308289      CARMEN CLARA                     PARRA                            RAMIREZ                          01-06-1941   82     Mujer     Tlaxcala               PARC410601HTLRMR00
-309001      MARTA BEATRIZ                    PEREZ                            YEPIZ                            20-03-1985   38     Mujer     Nuevo Leon             PEYM850320HNLRPR07
-309288      SARA CATALINA                    GONZALEZ                         ORTEGA                           10-07-1945   78     Mujer     Tabasco                GOOS450710HTCNRR05
-309764      BEATRIZ ANA                      PEREZ                            FERNANDEZ                        12-07-1995   28     Mujer     Coahuila               PEFB950712HCLRRT06
-309810      ISABEL                           AGUILAR                          PARRA                            17-01-1932   91     Mujer     Tamaulipas             AUPI320117HTSGRS06
-310142      EDUARDO                          ROMERO                           ORTEGA                           16-04-1950   73     Hombre    Queretaro              ROOE500416HQTMRD07
-310417      JORGE MIGUEL                     GARCIA                           DIAZ                             03-06-1965   58     Hombre    Aguascalientes         GADJ650603HASRZR08
-310459      JOSE MARIO                       GARCIA                           YEPIZ                            11-05-1940   83     Hombre    Sinaloa                GAYM400511HSLRPR06
-310688      ANTONIO MARIO                    PEREZ                            LLAMAS                           14-05-1997   26     Hombre    Colima                 PELA970514HCMRLN06
-310931      ANGEL DAVID                      LLAMAS                           LOPEZ                            01-06-1927   96     Hombre    Hidalgo                LALA270601HHGLPN06
-311022      FERNANDO                         RUIZ                             NAVARRO                          15-06-1903   120    Hombre    Chiapas                RUNF030615HCSZVR07
-311884       MARIA                           NAVARRO                          LLAMAS                           17-04-1978   45     Hombre    Sinaloa                NALX780417HSLVLX07
-312076      ANGEL                            VICENCIO                         PEREZ                            08-05-1910   113    Hombre    Michoacan              VIPA100508HMNCRN05
-312193      RUBEN                            SANCHEZ                          ROMERO                           02-10-1993   30     Hombre    Ciudad de Mexico/CDMX   SARR931002HMCNMB08
-312291      CLARA                            YEPIZ                            NAVARRO                          28-10-1941   82     Mujer     San Luis Potosi        YENC411028HSPPVL09
-312762      RUBEN                            VARGAS                           ROMERO                           06-02-1958   65     Hombre    Jalisco                VARR580206HJCRMB04
-313283      JULIETA CLARA                    RUIZ                             RODRIGUEZ                        06-11-1951   72     Mujer     Colima                 RURJ511106HCMZDL07
-313348      RUBEN PEDRO                      JIMENEZ                          RIVERA                           31-12-2000   23     Hombre    Baja California Sur    JIRR001231HBSMVBA9
-314369      RAUL FRANCISCO                   AGUILAR                          TORRES                           24-04-2002   21     Hombre    Zacatecas              AUTR020424HZSGRLA2
-314518      MARIA                            RODRIGUEZ                        MORALES                          08-11-1956   67     Mujer     Tabasco                ROMM561108HTCDRX02
-314734      ANA                              PEREZ                            VARGAS                           09-09-1996   27     Mujer     Estado de Mexico       PEVA960909HDFRRN01
-314890      ANTONIO                          ORTEGA                           JIMENEZ                          31-08-1989   34     Hombre    Hidalgo                OEJA890831HHGRMN08
-315326      EDUARDO MANUEL                   ORTEGA                           DIAZ                             04-09-1926   97     Hombre    Oaxaca                 OEDE260904HOCRZD04
-315361      ANA                              GARCIA                           RIVERA                           08-09-1916   107    Mujer     Estado de Mexico       GARA160908HDFRVN00
-316054       NATALIA                         AGUILAR                          MARTINEZ                         28-06-1998   25     Hombre    Oaxaca                 AUMX980628HOCGRX05
-316229      OSCAR                            MORALES                          RAMIREZ                          08-09-1995   28     Hombre    Chiapas                MORO950908HCSRMS09
-316519      CARLOS                           LLAMAS                           CASTRO                           16-02-1901   122    Hombre    Zacatecas              LACC010216HZSLSR09
-317202      RUBEN FRANCISCO                  LOPEZ                            CASTRO                           04-12-1921   102    Hombre    Zacatecas              LOCR211204HZSPSB01
-317876      SERGIO                           GARCIA                           LOPEZ                            04-03-2004   19     Hombre    Tabasco                GALS040304HTCRPRA5
-318074      JOSE JUAN                        VICENCIO                         RIVERA                           17-12-2006   17     Hombre    San Luis Potosi        VIRJ061217HSPCVNA0
-318199      CATALINA                         FERNANDEZ                        FERNANDEZ                        23-04-1937   86     Mujer     Tabasco                FEFC370423HTCRRT07
-318551      MANUEL FERNANDO                  MORALES                          VARGAS                           13-11-2001   22     Hombre    Campeche               MOVM011113HCCRRNA8
-319249      BEATRIZ                          MORALES                          NAVARRO                          21-06-1977   46     Mujer     Guanajuato             MONB770621HGTRVT07
-319251      DIEGO                            FERNANDEZ                        MORALES                          16-08-1903   120    Hombre    Chiapas                FEMD030816HCSRRG00
-320218      DIANA MARIA                      MORALES                          MORALES                          01-05-1919   104    Mujer     Veracruz               MOMD190501HVZRRN04
-320373      MIGUEL                           RAMIREZ                          RUIZ                             26-01-1937   86     Hombre    Tamaulipas             RARM370126HTSMZG09
-321131      BEATRIZ CATALINA                 TORRES                           PARRA                            12-09-1968   55     Mujer     Morelos                TOPB680912HMSRRT00
-321459      MANUEL                           CASTRO                           ROMERO                           01-06-1910   113    Hombre    Queretaro              CARM100601HQTSMN05
-321529      JUAN DIEGO                       RAMIREZ                          PARRA                            21-04-1991   32     Hombre    Sonora                 RAPJ910421HSRMRN02
-321722      MARIA SOFIA                      RUIZ                             TORRES                           08-04-1991   32     Mujer     Baja California        RUTS910408HBCZRF02
-321775      GUILLERMO                        TORRES                           TORRES                           22-08-1974   49     Hombre    Yucatan                TOTG740822HYNRRL03
-321914      LAURA                            YEPIZ                            LOPEZ                            15-03-1999   24     Mujer     Veracruz               YELL990315HVZPPR09
-322907      PEDRO FERNANDO                   PARRA                            SANCHEZ                          21-02-1920   103    Hombre    Baja California        PASP200221HBCRND03
-322936      DIEGO                            GONZALEZ                         RIVERA                           26-06-1921   102    Hombre    Morelos                GORD210626HMSNVG05
-323362      ALBERTO MARIO                    JIMENEZ                          LOPEZ                            19-02-1954   69     Hombre    Ciudad de Mexico/CDMX   JILA540219HMCMPL09
-323750      DANIEL                           TORRES                           PEREZ                            14-01-1996   27     Hombre    Extranjero             TOPD960114HNERRN07
-324332      ALEJANDRO                        GARCIA                           CASTRO                           25-01-1902   121    Hombre    Durango                GACA020125HDGRSL00
-324333      ROSA                             YEPIZ                            RODRIGUEZ                        24-03-2001   22     Mujer     Nuevo Leon             YERR010324HNLPDSA4
-324889      JULIETA SILVIA                   RAMIREZ                          MORALES                          08-09-2005   18     Mujer     Durango                RAMJ050908HDGMRLA2
-324959      ALICIA LUCIA                     FERNANDEZ                        RODRIGUEZ                        11-09-1904   119    Mujer     Estado de Mexico       FERA040911HDFRDL07
-325006      PATRICIA MARTA                   TORRES                           MORALES                          24-04-1902   121    Mujer     Campeche               TOMP020424HCCRRT01
-325202      CAROLINA                         GARCIA                           ORTEGA                           10-08-1946   77     Mujer     Sonora                 GAOC460810HSRRRR07
-325750      DIEGO MIGUEL                     NAVARRO                          YEPIZ                            19-05-1996   27     Hombre    Hidalgo                NAYD960519HHGVPG06
-326670      ANTONIO GUILLERMO                TORRES                           RUIZ                             11-01-1906   117    Hombre    Quintana Roo           TORA060111HQRRZN09
-327339      DIEGO                            LOPEZ                            RODRIGUEZ                        01-08-1992   31     Hombre    Morelos                LORD920801HMSPDG06
-327550      FRANCISCO GUILLERMO              GARCIA                           VARGAS                           26-03-1952   71     Hombre    Yucatan                GAVF520326HYNRRR00
-327591      LORENA CARMEN                    SANCHEZ                          VICENCIO                         21-01-1984   39     Mujer     Baja California        SAVL840121HBCNCR02
-327671      RUBEN                            VARGAS                           TORRES                           13-01-1949   74     Hombre    Tamaulipas             VATR490113HTSRRB02
-327814      RUBEN DIEGO                      RUIZ                             MARTINEZ                         08-02-1966   57     Hombre    Michoacan              RUMR660208HMNZRB00
-328185      VANESSA                          TORRES                           VICENCIO                         27-07-1923   100    Mujer     Extranjero             TOVV230727HNERCN05
-328497      ELENA                            YEPIZ                            VICENCIO                         19-07-1905   118    Mujer     Chihuahua              YEVE050719HCHPCL07
-328536      CATALINA                         RAMIREZ                          ROMERO                           08-12-1904   119    Mujer     Sonora                 RARC041208HSRMMT09
-329100      LAURA MARTA                      RUIZ                             AGUILAR                          26-03-1949   74     Mujer     Oaxaca                 RUAL490326HOCZGR06
-329430      ALBERTO                          PARRA                            YEPIZ                            24-10-2000   23     Hombre    Campeche               PAYA001024HCCRPLA2
-329553      SILVIA LORENA                    SANCHEZ                          RUIZ                             08-10-1996   27     Mujer     Durango                SARS961008HDGNZL03
-329591      PATRICIA ALICIA                  ROMERO                           JIMENEZ                          09-11-2007   16     Mujer     Sonora                 ROJP071109HSRMMTA5
-330319      JOSE                             VARGAS                           TORRES                           25-07-1941   82     Hombre    Colima                 VATJ410725HCMRRX03
-330407      MIGUEL PEDRO                     GONZALEZ                         RUIZ                             13-12-1901   122    Hombre    Chihuahua              GORM011213HCHNZG07
-330576      VANESSA                          TORRES                           ROMERO                           02-06-1960   63     Mujer     Veracruz               TORV600602HVZRMN02
-330838      ANA                              LLAMAS                           VICENCIO                         10-01-1929   94     Mujer     Nayarit                LAVA290110HNTLCN03
-331291      ANDREA LORENA                    CASTRO                           MARTINEZ                         30-10-1975   48     Mujer     Jalisco                CAMA751030HJCSRN04
-332110      EDUARDO OSCAR                    VICENCIO                         FERNANDEZ                        14-09-1909   114    Hombre    Hidalgo                VIFE090914HHGCRD05
-332641      MANUEL                           NAVARRO                          VICENCIO                         25-11-2000   23     Hombre    Extranjero             NAVM001125HNEVCNA4
-332725      SILVIA                           MARTINEZ                         CASTRO                           19-12-1946   77     Mujer     Puebla                 MACS461219HPLRSL08
-372688      DIEGO DEMIAN                     QUIROS                           VICENCIO                         12-08-2004   19     Hombre    Baja California        QUVD040812HBCRCGA8
-372689      CATALINA                         VICENCIO                         LLAMAS                           19-07-1973   50     Mujer     Sonora                 VILC730719HSRCLT04
+300048      OSCAR                            TORRES                           SANCHEZ                          08-04-1963   60     Hombre    Sonora                 TOSO630408HSRRNS06
+300078      CATALINA                         VICENCIO                         NAVARRO                          20-05-1957   66     Mujer     Oaxaca                 VINC570520HOCCVT01
+300107      DANIEL                           MARTINEZ                         SANCHEZ                          07-12-1951   72     Hombre    Colima                 MASD511207HCMRNN05
+300205      OSCAR                            RAMIREZ                          TORRES                           10-04-1927   96     Hombre    Tabasco                RATO270410HTCMRS09
+300222      FERNANDO                         YEPIZ                            GARCIA                           20-04-1957   66     Hombre    Sonora                 YEGF570420HSRPRR06
+300231      CAROLINA                         LLAMAS                           NAVARRO                          04-02-1997   26     Mujer     Tabasco                LANC970204HTCLVR03
+300239      MARIO SERGIO                     PARRA                            GARCIA                           13-11-1918   105    Hombre    Campeche               PAGM181113HCCRRR01
+300320      DAVID PEDRO                      TORRES                           TORRES                           22-05-2001   22     Hombre    Tamaulipas             TOTD010522HTSRRVA6
+300351      MARIA                            AGUILAR                          ORTEGA                           28-11-1958   65     Mujer     Oaxaca                 AUOM581128HOCGRX02
+300397      LUCIA SOFIA                      RAMIREZ                          RODRIGUEZ                        10-11-1905   118    Mujer     Coahuila               RARL051110HCLMDC05
+300403      FRANCISCO                        CASTRO                           ROMERO                           21-05-1904   119    Hombre    Extranjero             CARF040521HNESMR05
+300434      SOFIA                            SANCHEZ                          VICENCIO                         02-09-1999   24     Mujer     Yucatan                SAVS990902HYNNCF04
+300450      ANTONIO                          GARCIA                           VICENCIO                         24-04-1911   112    Hombre    Guanajuato             GAVA110424HGTRCN09
+300463      DIANA                            FERNANDEZ                        GARCIA                           01-06-1982   41     Mujer     Veracruz               FEGD820601HVZRRN09
+300713      ELENA ANDREA                     MARTINEZ                         SANCHEZ                          24-12-1949   74     Mujer     Chiapas                MASE491224HCSRNL09
+300835      MARIO ANTONIO                    DIAZ                             RODRIGUEZ                        26-11-1947   76     Hombre    Extranjero             DIRM471126HNEZDR03
+301017      ISABEL                           ROMERO                           RODRIGUEZ                        05-08-1905   118    Mujer     San Luis Potosi        RORI050805HSPMDS00
+301310      ANTONIO FRANCISCO                LLAMAS                           MORALES                          29-08-1930   93     Hombre    Sonora                 LAMA300829HSRLRN09
+301322      JORGE JUAN                       YEPIZ                            GONZALEZ                         23-01-1906   117    Hombre    Tamaulipas             YEGJ060123HTSPNR02
+301335      FRANCISCO                        PEREZ                            MARTINEZ                         07-12-1976   47     Hombre    Veracruz               PEMF761207HVZRRR08
+301746      DANIEL EDUARDO                   CASTRO                           YEPIZ                            15-01-1966   57     Hombre    Baja California Sur    CAYD660115HBSSPN04
+301874      LORENA                           PEREZ                            MARTINEZ                         01-02-1981   42     Mujer     Baja California Sur    PEML810201HBSRRR09
+301914      FRANCISCO RAUL                   MARTINEZ                         VARGAS                           20-10-1939   84     Hombre    Colima                 MAVF391020HCMRRR01
+301917      LUIS PEDRO                       VICENCIO                         TORRES                           19-07-1995   28     Hombre    Veracruz               VITL950719HVZCRS01
+301924      RUBEN                            ORTEGA                           ROMERO                           22-03-2001   22     Hombre    Yucatan                OERR010322HYNRMBA4
+301975      PATRICIA ISABEL                  NAVARRO                          MORALES                          28-03-1926   97     Mujer     Chiapas                NAMP260328HCSVRT04
+302047      FERNANDO EDUARDO                 RODRIGUEZ                        PEREZ                            26-09-1902   121    Hombre    Veracruz               ROPF020926HVZDRR09
+302093      OSCAR                            FERNANDEZ                        RUIZ                             26-06-1988   35     Hombre    Queretaro              FERO880626HQTRZS00
+302158      MARIO                            LLAMAS                           YEPIZ                            07-07-1958   65     Hombre    Estado de Mexico       LAYM580707HDFLPR05
+302202      RAUL SERGIO                      JIMENEZ                          SANCHEZ                          12-10-1920   103    Hombre    Aguascalientes         JISR201012HASMNL00
+302289      LORENA MARTA                     SANCHEZ                          GARCIA                           06-07-1967   56     Mujer     Aguascalientes         SAGL670706HASNRR03
+302367      ANA                              JIMENEZ                          PARRA                            27-06-1924   99     Mujer     Nayarit                JIPA240627HNTMRN07
+302472      ELENA                            FERNANDEZ                        MARTINEZ                         24-08-2000   23     Mujer     Zacatecas              FEME000824HZSRRLA6
+302495      CARLOS                           JIMENEZ                          LOPEZ                            28-07-1940   83     Hombre    Hidalgo                JILC400728HHGMPR06
+302595      JAVIER JUAN                      YEPIZ                            GONZALEZ                         02-11-1974   49     Hombre    Sonora                 YEGJ741102HSRPNV03
+302753      LORENA                           ORTEGA                           FERNANDEZ                        27-02-1949   74     Mujer     Campeche               OEFL490227HCCRRR01
+302764      DIEGO                            YEPIZ                            MORALES                          26-12-1997   26     Hombre    Tlaxcala               YEMD971226HTLPRG06
+302851      ANGEL DAVID                      CASTRO                           CASTRO                           30-01-1909   114    Hombre    Ciudad de Mexico/CDMX   CXCA090130HMCSSN02
+302957      CARLOS LUIS                      TORRES                           MARTINEZ                         24-05-1925   98     Hombre    Queretaro              TOMC250524HQTRRR02
+302996      ANGEL                            VARGAS                           MARTINEZ                         12-06-1957   66     Hombre    Zacatecas              VAMA570612HZSRRN01
+303025      MARIO                            YEPIZ                            VICENCIO                         13-12-1903   120    Hombre    Guanajuato             YEVM031213HGTPCR09
+303118      CARMEN                           VICENCIO                         ROMERO                           23-12-1908   115    Mujer     Tamaulipas             VIRC081223HTSCMR07
+303264      JULIETA SARA                     NAVARRO                          MARTINEZ                         04-03-1989   34     Mujer     Quintana Roo           NAMJ890304HQRVRL02
+303295      GUILLERMO JAVIER                 LOPEZ                            JIMENEZ                          26-10-1925   98     Hombre    Tabasco                LOJG251026HTCPML06
+303309      ELENA JULIETA                    NAVARRO                          SANCHEZ                          04-07-2006   17     Mujer     Quintana Roo           NASE060704HQRVNLA0
+303363      SILVIA                           YEPIZ                            JIMENEZ                          18-02-1907   116    Mujer     Yucatan                YEJS070218HYNPML04
+303403      PATRICIA SILVIA                  VICENCIO                         RODRIGUEZ                        29-05-1965   58     Mujer     Nuevo Leon             VIRP650529HNLCDT06
+303476      JORGE                            PARRA                            MORALES                          10-02-1948   75     Hombre    Tlaxcala               PAMJ480210HTLRRR08
+303502      CATALINA                         CASTRO                           RODRIGUEZ                        17-01-1932   91     Mujer     Nuevo Leon             CARC320117HNLSDT03
+303677      MANUEL JUAN                      MARTINEZ                         CASTRO                           01-11-2004   19     Hombre    Sinaloa                MACM041101HSLRSNA1
+303699      ALEJANDRO DANIEL                 RUIZ                             VARGAS                           10-06-1966   57     Hombre    Oaxaca                 RUVA660610HOCZRL08
+303861      ANTONIO MANUEL                   AGUILAR                          TORRES                           04-02-1909   114    Hombre    Tabasco                AUTA090204HTCGRN05
+303869      DIEGO RUBEN                      AGUILAR                          LLAMAS                           22-12-1914   109    Hombre    Coahuila               AULD141222HCLGLG06
+303870      JAVIER MIGUEL                    TORRES                           RAMIREZ                          20-02-1984   39     Hombre    Estado de Mexico       TORJ840220HDFRMV00
+303884      FRANCISCO                        LLAMAS                           PEREZ                            23-09-1975   48     Hombre    Chiapas                LAPF750923HCSLRR06
+303988      PEDRO LUIS                       VARGAS                           RODRIGUEZ                        03-01-1943   80     Hombre    Chihuahua              VARP430103HCHRDD08
+303990      JAVIER DIEGO                     FERNANDEZ                        MARTINEZ                         18-04-2001   22     Hombre    Tabasco                FEMJ010418HTCRRVA1
+303994      JOSE                             NAVARRO                          RAMIREZ                          02-02-1973   50     Hombre    Tabasco                NARJ730202HTCVMX07
+304022      ANGEL ALEJANDRO                  GONZALEZ                         PARRA                            16-05-1967   56     Hombre    Morelos                GOPA670516HMSNRN00
+304029      VANESSA DIANA                    DIAZ                             AGUILAR                          13-06-1977   46     Mujer     Colima                 DIAV770613HCMZGN05
+304078      SOFIA                            FERNANDEZ                        VARGAS                           08-05-1935   88     Mujer     Yucatan                FEVS350508HYNRRF00
+304090      LUIS                             ORTEGA                           PARRA                            21-08-1983   40     Hombre    Colima                 OEPL830821HCMRRS09
+304106      ANDREA LUCIA                     ORTEGA                           AGUILAR                          04-10-1975   48     Mujer     Morelos                OEAA751004HMSRGN01
+304261      MIGUEL LUIS                      YEPIZ                            GONZALEZ                         05-04-1940   83     Hombre    Sonora                 YEGM400405HSRPNG05
+304279      RUBEN ANGEL                      TORRES                           FERNANDEZ                        24-01-1908   115    Hombre    Morelos                TOFR080124HMSRRB01
+304288      VANESSA                          LOPEZ                            MORALES                          20-05-2001   22     Mujer     Sonora                 LOMV010520HSRPRNA0
+304367       ANDREA                          NAVARRO                          ROMERO                           26-02-1936   87     Hombre    Ciudad de Mexico/CDMX   NARX360226HMCVMX02
+304456      SILVIA                           GARCIA                           JIMENEZ                          04-01-1998   25     Mujer     Queretaro              GAJS980104HQTRML06
+304474      CAROLINA                         RIVERA                           VARGAS                           02-02-1902   121    Mujer     Hidalgo                RIVC020202HHGVRR02
+304526      SARA CATALINA                    AGUILAR                          TORRES                           26-04-2000   23     Mujer     Oaxaca                 AUTS000426HOCGRRA9
+304530      EDUARDO RAUL                     AGUILAR                          ORTEGA                           24-08-1928   95     Hombre    Guanajuato             AUOE280824HGTGRD03
+304669      JORGE                            DIAZ                             CASTRO                           03-01-1980   43     Hombre    Veracruz               DICJ800103HVZZSR01
+304687      ANDREA                           RUIZ                             MARTINEZ                         04-08-1947   76     Mujer     Nuevo Leon             RUMA470804HNLZRN02
+304950      MARTA LAURA                      TORRES                           ROMERO                           05-12-1941   82     Mujer     Jalisco                TORM411205HJCRMR01
+304952      CAROLINA CLARA                   RODRIGUEZ                        AGUILAR                          09-04-1984   39     Mujer     Chihuahua              ROAC840409HCHDGR02
+305120      DIANA SARA                       AGUILAR                          CASTRO                           22-08-1997   26     Mujer     Queretaro              AUCD970822HQTGSN09
+305173      CAROLINA                         SANCHEZ                          SANCHEZ                          04-10-1912   111    Mujer     Tamaulipas             SASC121004HTSNNR02
+305176      DANIEL                           PARRA                            PEREZ                            03-03-1981   42     Hombre    Estado de Mexico       PAPD810303HDFRRN02
+305177      CAROLINA                         CASTRO                           VARGAS                           09-11-1933   90     Mujer     Aguascalientes         CAVC331109HASSRR03
+305212      JULIETA                          ORTEGA                           RUIZ                             20-12-1954   69     Mujer     Tamaulipas             OERJ541220HTSRZL01
+305265      CAROLINA ELENA                   YEPIZ                            ROMERO                           17-03-1954   69     Mujer     Guerrero               YERC540317HGRPMR00
+305509      OSCAR                            RUIZ                             ROMERO                           16-05-1960   63     Hombre    Baja California        RURO600516HBCZMS06
+305512      SARA ANDREA                      SANCHEZ                          JIMENEZ                          01-03-1927   96     Mujer     Hidalgo                SAJS270301HHGNMR09
+305586      MARIA                            DIAZ                             GONZALEZ                         04-10-1956   67     Mujer     Zacatecas              DIGM561004HZSZNX05
+305598      SOFIA                            MORALES                          PEREZ                            14-02-1971   52     Mujer     San Luis Potosi        MOPS710214HSPRRF01
+305601      ANGEL                            VICENCIO                         PARRA                            11-05-1968   55     Hombre    Baja California        VIPA680511HBCCRN01
+305710      PATRICIA                         CASTRO                           RUIZ                             29-08-1941   82     Mujer     Campeche               CARP410829HCCSZT08
+305768      JULIETA                          GARCIA                           AGUILAR                          25-02-1940   83     Mujer     Yucatan                GAAJ400225HYNRGL07
+305989      JOSE SERGIO                      CASTRO                           DIAZ                             24-10-1919   104    Hombre    Baja California Sur    CADS191024HBSSZR05
+306313      GUILLERMO RUBEN                  RUIZ                             LLAMAS                           30-04-1947   76     Hombre    Veracruz               RULG470430HVZZLL08
+306477      SERGIO DIEGO                     CASTRO                           LLAMAS                           26-09-1942   81     Hombre    Nayarit                CALS420926HNTSLR09
+306542      CARLOS MARIO                     JIMENEZ                          PARRA                            13-06-1919   104    Hombre    Ciudad de Mexico/CDMX   JIPC190613HMCMRR06
+306713      VANESSA                          RAMIREZ                          TORRES                           04-04-1906   117    Mujer     Jalisco                RATV060404HJCMRN00
+306832      ANDREA                           YEPIZ                            MORALES                          13-12-1936   87     Mujer     Coahuila               YEMA361213HCLPRN02
+307148      MARTA ISABEL                     LOPEZ                            GARCIA                           12-04-1989   34     Mujer     Oaxaca                 LOGM890412HOCPRR05
+307206      MARIA PATRICIA                   MARTINEZ                         VICENCIO                         30-06-1930   93     Mujer     Aguascalientes         MAVP300630HASRCT01
+307408      CARLOS                           ORTEGA                           PEREZ                            15-03-1989   34     Hombre    Nayarit                OEPC890315HNTRRR06
+307455      LORENA                           FERNANDEZ                        GONZALEZ                         17-01-1956   67     Mujer     Sonora                 FEGL560117HSRRNR06
+307457      LORENA ANA                       AGUILAR                          GARCIA                           07-06-1954   69     Mujer     Tlaxcala               AUGL540607HTLGRR06
+307613      JORGE                            RAMIREZ                          LLAMAS                           27-09-1974   49     Hombre    Veracruz               RALJ740927HVZMLR07
+307647      PATRICIA CATALINA                AGUILAR                          PARRA                            07-03-1989   34     Mujer     Aguascalientes         AUPP890307HASGRT05
+307731      JOSE MIGUEL                      FERNANDEZ                        NAVARRO                          06-01-1936   87     Hombre    Baja California Sur    FENM360106HBSRVG00
+307816      ALBERTO                          LLAMAS                           MORALES                          29-10-1917   106    Hombre    Estado de Mexico       LAMA171029HDFLRL02
+307828      JUAN JOSE                        LOPEZ                            LLAMAS                           11-05-1996   27     Hombre    Nayarit                LOLJ960511HNTPLN09
+307951      RAUL                             MARTINEZ                         MARTINEZ                         16-11-1979   44     Hombre    Tamaulipas             MAMR791116HTSRRL01
+308011      CATALINA DIANA                   GONZALEZ                         VARGAS                           17-09-1995   28     Mujer     Aguascalientes         GOVC950917HASNRT07
+308042      ELENA LORENA                     PARRA                            RUIZ                             10-05-1951   72     Mujer     Queretaro              PARE510510HQTRZL00
+308368      DAVID MARIO                      TORRES                           DIAZ                             28-07-1971   52     Hombre    Durango                TODD710728HDGRZV02
+308381      SOFIA ISABEL                     CASTRO                           FERNANDEZ                        18-06-2005   18     Mujer     Chihuahua              CAFS050618HCHSRFA0
+308571      SERGIO                           VICENCIO                         TORRES                           09-08-1942   81     Hombre    Quintana Roo           VITS420809HQRCRR03
+308644      ISABEL                           PEREZ                            ORTEGA                           30-10-1980   43     Mujer     Hidalgo                PEOI801030HHGRRS07
+308697      NATALIA BEATRIZ                  LLAMAS                           AGUILAR                          09-08-1967   56     Mujer     Tabasco                LAAN670809HTCLGT02
+308707      DANIEL                           RAMIREZ                          RUIZ                             29-09-1925   98     Hombre    Tamaulipas             RARD250929HTSMZN08
+308717      CARMEN                           RAMIREZ                          AGUILAR                          19-02-1997   26     Mujer     Coahuila               RAAC970219HCLMGR07
+308785      ANDREA                           SANCHEZ                          RUIZ                             04-07-1916   107    Mujer     Sinaloa                SARA160704HSLNZN05
+308917      CAROLINA                         JIMENEZ                          JIMENEZ                          22-12-1968   55     Mujer     Tabasco                JIJC681222HTCMMR01
+309134      ANGEL RUBEN                      FERNANDEZ                        GARCIA                           20-12-1975   48     Hombre    Guerrero               FEGA751220HGRRRN06
+309143      ANGEL                            GARCIA                           AGUILAR                          10-06-1943   80     Hombre    Colima                 GAAA430610HCMRGN01
+309145      BEATRIZ                          RIVERA                           AGUILAR                          09-01-1935   88     Mujer     Campeche               RIAB350109HCCVGT07
+309246      JORGE ALBERTO                    AGUILAR                          ROMERO                           10-07-1989   34     Hombre    Tlaxcala               AURJ890710HTLGMR06
+309366      MIGUEL                           NAVARRO                          TORRES                           23-08-1969   54     Hombre    Campeche               NATM690823HCCVRG00
+309394      ROSA                             ROMERO                           YEPIZ                            31-08-1938   85     Mujer     Chiapas                ROYR380831HCSMPS01
+309401      LORENA PATRICIA                  RIVERA                           NAVARRO                          27-07-1968   55     Mujer     Sinaloa                RINL680727HSLVVR06
+309490      CAROLINA CATALINA                FERNANDEZ                        ROMERO                           22-10-1983   40     Mujer     Veracruz               FERC831022HVZRMR08
+309630      LAURA                            FERNANDEZ                        GONZALEZ                         30-08-1989   34     Mujer     Tlaxcala               FEGL890830HTLRNR07
+309808      MARTA LUCIA                      LLAMAS                           YEPIZ                            30-10-1981   42     Mujer     San Luis Potosi        LAYM811030HSPLPR00
+310020      LORENA                           YEPIZ                            FERNANDEZ                        08-05-1930   93     Mujer     Coahuila               YEFL300508HCLPRR05
+310149      MIGUEL JAVIER                    DIAZ                             RIVERA                           10-07-1946   77     Hombre    Yucatan                DIRM460710HYNZVG04
+310315      ALICIA JULIETA                   FERNANDEZ                        FERNANDEZ                        12-04-1959   64     Mujer     Guerrero               FEFA590412HGRRRL03
+310438      CARMEN                           ROMERO                           NAVARRO                          09-04-1909   114    Mujer     Aguascalientes         RONC090409HASMVR04
+310573      LUCIA JULIETA                    LOPEZ                            RAMIREZ                          28-05-1961   62     Mujer     Hidalgo                LORL610528HHGPMC04
+310647      RUBEN FRANCISCO                  YEPIZ                            FERNANDEZ                        29-07-1903   120    Hombre    Nuevo Leon             YEFR030729HNLPRB08
+310672      JAVIER PEDRO                     RUIZ                             FERNANDEZ                        27-08-1968   55     Hombre    Oaxaca                 RUFJ680827HOCZRV07
+310995      SOFIA CARMEN                     RUIZ                             JIMENEZ                          19-03-1906   117    Mujer     Baja California Sur    RUJS060319HBSZMF09
+311141      ALEJANDRO                        TORRES                           AGUILAR                          08-01-1913   110    Hombre    Estado de Mexico       TOAA130108HDFRGL05
+311167      LORENA VANESSA                   SANCHEZ                          NAVARRO                          15-02-1939   84     Mujer     Nayarit                SANL390215HNTNVR00
+311308      RUBEN                            RODRIGUEZ                        MARTINEZ                         18-05-2007   16     Hombre    Campeche               ROMR070518HCCDRBA6
+311338      SILVIA                           RUIZ                             VARGAS                           22-07-1952   71     Mujer     Tlaxcala               RUVS520722HTLZRL07
+311423      ALBERTO                          CASTRO                           LOPEZ                            20-12-2005   18     Hombre    Queretaro              CALA051220HQTSPLA2
+311442      JUAN SERGIO                      RUIZ                             MORALES                          09-03-1940   83     Hombre    Guerrero               RUMJ400309HGRZRN08
+311454      SILVIA ALICIA                    RAMIREZ                          VICENCIO                         10-07-1972   51     Mujer     Guanajuato             RAVS720710HGTMCL07
+311490      ROSA LAURA                       AGUILAR                          YEPIZ                            09-07-1923   100    Mujer     Puebla                 AUYR230709HPLGPS01
+311630      RAUL                             GARCIA                           LLAMAS                           14-03-1902   121    Hombre    Michoacan              GALR020314HMNRLL08
+311752      MANUEL JUAN                      SANCHEZ                          VARGAS                           02-03-1927   96     Hombre    Nuevo Leon             SAVM270302HNLNRN07
+311753      BEATRIZ DIANA                    GONZALEZ                         ORTEGA                           17-10-1900   123    Mujer     Durango                GOOB001017HDGNRT00
+311912      ANTONIO JUAN                     RAMIREZ                          ROMERO                           09-12-1966   57     Hombre    Queretaro              RARA661209HQTMMN04
+311931      ROSA LUCIA                       PARRA                            LLAMAS                           11-08-1930   93     Mujer     Chiapas                PALR300811HCSRLS06
+311946      MARTA SILVIA                     PARRA                            ORTEGA                           12-03-1989   34     Mujer     Yucatan                PAOM890312HYNRRR00
+312038      ALEJANDRO                        ORTEGA                           MORALES                          11-12-1908   115    Hombre    Nayarit                OEMA081211HNTRRL00
+312086      VANESSA LUCIA                    MARTINEZ                         AGUILAR                          19-07-1941   82     Mujer     Baja California Sur    MAAV410719HBSRGN02
+312095      VANESSA DIANA                    SANCHEZ                          ORTEGA                           24-09-1968   55     Mujer     Queretaro              SAOV680924HQTNRN00
+312214      CARLOS PEDRO                     RODRIGUEZ                        VICENCIO                         15-11-1995   28     Hombre    Guerrero               ROVC951115HGRDCR01
+312397      RAUL                             LOPEZ                            FERNANDEZ                        14-03-1911   112    Hombre    Durango                LOFR110314HDGPRL01
+312507      RAUL                             RIVERA                           VICENCIO                         05-01-1929   94     Hombre    Tabasco                RIVR290105HTCVCL09
+312517      DIEGO                            YEPIZ                            PARRA                            15-01-1936   87     Hombre    Queretaro              YEPD360115HQTPRG07
+312555      NATALIA                          YEPIZ                            JIMENEZ                          21-11-2007   16     Mujer     Estado de Mexico       YEJN071121HDFPMTA1
+312638      BEATRIZ                          CASTRO                           LLAMAS                           29-04-1906   117    Mujer     Chiapas                CALB060429HCSSLT00
+312759      MARIO DAVID                      DIAZ                             PARRA                            24-11-1904   119    Hombre    Quintana Roo           DIPM041124HQRZRR04
+313100      PATRICIA MARTA                   JIMENEZ                          GONZALEZ                         13-09-1987   36     Mujer     Sinaloa                JIGP870913HSLMNT06
+313165      LORENA LAURA                     PARRA                            RAMIREZ                          19-02-1924   99     Mujer     Michoacan              PARL240219HMNRMR00
+313230      LORENA NATALIA                   VICENCIO                         RIVERA                           14-10-1915   108    Mujer     Chihuahua              VIRL151014HCHCVR04
+313271      JOSE FERNANDO                    RIVERA                           ORTEGA                           05-05-1952   71     Hombre    Oaxaca                 RIOF520505HOCVRR04
+313301      LUCIA                            LOPEZ                            PEREZ                            13-05-1927   96     Mujer     Morelos                LOPL270513HMSPRC05
+313384      ISABEL                           ROMERO                           GONZALEZ                         17-10-1939   84     Mujer     Tlaxcala               ROGI391017HTLMNS05
+313514      NATALIA CATALINA                 RUIZ                             VICENCIO                         29-07-1960   63     Mujer     Michoacan              RUVN600729HMNZCT02
+313538      CATALINA LUCIA                   AGUILAR                          FERNANDEZ                        13-07-1966   57     Mujer     Coahuila               AUFC660713HCLGRT07
+313758      DIANA                            MARTINEZ                         GARCIA                           16-10-1967   56     Mujer     Chiapas                MAGD671016HCSRRN09
+313848      CARMEN NATALIA                   MARTINEZ                         GARCIA                           12-03-2000   23     Mujer     Queretaro              MAGC000312HQTRRRA1
+313859      ANTONIO RUBEN                    RIVERA                           LOPEZ                            29-02-1976   47     Hombre    Nayarit                RILA760229HNTVPN00
+313928      EDUARDO                          PARRA                            TORRES                           01-03-1968   55     Hombre    Tlaxcala               PATE680301HTLRRD07
+313985      ALEJANDRO                        LLAMAS                           RAMIREZ                          22-02-1996   27     Hombre    Veracruz               LARA960222HVZLML01
+314023      DIANA CATALINA                   RIVERA                           GARCIA                           04-07-1952   71     Mujer     Nayarit                RIGD520704HNTVRN06
+314057      JOSE CARLOS                      YEPIZ                            DIAZ                             15-08-1944   79     Hombre    Sonora                 YEDC440815HSRPZR00
+314233      JULIETA                          RAMIREZ                          MARTINEZ                         06-04-1907   116    Mujer     Tlaxcala               RAMJ070406HTLMRL04
+314247      SARA                             NAVARRO                          GONZALEZ                         18-12-1997   26     Mujer     Puebla                 NAGS971218HPLVNR01
+314291      FRANCISCO                        GONZALEZ                         SANCHEZ                          11-02-1939   84     Hombre    San Luis Potosi        GOSF390211HSPNNR04
+314375      MIGUEL                           ROMERO                           SANCHEZ                          12-02-2006   17     Hombre    Puebla                 ROSM060212HPLMNGA5
+314394      MANUEL                           GARCIA                           GONZALEZ                         30-04-1966   57     Hombre    Hidalgo                GAGM660430HHGRNN01
+314501      GUILLERMO                        GONZALEZ                         AGUILAR                          20-12-1953   70     Hombre    Ciudad de Mexico/CDMX   GOAG531220HMCNGL06
+314514      MARIA                            PARRA                            DIAZ                             09-10-1987   36     Mujer     Zacatecas              PADM871009HZSRZX07
+314556      SERGIO                           GARCIA                           SANCHEZ                          26-04-2005   18     Hombre    San Luis Potosi        GASS050426HSPRNRA1
+314692      ANA ELENA                        JIMENEZ                          PEREZ                            03-05-1943   80     Mujer     Guanajuato             JIPA430503HGTMRN06
+314738      JOSE ANGEL                       GARCIA                           YEPIZ                            09-01-1926   97     Hombre    Coahuila               GAYA260109HCLRPN04
+314895      ELENA                            TORRES                           VARGAS                           25-12-1983   40     Mujer     Oaxaca                 TOVE831225HOCRRL04
+314918      SARA ROSA                        GONZALEZ                         FERNANDEZ                        03-06-1920   103    Mujer     Tlaxcala               GOFS200603HTLNRR09
+314943      LORENA ANDREA                    YEPIZ                            JIMENEZ                          06-01-1925   98     Mujer     Extranjero             YEJL250106HNEPMR02
+314971      LUCIA                            YEPIZ                            TORRES                           10-06-1910   113    Mujer     Veracruz               YETL100610HVZPRC02
+315257      SILVIA                           VICENCIO                         NAVARRO                          26-08-1932   91     Mujer     Hidalgo                VINS320826HHGCVL00
+315283      PEDRO                            VICENCIO                         GARCIA                           29-01-1902   121    Hombre    Morelos                VIGP020129HMSCRD08
+315444      SERGIO                           FERNANDEZ                        VARGAS                           24-11-1948   75     Hombre    Estado de Mexico       FEVS481124HDFRRR02
+315559      CARLOS MIGUEL                    MORALES                          AGUILAR                          29-05-1913   110    Hombre    Yucatan                MOAC130529HYNRGR03
+315609      ALICIA ANDREA                    DIAZ                             SANCHEZ                          23-11-1902   121    Mujer     Ciudad de Mexico/CDMX   DISA021123HMCZNL07
+315917      FERNANDO RAUL                    ROMERO                           PEREZ                            27-12-1929   94     Hombre    Nayarit                ROPF291227HNTMRR09
+315947      ANTONIO                          ORTEGA                           MORALES                          04-01-1924   99     Hombre    Morelos                OEMA240104HMSRRN00
+315968      MIGUEL                           RUIZ                             RAMIREZ                          28-02-1903   120    Hombre    Extranjero             RURM030228HNEZMG01
+316221      ANA                              FERNANDEZ                        DIAZ                             18-03-1936   87     Mujer     Zacatecas              FEDA360318HZSRZN07
+316358      FRANCISCO MIGUEL                 SANCHEZ                          VICENCIO                         19-06-1928   95     Hombre    Tabasco                SAVF280619HTCNCR06
+316402      JORGE                            YEPIZ                            RAMIREZ                          06-01-1970   53     Hombre    Sonora                 YERJ700106HSRPMR03
+316425      RAUL JOSE                        LLAMAS                           ORTEGA                           12-03-1991   32     Hombre    Tabasco                LAOR910312HTCLRL01
+316617      DAVID CARLOS                     MARTINEZ                         FERNANDEZ                        16-03-1959   64     Hombre    Chiapas                MAFD590316HCSRRV03
+316794      JUAN                             AGUILAR                          LLAMAS                           17-06-1984   39     Hombre    Hidalgo                AULJ840617HHGGLN00
+316870      JAVIER SERGIO                    JIMENEZ                          VARGAS                           26-02-1921   102    Hombre    Veracruz               JIVJ210226HVZMRV03
+316897      LORENA DIANA                     JIMENEZ                          MORALES                          10-12-2006   17     Mujer     Sonora                 JIML061210HSRMRRA0
+317235      SARA                             GONZALEZ                         FERNANDEZ                        02-05-1938   85     Mujer     San Luis Potosi        GOFS380502HSPNRR03
+317283      RUBEN                            JIMENEZ                          VARGAS                           26-03-1929   94     Hombre    Tabasco                JIVR290326HTCMRB06
+317305      LORENA                           NAVARRO                          DIAZ                             07-08-1984   39     Mujer     Campeche               NADL840807HCCVZR03
+317471      FERNANDO ANGEL                   RAMIREZ                          DIAZ                             16-11-1908   115    Hombre    Tamaulipas             RADF081116HTSMZR00
+317489      ALEJANDRO                        VICENCIO                         SANCHEZ                          06-04-1929   94     Hombre    Veracruz               VISA290406HVZCNL05
+317517      DIEGO ANTONIO                    VICENCIO                         RUIZ                             08-12-1986   37     Hombre    Hidalgo                VIRD861208HHGCZG05
+317664      DAVID                            RIVERA                           YEPIZ                            19-03-1979   44     Hombre    Durango                RIYD790319HDGVPV03
+317999      LAURA JULIETA                    ROMERO                           LLAMAS                           26-12-1964   59     Mujer     Estado de Mexico       ROLL641226HDFMLR00
+318131      MANUEL LUIS                      FERNANDEZ                        TORRES                           24-06-1960   63     Hombre    Oaxaca                 FETM600624HOCRRN03
+318248      ANTONIO ALBERTO                  YEPIZ                            RIVERA                           07-01-1918   105    Hombre    Quintana Roo           YERA180107HQRPVN08
+318434      JAVIER LUIS                      RIVERA                           FERNANDEZ                        06-04-1914   109    Hombre    Chiapas                RIFJ140406HCSVRV07
+318462      DAVID JAVIER                     RODRIGUEZ                        LOPEZ                            22-07-2000   23     Hombre    Puebla                 ROLD000722HPLDPVA6
+318518      SERGIO                           DIAZ                             RUIZ                             26-07-1901   122    Hombre    Extranjero             DIRS010726HNEZZR07
+318532      CLARA                            MORALES                          GARCIA                           22-06-1911   112    Mujer     Chihuahua              MOGC110622HCHRRL06
+318537      ANA SARA                         RUIZ                             VICENCIO                         06-09-1950   73     Mujer     Tamaulipas             RUVA500906HTSZCN03
+318588      FRANCISCO ANTONIO                TORRES                           LLAMAS                           29-03-1911   112    Hombre    Oaxaca                 TOLF110329HOCRLR02
+318669      MANUEL                           RUIZ                             RAMIREZ                          29-09-1930   93     Hombre    Guanajuato             RURM300929HGTZMN03
+319105      ANDREA BEATRIZ                   LLAMAS                           LOPEZ                            15-04-1986   37     Mujer     Ciudad de Mexico/CDMX   LALA860415HMCLPN07
+319192      CATALINA                         YEPIZ                            RODRIGUEZ                        11-11-1903   120    Mujer     Chiapas                YERC031111HCSPDT00
+319277      RUBEN                            VICENCIO                         GARCIA                           03-05-2006   17     Hombre    Baja California        VIGR060503HBCCRBA0
+319393      EDUARDO PEDRO                    RODRIGUEZ                        ORTEGA                           12-10-1961   62     Hombre    Nayarit                ROOE611012HNTDRD09
+319776      ANGEL PEDRO                      GARCIA                           VARGAS                           21-11-1967   56     Hombre    Campeche               GAVA671121HCCRRN00
+319886      NATALIA                          PARRA                            LOPEZ                            01-01-1977   46     Mujer     Tlaxcala               PALN770101HTLRPT03
+319977      LUIS                             NAVARRO                          LLAMAS                           30-10-1972   51     Hombre    Nayarit                NALL721030HNTVLS07
+320083      JOSE ANTONIO                     CASTRO                           VARGAS                           17-12-1936   87     Hombre    Quintana Roo           CAVA361217HQRSRN05
+320144      MARIO MANUEL                     RODRIGUEZ                        SANCHEZ                          02-10-1975   48     Hombre    Zacatecas              ROSM751002HZSDNR06
+320185      ROSA                             GONZALEZ                         ROMERO                           12-06-1971   52     Mujer     Baja California        GORR710612HBCNMS09
+320218      GUILLERMO CARLOS                 SANCHEZ                          JIMENEZ                          07-06-1905   118    Hombre    Guanajuato             SAJG050607HGTNML00
+320293      MARIO JUAN                       PARRA                            AGUILAR                          21-12-1971   52     Hombre    Nuevo Leon             PAAM711221HNLRGR00
+320313      ANGEL RAUL                       RUIZ                             AGUILAR                          12-10-1933   90     Hombre    Michoacan              RUAA331012HMNZGN06
+320384      CARMEN JULIETA                   CASTRO                           JIMENEZ                          01-03-1963   60     Mujer     Estado de Mexico       CAJC630301HDFSMR04
+320538      ALEJANDRO                        AGUILAR                          ORTEGA                           02-12-1947   76     Hombre    Guanajuato             AUOA471202HGTGRL03
+320561      JORGE SERGIO                     VARGAS                           GONZALEZ                         12-01-1930   93     Hombre    Coahuila               VAGJ300112HCLRNR02
+320611      RAUL ALBERTO                     ORTEGA                           JIMENEZ                          25-06-1918   105    Hombre    Durango                OEJR180625HDGRML05
+320874      PATRICIA                         RUIZ                             VARGAS                           14-10-1981   42     Mujer     Estado de Mexico       RUVP811014HDFZRT04
+320910      FERNANDO                         NAVARRO                          RIVERA                           01-03-1947   76     Hombre    Baja California        NARF470301HBCVVR06
+320940      LAURA SARA                       VICENCIO                         JIMENEZ                          15-08-1950   73     Mujer     Yucatan                VIJL500815HYNCMR04
+320982      MARIO LUIS                       RODRIGUEZ                        NAVARRO                          10-05-1926   97     Hombre    Queretaro              RONM260510HQTDVR02
+321151      ALICIA                           DIAZ                             PARRA                            19-03-1959   64     Mujer     Nayarit                DIPA590319HNTZRL04
+321202      MIGUEL                           SANCHEZ                          DIAZ                             21-02-1936   87     Hombre    Sinaloa                SADM360221HSLNZG02
+321258      ALEJANDRO                        CASTRO                           FERNANDEZ                        12-11-1965   58     Hombre    Queretaro              CAFA651112HQTSRL06
+321302      EDUARDO JOSE                     GARCIA                           CASTRO                           03-09-1959   64     Hombre    Baja California        GACE590903HBCRSD00
+321318      DANIEL                           JIMENEZ                          CASTRO                           27-05-2007   16     Hombre    Yucatan                JICD070527HYNMSNA2
+321395      LORENA CAROLINA                  FERNANDEZ                        MARTINEZ                         09-05-1943   80     Mujer     Tabasco                FEML430509HTCRRR06
+321431      PEDRO                            FERNANDEZ                        NAVARRO                          28-01-1986   37     Hombre    Guanajuato             FENP860128HGTRVD00
+321514      OSCAR ALEJANDRO                  VARGAS                           SANCHEZ                          09-09-1933   90     Hombre    Tabasco                VASO330909HTCRNS01
+321534      PATRICIA                         ORTEGA                           MORALES                          23-03-1955   68     Mujer     Michoacan              OEMP550323HMNRRT04
+321605      NATALIA ANA                      CASTRO                           DIAZ                             27-08-1946   77     Mujer     Coahuila               CADN460827HCLSZT06
+321652      BEATRIZ VANESSA                  MORALES                          TORRES                           01-08-1986   37     Mujer     Oaxaca                 MOTB860801HOCRRT06
+321726      LUIS                             GARCIA                           YEPIZ                            08-09-1977   46     Hombre    Yucatan                GAYL770908HYNRPS06
+321792      PEDRO RUBEN                      ORTEGA                           RODRIGUEZ                        21-05-1943   80     Hombre    Chiapas                OERP430521HCSRDD04
+321805      LUIS                             VICENCIO                         RAMIREZ                          22-01-1951   72     Hombre    Queretaro              VIRL510122HQTCMS09
+322100      MIGUEL                           CASTRO                           RAMIREZ                          04-02-1989   34     Hombre    Quintana Roo           CARM890204HQRSMG07
+322255      DANIEL FERNANDO                  MORALES                          YEPIZ                            31-12-1956   67     Hombre    Nuevo Leon             MOYD561231HNLRPN05
+322370      MANUEL                           LOPEZ                            RODRIGUEZ                        03-11-2002   21     Hombre    Tabasco                LORM021103HTCPDNA6
+322406      ANTONIO FERNANDO                 CASTRO                           DIAZ                             28-02-1969   54     Hombre    Michoacan              CADA690228HMNSZN05
+322464      DIANA MARIA                      CASTRO                           CASTRO                           15-10-1947   76     Mujer     Hidalgo                CACD471015HHGSSN00
+322717      ANGEL JUAN                       RUIZ                             ORTEGA                           05-08-1969   54     Hombre    Extranjero             RUOA690805HNEZRN08
+322826      ANA JULIETA                      GARCIA                           FERNANDEZ                        25-10-1988   35     Mujer     Puebla                 GAFA881025HPLRRN01
+322843      ALEJANDRO                        GARCIA                           TORRES                           02-04-1964   59     Hombre    Michoacan              GATA640402HMNRRL09
+322929      DANIEL MANUEL                    RIVERA                           ROMERO                           11-05-1940   83     Hombre    Chiapas                RIRD400511HCSVMN06
+322935      ISABEL                           MORALES                          CASTRO                           21-07-1988   35     Mujer     Tamaulipas             MOCI880721HTSRSS03
+322941      RUBEN JUAN                       ROMERO                           VICENCIO                         20-04-1973   50     Hombre    Extranjero             ROVR730420HNEMCB04
+323066      RAUL                             VARGAS                           LLAMAS                           21-06-1915   108    Hombre    Aguascalientes         VALR150621HASRLL05
+323142      CLARA                            VARGAS                           GONZALEZ                         07-04-1952   71     Mujer     Baja California        VAGC520407HBCRNL03
+323247      JULIETA                          RODRIGUEZ                        RUIZ                             08-04-1968   55     Mujer     Aguascalientes         RORJ680408HASDZL06
+323391      ANTONIO OSCAR                    JIMENEZ                          PARRA                            12-11-1915   108    Hombre    Durango                JIPA151112HDGMRN06
+323393      RAUL                             RUIZ                             LOPEZ                            02-05-2003   20     Hombre    Estado de Mexico       RULR030502HDFZPLA7
+323473      FRANCISCO JAVIER                 AGUILAR                          YEPIZ                            24-01-1993   30     Hombre    Queretaro              AUYF930124HQTGPR00
+323621      SARA LUCIA                       FERNANDEZ                        RUIZ                             13-11-1937   86     Mujer     Aguascalientes         FERS371113HASRZR05
+323624      RUBEN                            ORTEGA                           LOPEZ                            21-10-1984   39     Hombre    Yucatan                OELR841021HYNRPB08
+323629      DAVID                            LLAMAS                           NAVARRO                          10-02-1999   24     Hombre    Michoacan              LAND990210HMNLVV00
+323700      JORGE JAVIER                     RAMIREZ                          RAMIREZ                          25-12-1947   76     Hombre    Guanajuato             RARJ471225HGTMMR09
+323707      PEDRO                            RUIZ                             FERNANDEZ                        29-07-1970   53     Hombre    Queretaro              RUFP700729HQTZRD09
+323741      MARTA DIANA                      RIVERA                           DIAZ                             17-03-1913   110    Mujer     Morelos                RIDM130317HMSVZR01
+323773      LORENA MARIA                     DIAZ                             RUIZ                             27-04-1994   29     Mujer     Sinaloa                DIRL940427HSLZZR07
+323851      SOFIA                            GARCIA                           PEREZ                            16-11-1989   34     Mujer     Chihuahua              GAPS891116HCHRRF08
+323992      ALICIA LORENA                    RIVERA                           ROMERO                           31-03-1942   81     Mujer     Tabasco                RIRA420331HTCVML04
+324046      PEDRO                            CASTRO                           RAMIREZ                          21-07-1984   39     Hombre    Estado de Mexico       CARP840721HDFSMD02
+324136      DIEGO                            PARRA                            ROMERO                           30-12-1910   113    Hombre    Coahuila               PARD101230HCLRMG00
+324199      CAROLINA ANDREA                  TORRES                           VARGAS                           22-05-1925   98     Mujer     Baja California Sur    TOVC250522HBSRRR00
+324264      CARMEN                           RAMIREZ                          DIAZ                             03-03-1901   122    Mujer     Nayarit                RADC010303HNTMZR07
+324275      MANUEL SERGIO                    TORRES                           ORTEGA                           04-10-1930   93     Hombre    Tamaulipas             TOOM301004HTSRRN09
+324454      ISABEL                           JIMENEZ                          AGUILAR                          24-07-1959   64     Mujer     Michoacan              JIAI590724HMNMGS03
+324464      SARA                             MORALES                          LLAMAS                           11-02-1964   59     Mujer     Nuevo Leon             MOLS640211HNLRLR07
+324499      RAUL MARIO                       VARGAS                           DIAZ                             03-09-1953   70     Hombre    Durango                VADR530903HDGRZL09
+324568      NATALIA CATALINA                 RODRIGUEZ                        RODRIGUEZ                        28-11-1969   54     Mujer     Tlaxcala               RORN691128HTLDDT06
+324662      ISABEL                           GONZALEZ                         FERNANDEZ                        03-09-1994   29     Mujer     Tlaxcala               GOFI940903HTLNRS02
+324701      FRANCISCO SERGIO                 JIMENEZ                          CASTRO                           27-03-1978   45     Hombre    Nayarit                JICF780327HNTMSR05
+324743      PEDRO DIEGO                      DIAZ                             JIMENEZ                          11-11-1979   44     Hombre    Campeche               DIJP791111HCCZMD03
+324745      LAURA                            PEREZ                            GONZALEZ                         08-09-1902   121    Mujer     Guanajuato             PEGL020908HGTRNR08
+324784      BEATRIZ ISABEL                   VARGAS                           LOPEZ                            25-06-1989   34     Mujer     Quintana Roo           VALB890625HQRRPT08
+324855       ROSA                            LLAMAS                           GONZALEZ                         28-07-1910   113    Hombre    Estado de Mexico       LAGX100728HDFLNX04
+325008      MARTA SARA                       AGUILAR                          GONZALEZ                         13-05-1957   66     Mujer     Morelos                AUGM570513HMSGNR08
+325054      NATALIA ISABEL                   FERNANDEZ                        ORTEGA                           14-11-1955   68     Mujer     Quintana Roo           FEON551114HQRRRT00
+325193      DIEGO                            PEREZ                            DIAZ                             02-08-2005   18     Hombre    Oaxaca                 PEDD050802HOCRZGA6
+325213      OSCAR                            RAMIREZ                          CASTRO                           29-07-1988   35     Hombre    Quintana Roo           RACO880729HQRMSS05
+325288      JULIETA                          YEPIZ                            FERNANDEZ                        11-11-1960   63     Mujer     Morelos                YEFJ601111HMSPRL01
+325290      ANTONIO MARIO                    VICENCIO                         SANCHEZ                          19-03-1920   103    Hombre    Jalisco                VISA200319HJCCNN08
+325415      JAVIER MIGUEL                    TORRES                           ROMERO                           19-02-1936   87     Hombre    Yucatan                TORJ360219HYNRMV07
+325515      MANUEL LUIS                      PEREZ                            RUIZ                             11-07-1904   119    Hombre    Sinaloa                PERM040711HSLRZN06
+325797      CARMEN                           PARRA                            RAMIREZ                          20-09-1965   58     Mujer     Puebla                 PARC650920HPLRMR06
+325861      DAVID                            FERNANDEZ                        ROMERO                           01-02-1966   57     Hombre    Campeche               FERD660201HCCRMV08
+325961      SARA                             RIVERA                           MORALES                          10-07-1904   119    Mujer     Jalisco                RIMS040710HJCVRR07
+325993      FRANCISCO FERNANDO               NAVARRO                          RAMIREZ                          25-03-1967   56     Hombre    Morelos                NARF670325HMSVMR04
+326068      CARLOS OSCAR                     RAMIREZ                          YEPIZ                            15-10-1924   99     Hombre    Aguascalientes         RAYC241015HASMPR00
+326364      RUBEN                            RAMIREZ                          RODRIGUEZ                        15-07-1908   115    Hombre    Quintana Roo           RARR080715HQRMDB01
+326513      JOSE                             GONZALEZ                         GARCIA                           27-03-1908   115    Hombre    Nuevo Leon             GOGJ080327HNLNRX03
+326541      SARA                             GARCIA                           CASTRO                           20-01-1976   47     Mujer     Queretaro              GACS760120HQTRSR09
+326543      RAUL                             JIMENEZ                          CASTRO                           25-09-1995   28     Hombre    Sonora                 JICR950925HSRMSL00
+326641      CARMEN                           TORRES                           LOPEZ                            18-01-1980   43     Mujer     Morelos                TOLC800118HMSRPR02
+326652      PATRICIA LAURA                   RUIZ                             JIMENEZ                          15-12-1944   79     Mujer     Puebla                 RUJP441215HPLZMT00
+326750      DAVID                            PARRA                            RODRIGUEZ                        10-08-1963   60     Hombre    Yucatan                PARD630810HYNRDV07
+326802      NATALIA LORENA                   MORALES                          AGUILAR                          05-12-1968   55     Mujer     Ciudad de Mexico/CDMX   MOAN681205HMCRGT01
+326834      RAUL ALBERTO                     NAVARRO                          PEREZ                            17-10-1983   40     Hombre    Nayarit                NAPR831017HNTVRL04
+326887      JUAN MANUEL                      CASTRO                           LOPEZ                            02-08-1989   34     Hombre    Queretaro              CALJ890802HQTSPN00
+326909      CLARA LAURA                      AGUILAR                          RUIZ                             05-02-1939   84     Mujer     Veracruz               AURC390205HVZGZL07
+326918      ALEJANDRO FERNANDO               GARCIA                           FERNANDEZ                        01-05-1907   116    Hombre    Tlaxcala               GAFA070501HTLRRL02
+327136      SILVIA CAROLINA                  PEREZ                            ROMERO                           16-12-1934   89     Mujer     San Luis Potosi        PERS341216HSPRML07
+327251      GUILLERMO ALBERTO                GONZALEZ                         AGUILAR                          03-05-1968   55     Hombre    Veracruz               GOAG680503HVZNGL03
+327269      RAUL SERGIO                      ORTEGA                           RODRIGUEZ                        19-08-1938   85     Hombre    Tabasco                OERR380819HTCRDL03
+327345      CAROLINA                         DIAZ                             GARCIA                           16-04-1977   46     Mujer     Puebla                 DIGC770416HPLZRR01
+327369      ANA MARIA                        LOPEZ                            MARTINEZ                         02-10-1911   112    Mujer     Nayarit                LOMA111002HNTPRN04
+327381      PEDRO                            VARGAS                           JIMENEZ                          09-12-1952   71     Hombre    Queretaro              VAJP521209HQTRMD08
+327562      LAURA NATALIA                    NAVARRO                          VICENCIO                         12-08-1921   102    Mujer     Tabasco                NAVL210812HTCVCR07
+327584      ANDREA                           MORALES                          FERNANDEZ                        04-04-1923   100    Mujer     Morelos                MOFA230404HMSRRN09
+327931      ANA                              RAMIREZ                          MORALES                          16-01-1994   29     Mujer     Queretaro              RAMA940116HQTMRN05
+328068      CAROLINA PATRICIA                CASTRO                           CASTRO                           08-06-1923   100    Mujer     Estado de Mexico       CACC230608HDFSSR01
+328117      PEDRO                            YEPIZ                            TORRES                           01-05-2005   18     Hombre    Sonora                 YETP050501HSRPRDA8
+328268      LUIS EDUARDO                     JIMENEZ                          NAVARRO                          13-10-1938   85     Hombre    Ciudad de Mexico/CDMX   JINL381013HMCMVS07
+328323      ROSA SILVIA                      LLAMAS                           FERNANDEZ                        23-05-1913   110    Mujer     Sinaloa                LAFR130523HSLLRS03
+328334      NATALIA ANA                      DIAZ                             FERNANDEZ                        30-04-1958   65     Mujer     Yucatan                DIFN580430HYNZRT03
+328340      ANA MARIA                        NAVARRO                          FERNANDEZ                        26-05-1933   90     Mujer     Coahuila               NAFA330526HCLVRN03
+328348      SOFIA BEATRIZ                    PEREZ                            LOPEZ                            26-01-1989   34     Mujer     Michoacan              PELS890126HMNRPF09
+328373      NATALIA PATRICIA                 MORALES                          CASTRO                           01-07-1986   37     Mujer     Puebla                 MOCN860701HPLRST02
+328638      RUBEN ALEJANDRO                  LOPEZ                            CASTRO                           06-01-2000   23     Hombre    Tabasco                LOCR000106HTCPSBA1
+328751      ELENA ANA                        VICENCIO                         SANCHEZ                          25-07-1993   30     Mujer     Chihuahua              VISE930725HCHCNL08
+329012       SILVIA                          GARCIA                           JIMENEZ                          30-06-1937   86     Hombre    Extranjero             GAJX370630HNERMX09
+329107      PATRICIA ALICIA                  JIMENEZ                          MORALES                          21-01-1939   84     Mujer     Morelos                JIMP390121HMSMRT05
+329133      DANIEL                           RODRIGUEZ                        RUIZ                             18-02-1973   50     Hombre    Chihuahua              RORD730218HCHDZN08
+329137                                       RUIZ                             RODRIGUEZ                        10-07-1981   42     Mujer     Colima                 RURX810710MCMZDX02
+329147      CATALINA                         RIVERA                           TORRES                           31-10-1919   104    Mujer     Yucatan                RITC191031HYNVRT04
+329164      RUBEN                            RUIZ                             YEPIZ                            06-11-1958   65     Hombre    Aguascalientes         RUYR581106HASZPB01
+329183      JAVIER                           ORTEGA                           LLAMAS                           20-12-1952   71     Hombre    Ciudad de Mexico/CDMX   OELJ521220HMCRLV07
+329255      JULIETA LAURA                    ROMERO                           VICENCIO                         18-08-1979   44     Mujer     Hidalgo                ROVJ790818HHGMCL00
+329259      JULIETA                          RUIZ                             ORTEGA                           20-03-1925   98     Mujer     Chihuahua              RUOJ250320HCHZRL07
+329277      ANDREA                           AGUILAR                          RAMIREZ                          29-10-1927   96     Mujer     Campeche               AURA271029HCCGMN07
+329320      PEDRO                            RUIZ                             DIAZ                             02-02-1904   119    Hombre    Sinaloa                RUDP040202HSLZZD07
+329413      ELENA DIANA                      RAMIREZ                          ORTEGA                           15-02-1914   109    Mujer     Nuevo Leon             RAOE140215HNLMRL08
+329455      LAURA CATALINA                   DIAZ                             AGUILAR                          06-07-1949   74     Mujer     Nayarit                DIAL490706HNTZGR03
+329635      MARTA JULIETA                    SANCHEZ                          NAVARRO                          02-07-1937   86     Mujer     Campeche               SANM370702HCCNVR09
+329776      CARMEN SILVIA                    RAMIREZ                          PEREZ                            18-07-1931   92     Mujer     Zacatecas              RAPC310718HZSMRR00
+329933      ANGEL                            GONZALEZ                         RAMIREZ                          02-08-1931   92     Hombre    Tabasco                GORA310802HTCNMN09
+330100      ELENA                            LOPEZ                            VARGAS                           12-09-1908   115    Mujer     Baja California        LOVE080912HBCPRL04
+330136      OSCAR ANTONIO                    AGUILAR                          AGUILAR                          16-05-1976   47     Hombre    Tamaulipas             AUAO760516HTSGGS06
+330239      PATRICIA                         GONZALEZ                         GONZALEZ                         09-01-1932   91     Mujer     Ciudad de Mexico/CDMX   GOGP320109HMCNNT05
+330372      OSCAR                            MARTINEZ                         RIVERA                           20-05-1961   62     Hombre    Veracruz               MARO610520HVZRVS05
+330440      OSCAR JUAN                       MARTINEZ                         LLAMAS                           05-06-1902   121    Hombre    Sonora                 MALO020605HSRRLS09
+330508      LORENA VANESSA                   PEREZ                            RAMIREZ                          14-06-2007   16     Mujer     Veracruz               PERL070614HVZRMRA2
+330527      LAURA                            GARCIA                           RUIZ                             09-05-1920   103    Mujer     Baja California Sur    GARL200509HBSRZR07
+330557      ANDREA LAURA                     LOPEZ                            CASTRO                           20-12-1920   103    Mujer     Chihuahua              LXCA201220HCHPSN05
+330562      EDUARDO PEDRO                    YEPIZ                            CASTRO                           29-12-1974   49     Hombre    San Luis Potosi        YECE741229HSPPSD01
+330584      CLARA ANA                        GARCIA                           TORRES                           06-06-1994   29     Mujer     Guerrero               GATC940606HGRRRL00
+330612      ALICIA SARA                      FERNANDEZ                        GARCIA                           01-03-1961   62     Mujer     Sonora                 FEGA610301HSRRRL03
+330649                                       FERNANDEZ                        PARRA                            10-09-1908   115    Mujer     Jalisco                FEPX080910MJCRRX04
+330666      CAROLINA                         FERNANDEZ                        CASTRO                           27-01-1987   36     Mujer     Ciudad de Mexico/CDMX   FECC870127HMCRSR07
+330781      OSCAR SERGIO                     MARTINEZ                         SANCHEZ                          27-12-1981   42     Hombre    Quintana Roo           MASO811227HQRRNS00
+330927      DIEGO                            NAVARRO                          JIMENEZ                          05-02-1901   122    Hombre    Chiapas                NAJD010205HCSVMG01
+330958      RAUL JUAN                        GONZALEZ                         FERNANDEZ                        13-12-1982   41     Hombre    Colima                 GOFR821213HCMNRL03
+331056      JORGE                            FERNANDEZ                        RODRIGUEZ                        15-02-1967   56     Hombre    Nayarit                FERJ670215HNTRDR07
+331087      FERNANDO                         ROMERO                           RAMIREZ                          21-11-1927   96     Hombre    Estado de Mexico       RORF271121HDFMMR08
+331126                                       PEREZ                            SANCHEZ                          24-07-1939   84     Mujer     Chihuahua              PESX390724MCHRNX03
+331276      LAURA                            MORALES                          MARTINEZ                         08-03-1968   55     Mujer     Yucatan                MOML680308HYNRRR04
+331328      JAVIER ALEJANDRO                 PARRA                            AGUILAR                          25-10-1950   73     Hombre    Michoacan              PAAJ501025HMNRGV05
+331333      DANIEL                           JIMENEZ                          YEPIZ                            14-02-1927   96     Hombre    Campeche               JIYD270214HCCMPN06
+331338      ANA                              RODRIGUEZ                        VARGAS                           10-09-1924   99     Mujer     Yucatan                ROVA240910HYNDRN05
+331356      FRANCISCO ANGEL                  LOPEZ                            PARRA                            16-08-1902   121    Hombre    Baja California        LOPF020816HBCPRR08
+331408      JORGE JUAN                       PARRA                            FERNANDEZ                        04-04-1913   110    Hombre    Jalisco                PAFJ130404HJCRRR05
+331510      BEATRIZ                          RODRIGUEZ                        RAMIREZ                          03-03-1929   94     Mujer     Chihuahua              RORB290303HCHDMT05
+331568      DIANA CATALINA                   PARRA                            SANCHEZ                          25-05-1904   119    Mujer     Campeche               PASD040525HCCRNN09
+331596      DAVID ALBERTO                    FERNANDEZ                        PEREZ                            08-12-1901   122    Hombre    Coahuila               FEPD011208HCLRRV00
+331642      SERGIO                           TORRES                           NAVARRO                          02-04-1928   95     Hombre    Puebla                 TONS280402HPLRVR04
+331795      JULIETA CLARA                    RIVERA                           VARGAS                           14-01-1985   38     Mujer     Guerrero               RIVJ850114HGRVRL04
+331826      SILVIA LUCIA                     RUIZ                             RUIZ                             12-10-1948   75     Mujer     Sinaloa                RURS481012HSLZZL00
+331836      CARLOS                           RODRIGUEZ                        ROMERO                           14-12-1980   43     Hombre    Jalisco                RORC801214HJCDMR01
+331859      BEATRIZ                          RUIZ                             RUIZ                             07-04-1986   37     Mujer     Tlaxcala               RURB860407HTLZZT02
+331919      ALBERTO                          PARRA                            VARGAS                           13-10-1919   104    Hombre    Baja California        PAVA191013HBCRRL08
+331954      LORENA                           NAVARRO                          VARGAS                           20-06-1929   94     Mujer     Queretaro              NAVL290620HQTVRR09
+331978      CARMEN SARA                      ORTEGA                           RUIZ                             08-12-1903   120    Mujer     Extranjero             OERC031208HNERZR09
+332005      ALBERTO GUILLERMO                YEPIZ                            VARGAS                           21-04-2003   20     Hombre    Hidalgo                YEVA030421HHGPRLA0
+332086      GUILLERMO                        ORTEGA                           GONZALEZ                         02-08-1987   36     Hombre    Chiapas                OEGG870802HCSRNL09
+332167      SOFIA                            CASTRO                           VARGAS                           22-09-1952   71     Mujer     Queretaro              CAVS520922HQTSRF05
+332240      ANA ROSA                         PEREZ                            VARGAS                           20-06-1969   54     Mujer     Morelos                PEVA690620HMSRRN02
+332242      JOSE                             AGUILAR                          RUIZ                             15-12-1968   55     Hombre    Extranjero             AURJ681215HNEGZX00
+332298      DIEGO                            PARRA                            AGUILAR                          19-02-1905   118    Hombre    Tamaulipas             PAAD050219HTSRGG00
+332356      ANDREA NATALIA                   YEPIZ                            VICENCIO                         02-11-1985   38     Mujer     Baja California        YEVA851102HBCPCN02
+332561      JAVIER EDUARDO                   ROMERO                           RUIZ                             07-07-1962   61     Hombre    Tlaxcala               RORJ620707HTLMZV03

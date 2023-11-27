@@ -3,6 +3,7 @@
         "QVDD_Act10_PE_932.C": "cpp",
         "typeinfo": "cpp",
         "stdlib.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "ddqvalhd.h": "c"
     }
 }

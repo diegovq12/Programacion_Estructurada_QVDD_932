@@ -66,7 +66,7 @@ void menu(void)
             detectConsonant(name, lnPat, lnMat, consonants);
             getHomonimia(year, homonimia);
 
-            printf("%s %s %s %s %s %s %s %s %s\n", name, lnPat, lnMat, initials1, bornDate, state, sex, consonants, homonimia);
+            //printf("%s %s %s %s %s %s %s %s %s\n", name, lnPat, lnMat, initials1, bornDate, state, sex, consonants, homonimia);
 
             sprintf(curp, "%s%s%s%s%s%s", initials1, bornDate, sex, state, consonants, homonimia);
             fixCurp(curp);
@@ -123,7 +123,7 @@ void getFullName(char name[], char lnPat[], char lnMat[], char initials[])
             found = 1;
         }
     }
-    //printf("found = %d\n", found);
+    // printf("found = %d\n", found);
 
     printf("Ingresa Primer Apellido: ");
     fflush(stdin);
@@ -141,7 +141,7 @@ void getFullName(char name[], char lnPat[], char lnMat[], char initials[])
     } while (correct == FALSE);
     convertMayus(lnPat);
 
-    printf("Ingresa Segundo Apellido(0 si no tiene): ");
+    printf("Ingresa Segundo Apellido: ");
     fflush(stdin);
     gets(lnMat);
     do
@@ -149,9 +149,9 @@ void getFullName(char name[], char lnPat[], char lnMat[], char initials[])
         correct = validStringNull(lnMat);
         if (lnMat == NULL)
         {
-            correct=TRUE;
+            correct = TRUE;
         }
-        
+
         if (correct == FALSE)
         {
             printf("Error - Reingresa correctamente los datos\n");
@@ -164,10 +164,10 @@ void getFullName(char name[], char lnPat[], char lnMat[], char initials[])
 
     initials[0] = lnPat[0];
     initials[1] = firstVowel(lnPat);
-    
-    if (lnMat!= NULL)
+
+    if (lnMat != NULL)
     {
-        initials[2] = lnMat[0]; 
+        initials[2] = lnMat[0];
     }
     else
     {
@@ -186,9 +186,8 @@ void getFullName(char name[], char lnPat[], char lnMat[], char initials[])
 
     initials[4] = '\0';
 
-    strcat(name," ");
-    strcat(name,nameTemp);
-
+    strcat(name, " ");
+    strcat(name, nameTemp);
 }
 
 void getState(char state[])
@@ -199,7 +198,8 @@ void getState(char state[])
                            "Nuevo Leon", "Oaxaca", "Puebla", "Queretaro", "Quintana Roo", "San Luis Potosi", "Sinaloa",
                            "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas", "Extranjero"};
 
-    char stateCode[35][5] = {"AS", "BC", "BS", "CC", "CS", "CH", "CL", "CM", "MC", "DG", "DF", "GT", "GR", "HG", "JC", "MN", "MS", "NT", "NL", "OC", "PL", "QT", "QR", "SP", "SL", "SR", "TC", "TS", "TL", "VZ", "YN", "ZS", "NE"};
+    char stateCode[35][5] = {"AS", "BC", "BS", "CC", "CS", "CH", "CL", "CM", "MC", "DG", "DF", "GT", "GR", "HG", "JC", "MN", "MS",
+                             "NT", "NL", "OC", "PL", "QT", "QR", "SP", "SL", "SR", "TC", "TS", "TL", "VZ", "YN", "ZS", "NE"};
 
     for (int i = 1; i <= 33; i++)
     {
@@ -350,7 +350,6 @@ void detectConsonant(char name[], char ln[], char ln2[], char consonante[])
     char nombresCortos[][7] = {"MARIA", "MAX", "MA", "MX",
                                "M", "JOSE", "JX", "J"};
 
-
     for (int i = 1; ln[i] != '\0' && flag == FALSE; i++)
     {
         c = ln[i];
@@ -373,7 +372,6 @@ void detectConsonant(char name[], char ln[], char ln2[], char consonante[])
     }
     consonante[1] = c;
 
-
     char *space = strchr(name, ' ');
     if (space != NULL)
     {
@@ -382,7 +380,7 @@ void detectConsonant(char name[], char ln[], char ln2[], char consonante[])
     }
 
     int found = 0;
-    for (int i = 1; (unsigned int) i < (unsigned int) sizeof(nombresCortos) / sizeof(nombresCortos[0]) && found == 0; i++)
+    for (int i = 1; (unsigned int)i < (unsigned int)sizeof(nombresCortos) / sizeof(nombresCortos[0]) && found == 0; i++)
     {
         if (strcmp(name, nombresCortos[i]) == 0)
         {
@@ -391,7 +389,7 @@ void detectConsonant(char name[], char ln[], char ln2[], char consonante[])
     }
 
     flag = FALSE;
-    if(found != 1)
+    if (found != 1)
     {
         for (int i = 1; name[i] != '\0' && flag == FALSE; i++)
         {
@@ -404,7 +402,7 @@ void detectConsonant(char name[], char ln[], char ln2[], char consonante[])
     }
     else
     {
-        if(found == 1)
+        if (found == 1)
         {
             for (int i = 1; nameTemp[i] != '\0' && flag == FALSE; i++)
             {
@@ -467,7 +465,7 @@ void fixCurp(char curp[])
 
     char cadenatemp[5];
     strncpy(cadenatemp, curp, 4);
-    cadenatemp[4]='\0';
+    cadenatemp[4] = '\0';
 
     int i;
     int found = 0;
@@ -479,11 +477,10 @@ void fixCurp(char curp[])
         }
     }
 
-    if (found==1)
+    if (found == 1)
     {
-        curp[1]='X';
+        curp[1] = 'X';
     }
-    
 
     if (curp[14] == ' ' || curp[14] == '\0')
     {
@@ -494,5 +491,4 @@ void fixCurp(char curp[])
     {
         curp[15] = 'X';
     }
-    
 }

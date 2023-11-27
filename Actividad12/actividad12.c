@@ -569,23 +569,3 @@ void genTxt(Tstudent vect[], int index, char fileName[])
     makeFile(vect, index, temp, 0);
     printf("FILES CREATED SUCCESSFULLY\n");
 }
-
-int regsCount(char fileName[])
-{
-    int counter;
-    char cmd[50];
-    strcat(fileName, ".txt");
-
-    sprintf(cmd, "RegisterCounter.exe %s", fileName);
-    counter = system(cmd);
-
-    if (counter != -1)
-    {
-        printf("FILE %s CONTAINS %d REGISTERS\n", fileName, counter);
-    }
-    else
-    {
-        printf("FILE UNAVAILABLE\n");
-    }
-    return counter;
-}

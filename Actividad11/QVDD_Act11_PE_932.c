@@ -5,6 +5,14 @@
 #include "namesddqv.h"
 #include "ddqvval.h"
 
+/*
+Quiros Vicencio Diego Demian
+28/10/23(creado) - 01/11/23 (modificado)
+ACTIVIDAD 11
+FUNCIONES y METODOS DE ORDENACION Y BUSQUEDA
+ESTRUCTURAS Y LIBRERIAS
+*/
+
 #define FALSE 0
 #define TRUE 1
 

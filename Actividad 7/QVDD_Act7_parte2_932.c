@@ -152,13 +152,22 @@ void convertirMinusculas(char *string)
 
 void convertirCapital(char *string)
 {
+    int i=0;
     if (string[0] >='a')
     {
         if (string[0]<='z')
         {
             string[0]=string[0]-32;
         }
-    } 
+    }
+    while (string[i] != '\0')
+    {
+        if (string[i] == ' ' && string[i + 1] >= 'a' && string[i + 1] <= 'z') {
+            string[i + 1] -= ('a' - 'A');
+        }
+        i++;     
+    }
+     
     printf("\n %s \n",string);
 }
 //*************************************
